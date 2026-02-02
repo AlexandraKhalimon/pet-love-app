@@ -1,0 +1,23 @@
+.image {
+  margin: 0 auto;
+}
+
+@media (min-width: 320px) and (max-width: 374px) {
+  .image {
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .image {
+    width: 768px;
+    height: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .image {
+    min-width: 1280px;
+    height: 800px;
+  }
+}

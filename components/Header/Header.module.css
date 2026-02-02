@@ -1,0 +1,15 @@
+.header {
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.button {
+  background-color: transparent;
+}
+
+.button > .icon {
+  stroke: #262626;
+}
