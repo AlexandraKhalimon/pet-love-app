@@ -32,3 +32,15 @@
 .icon {
   stroke: #262626;
 }
+
+@media (min-width: 768px) {
+  .menu {
+    width: 374px;
+    padding: 49px 40px;
+  }
+
+  .button {
+    top: 39px;
+    right: 32px;
+  }
+}
