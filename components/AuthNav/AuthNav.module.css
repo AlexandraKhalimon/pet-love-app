@@ -1,0 +1,35 @@
+.navigation {
+  width: 178px;
+  height: 92px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 280px;
+}
+
+.login {
+  border-radius: 30px;
+  padding: 12px 67px;
+  width: 178px;
+  height: 42px;
+  background-color: #f6b83d;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: #fff;
+}
+.register {
+  border-radius: 30px;
+  padding: 12px 41px;
+  width: 178px;
+  height: 42px;
+  background-color: #fff4df;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: #f6b83d;
+}

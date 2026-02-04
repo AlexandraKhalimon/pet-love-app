@@ -1,6 +1,7 @@
 import { createPortal } from "react-dom";
 import css from "./BurgerMenu.module.css";
 import Nav from "../Nav/Nav";
+import AuthNav from "../AuthNav/AuthNav";
 
 interface Props {
   onClose: () => void;
@@ -16,6 +17,7 @@ export default function BurgerMenu({ onClose }: Props) {
           </svg>
         </button>
         <Nav />
+        <AuthNav />
       </div>
     </div>,
     document.body,
