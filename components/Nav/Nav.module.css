@@ -1,0 +1,26 @@
+.navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 119px;
+  height: auto;
+}
+
+.link {
+  border: 1px solid rgba(38, 38, 38, 0.15);
+  border-radius: 30px;
+  padding: 15px 24px;
+  width: 119px;
+  height: 48px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.03em;
+  text-align: center;
+  color: var(--foreground);
+}
+
+.link:hover,
+.link:active {
+  border: 1px solid #f6b83d;
+}
