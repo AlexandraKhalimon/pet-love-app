@@ -5,6 +5,7 @@ import css from "./Header.module.css";
 import { useState } from "react";
 import BurgerMenu from "../BurgerMenu/BurgerMenu";
 import AuthNav from "../AuthNav/AuthNav";
+import Nav from "../Nav/Nav";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,6 +17,7 @@ export default function Header() {
           <use href="/icons.svg#icon-logo-1"></use>
         </svg>
       </Link>
+      <Nav className={css.nav} />
       <AuthNav className={css.authNav} />
       <button className={css.button} onClick={() => setIsMenuOpen(true)}>
         <svg width={32} height={32} className={css.icon}>

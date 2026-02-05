@@ -1,9 +1,13 @@
 import Link from "next/link";
 import css from "./Nav.module.css";
 
-export default function Nav() {
+interface Props {
+  className: string;
+}
+
+export default function Nav({ className }: Props) {
   return (
-    <ul className={css.navigation}>
+    <ul className={`${css.navigation} ${className}`}>
       <li className={css.link}>
         <Link href="/news">News</Link>
       </li>
