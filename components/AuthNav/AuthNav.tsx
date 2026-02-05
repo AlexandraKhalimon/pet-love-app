@@ -1,9 +1,13 @@
 import css from "./AuthNav.module.css";
 import Link from "next/link";
 
-export default function AuthNav() {
+interface Props {
+  className: string;
+}
+
+export default function AuthNav({ className }: Props) {
   return (
-    <ul className={css.navigation}>
+    <ul className={`${css.navigation} ${className}`}>
       <li className={css.login}>
         <Link href="/login">Log In</Link>
       </li>

@@ -4,7 +4,6 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
-  margin-top: 280px;
 }
 
 .login {
@@ -39,7 +38,6 @@
     width: 276px;
     height: 50px;
     flex-direction: row;
-    margin-top: 395px;
   }
 
   .login {
