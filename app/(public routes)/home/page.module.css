@@ -4,7 +4,6 @@
 
 .infoWrapper {
   width: 100%;
-  max-width: 335px;
   border-radius: 30px;
   padding: 60px 20px 50px;
   margin: 0 auto;
@@ -38,7 +37,64 @@
 }
 
 @media (min-width: 320px) and (max-width: 374px) {
+  .infoWrapper {
+    max-width: 335px;
+  }
+
   .title {
     font-size: 36px;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero {
+    padding: 0 32px;
+  }
+
+  .infoWrapper {
+    width: 704px;
+    border-radius: 60px;
+    padding: 112px 32px 44px;
+  }
+
+  .title {
+    font-size: 80px;
+    margin-bottom: 32px;
+  }
+
+  .text {
+    font-size: 18px;
+    line-height: 122%;
+    width: 255px;
+    margin-left: auto;
+  }
+
+  .image {
+    border-radius: 60px;
+    width: 704px;
+    height: 496px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .infoWrapper {
+    width: 1216px;
+    padding: 112px 64px 32px;
+    display: flex;
+    align-items: flex-end;
+    gap: 73px;
+  }
+
+  .title {
+    font-size: 90px;
+    margin-bottom: 0;
+    line-height: 97%;
+    width: 760px;
+  }
+
+  .image {
+    border-radius: 60px;
+    width: 1216px;
+    height: 384px;
   }
 }
