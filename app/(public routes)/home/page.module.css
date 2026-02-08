@@ -1,0 +1,44 @@
+.hero {
+  padding: 0 20px;
+}
+
+.infoWrapper {
+  width: 100%;
+  max-width: 335px;
+  border-radius: 30px;
+  padding: 60px 20px 50px;
+  margin: 0 auto;
+  background-color: #f6b83d;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 96%;
+  letter-spacing: -0.03em;
+  color: #fff;
+  margin-bottom: 24px;
+}
+
+.title > span {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.text {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+
+.image {
+  border-radius: 30px;
+  margin: 0 auto;
+}
+
+@media (min-width: 320px) and (max-width: 374px) {
+  .title {
+    font-size: 36px;
+  }
+}
