@@ -55,6 +55,15 @@
     justify-content: flex-end;
   }
 
+  .homeHeader {
+    padding: 16px 32px 0 32px;
+  }
+
+  .headerWrapper {
+    padding: 16px 32px 0 32px;
+    border-radius: 60px 60px 0 0;
+  }
+
   .logo {
     margin-right: auto;
   }
@@ -76,6 +85,15 @@
     width: 36px;
     height: 36px;
   }
+
+  .homeButton {
+    margin-left: 18px;
+  }
+
+  .homeButton > .icon {
+    width: 36px;
+    height: 36px;
+  }
 }
 
 @media (min-width: 1280px) {
@@ -84,11 +102,19 @@
     justify-content: flex-end;
   }
 
+  .headerWrapper {
+    padding: 16px 64px 0 64px;
+  }
+
   .nav {
     display: flex !important;
   }
 
   .button {
+    display: none;
+  }
+
+  .homeButton {
     display: none;
   }
 }
