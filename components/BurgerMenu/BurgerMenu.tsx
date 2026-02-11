@@ -16,6 +16,8 @@ export default function BurgerMenu({ onClose }: Props) {
 
   const menuBackground = isHomePage ? css.white : css.orange;
   const icon = isHomePage ? css.blackIcon : css.whiteIcon;
+  const nav = isHomePage ? "grey" : "white";
+  const auth = isHomePage ? "orange" : "white";
 
   return createPortal(
     <div className={css.backdrop}>
@@ -25,8 +27,8 @@ export default function BurgerMenu({ onClose }: Props) {
             <use href="/icons.svg#icon-cross-small"></use>
           </svg>
         </button>
-        <Nav />
-        <AuthNav />
+        <Nav link={nav} />
+        <AuthNav border={auth} />
       </div>
     </div>,
     document.body,

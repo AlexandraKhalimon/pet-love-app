@@ -2,19 +2,20 @@ import Link from "next/link";
 import css from "./Nav.module.css";
 
 interface Props {
-  className: string;
+  className?: string;
+  link: "white" | "grey";
 }
 
-export default function Nav({ className }: Props) {
+export default function Nav({ className, link }: Props) {
   return (
     <ul className={`${css.navigation} ${className}`}>
-      <li className={css.link}>
+      <li className={`${css.link} ${css[link]}`}>
         <Link href="/news">News</Link>
       </li>
-      <li className={css.link}>
+      <li className={`${css.link} ${css[link]}`}>
         <Link href="/notices">Find pet</Link>
       </li>
-      <li className={css.link}>
+      <li className={`${css.link} ${css[link]}`}>
         <Link href="/friends">Our friends</Link>
       </li>
     </ul>

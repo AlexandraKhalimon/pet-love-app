@@ -8,7 +8,6 @@
 }
 
 .link {
-  border: 1px solid rgba(38, 38, 38, 0.15);
   border-radius: 30px;
   padding: 15px 24px;
   width: 119px;
@@ -18,11 +17,25 @@
   line-height: 129%;
   letter-spacing: -0.03em;
   text-align: center;
+}
+
+.white {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+.white:hover,
+.white:focus {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.grey {
+  border: 1px solid rgba(38, 38, 38, 0.15);
   color: var(--foreground);
 }
 
-.link:hover,
-.link:active {
+.grey:hover,
+.grey:focus {
   border: 1px solid #f6b83d;
 }
 
@@ -34,7 +47,6 @@
   }
 
   .link {
-    border: 1px solid rgba(38, 38, 38, 0.4);
     padding: 15px 19px;
     height: 50px;
     font-size: 16px;
@@ -53,7 +65,6 @@
   }
 
   .link {
-    border: 1px solid rgba(38, 38, 38, 0.15);
     width: auto;
     font-size: 16px;
     line-height: 125%;

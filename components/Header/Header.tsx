@@ -21,8 +21,8 @@ export default function Header() {
             <use href="/icons.svg#icon-logo-2"></use>
           </svg>
         </Link>
-        <Nav className={css.nav} />
-        <AuthNav className={css.authNav} />
+        <Nav className={css.nav} link={"white"} />
+        <AuthNav className={css.authNav} border={"white"} />
         <button className={css.homeButton} onClick={() => setIsMenuOpen(true)}>
           <svg width={32} height={32} className={css.icon}>
             <use href="/icons.svg#icon-menu"></use>
@@ -38,8 +38,8 @@ export default function Header() {
           <use href="/icons.svg#icon-logo-1"></use>
         </svg>
       </Link>
-      <Nav className={css.nav} />
-      <AuthNav className={css.authNav} />
+      <Nav className={css.nav} link={"grey"} />
+      <AuthNav className={css.authNav} border={"orange"} />
       <button className={css.button} onClick={() => setIsMenuOpen(true)}>
         <svg width={32} height={32} className={css.icon}>
           <use href="/icons.svg#icon-menu"></use>
