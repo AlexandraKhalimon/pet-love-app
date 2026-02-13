@@ -1,5 +1,6 @@
 // Компонент закоментований для тестів
 
+// import SearchField from "@/components/SearchField/SearchField";
 // import css from "./page.module.css";
 // import Title from "@/components/Title/Title";
 
@@ -7,6 +8,7 @@
 //   return (
 //     <section className={css.section}>
 //       <Title title={"News"} />
+//       <SearchField />
 //     </section>
 //   );
 // }
