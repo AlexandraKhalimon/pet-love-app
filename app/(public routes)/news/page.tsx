@@ -3,6 +3,7 @@
 import SearchField from "@/components/SearchField/SearchField";
 import css from "./page.module.css";
 import Title from "@/components/Title/Title";
+import NewsList from "@/components/NewsList/NewsList";
 
 export default function News() {
   return (
@@ -10,6 +11,7 @@ export default function News() {
       <div className={css.newsHeader}>
         <Title title={"News"} />
         <SearchField />
+        <NewsList />
       </div>
     </section>
   );

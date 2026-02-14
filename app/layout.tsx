@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header/Header";
+import TanStackProvider from "@/components/TanStackProvider/TanStackProvider";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -26,8 +27,10 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.png" />
       </head>
       <body className={manrope.variable}>
-        <Header />
-        {children}
+        <TanStackProvider>
+          <Header />
+          {children}
+        </TanStackProvider>
       </body>
     </html>
   );
