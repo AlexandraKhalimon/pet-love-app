@@ -50,6 +50,7 @@
 }
 
 @media (min-width: 320px) and (max-width: 374px) {
+  .search,
   .input {
     width: 100%;
   }
