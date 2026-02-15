@@ -1,18 +1,22 @@
-// Компонент закоментований для тестів
+import { fetchNews } from "@/lib/api";
+import {
+  dehydrate,
+  HydrationBoundary,
+  QueryClient,
+} from "@tanstack/react-query";
+import NewsClient from "./News.client";
 
-import SearchField from "@/components/SearchField/SearchField";
-import css from "./page.module.css";
-import Title from "@/components/Title/Title";
-import NewsList from "@/components/NewsList/NewsList";
+export default async function NewsPage() {
+  const queryClient = new QueryClient();
 
-export default function News() {
+  await queryClient.prefetchQuery({
+    queryKey: ["news", "", 1],
+    queryFn: () => fetchNews({ search: "", page: 1, limit: 6 }),
+  });
+
   return (
-    <section className={css.section}>
-      <div className={css.newsHeader}>
-        <Title title={"News"} />
-        <SearchField />
-      </div>
-      <NewsList />
-    </section>
+    <HydrationBoundary state={dehydrate(queryClient)}>
+      <NewsClient />
+    </HydrationBoundary>
   );
 }

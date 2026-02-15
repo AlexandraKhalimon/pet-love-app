@@ -1,5 +1,5 @@
-import Image from "next/image";
 import css from "./NewsItem.module.css";
+import Image from "next/image";
 import { News } from "@/types/news";
 
 interface Props {
