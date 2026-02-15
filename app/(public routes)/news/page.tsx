@@ -11,8 +11,8 @@ export default function News() {
       <div className={css.newsHeader}>
         <Title title={"News"} />
         <SearchField />
-        <NewsList />
       </div>
+      <NewsList />
     </section>
   );
 }

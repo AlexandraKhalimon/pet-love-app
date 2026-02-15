@@ -1,7 +1,9 @@
 "use client";
 
+import css from './NewsList.module.css';
 import { fetchNews } from "@/lib/api";
 import { keepPreviousData, useQuery } from "@tanstack/react-query";
+import NewsItem from "../NewsItem/NewsItem";
 
 interface Props {
   search: string;
@@ -28,9 +30,11 @@ export default function NewsList({ search, currentPage }: Props) {
   }
 
   return (
-    <ul>
+    <ul className={css.NewsList}>
       {data?.results.map((news) => (
-        <li key={news._id}></li>
+        <li key={news._id}>
+          <NewsItem news={news} />
+        </li>
       ))}
     </ul>
   );
