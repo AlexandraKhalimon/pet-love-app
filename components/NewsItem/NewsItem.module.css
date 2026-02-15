@@ -8,6 +8,7 @@
 .image {
   border-radius: 15px;
   margin-bottom: 20px;
+  width: 100%;
 }
 
 .title {
@@ -55,5 +56,59 @@
   .card {
     width: 100%;
     max-width: 335px;
+  }
+}
+
+@media (min-width: 768px) {
+  .card {
+    width: 340px;
+    height: 476px;
+  }
+
+  .image {
+    margin-bottom: 28px;
+    height: 226px;
+  }
+
+  .title {
+    font-size: 20px;
+    line-height: 130%;
+    margin-bottom: 14px;
+  }
+
+  .text {
+    font-size: 16px;
+    line-height: 125%;
+  }
+
+  .date {
+    font-size: 16px;
+    line-height: 125%;
+  }
+
+  .link {
+    font-size: 16px;
+    line-height: 125%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .card {
+    width: 361px;
+  }
+
+  .text {
+    font-size: 16px;
+    line-height: 125%;
+  }
+
+  .date {
+    font-size: 16px;
+    line-height: 125%;
+  }
+
+  .link {
+    font-size: 16px;
+    line-height: 125%;
   }
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import css from './NewsList.module.css';
+import css from "./NewsList.module.css";
 import { fetchNews } from "@/lib/api";
 import { keepPreviousData, useQuery } from "@tanstack/react-query";
 import NewsItem from "../NewsItem/NewsItem";

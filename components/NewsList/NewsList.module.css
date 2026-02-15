@@ -5,3 +5,19 @@
   margin: 0 auto;
   margin-bottom: 44px;
 }
+
+@media (min-width: 768px) {
+  .NewsList {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 32px 24px;
+    margin-bottom: 60px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .NewsList {
+    gap: 40px 35px;
+    width: 1153px;
+  }
+}

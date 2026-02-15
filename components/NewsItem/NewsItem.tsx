@@ -18,6 +18,7 @@ export default function NewsItem({ news }: Props) {
       <Image
         src={news.imgUrl}
         alt="News image"
+        sizes="(max-width: 767px) 335px, (max-width: 1279px) 340px, (min-width: 1280px) 361px"
         width={335}
         height={190}
         className={css.image}
