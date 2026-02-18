@@ -56,9 +56,7 @@
   font-size: 14px;
   line-height: 129%;
   color: var(--foreground);
-  transition:
-    border-color 0.2s ease,
-    color 0.2s ease;
+  transition: color 0.2s ease;
 }
 
 .firstPage:hover,
@@ -107,5 +105,42 @@
 @media (min-width: 320px) and (max-width: 374px) {
   .paginationContainer {
     width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .paginationContainer {
+    gap: 8px;
+    width: 446px;
+  }
+
+  .pagination {
+    gap: 10px;
+  }
+
+  .firstPage,
+  .lastPage {
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+    line-height: 122%;
+  }
+
+  .pagination > li {
+    width: 44px;
+    height: 44px;
+  }
+
+  .pagination li a {
+    font-size: 18px;
+    line-height: 122%;
+  }
+
+  .previous {
+    margin-right: 14px;
+  }
+
+  .next {
+    margin-left: 14px;
   }
 }
