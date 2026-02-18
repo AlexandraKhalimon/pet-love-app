@@ -8,6 +8,7 @@ import { useState } from "react";
 import { useDebounce } from "use-debounce";
 import { fetchNews } from "@/lib/api";
 import { keepPreviousData, useQuery } from "@tanstack/react-query";
+import Pagination from "@/components/Pagination/Pagination";
 
 export default function NewsClient() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -38,6 +39,8 @@ export default function NewsClient() {
     setCurrentPage(1);
   };
 
+  const totalPages = data?.totalPages ?? 0;
+
   return (
     <section className={css.section}>
       <div className={css.newsHeader}>
@@ -45,6 +48,13 @@ export default function NewsClient() {
         <SearchField onSearch={handleSearch} />
       </div>
       {data && data.results.length > 0 && <NewsList news={data.results} />}
+      {totalPages > 1 && (
+        <Pagination
+          totalPages={totalPages}
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+        />
+      )}
     </section>
   );
 }
