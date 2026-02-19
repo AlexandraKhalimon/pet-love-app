@@ -1,0 +1,77 @@
+.card {
+  border-radius: 15px;
+  width: 335px;
+  height: 184px;
+  background-color: #fff;
+  position: relative;
+}
+
+.time {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  border-radius: 30px;
+  padding: 8px;
+  width: 88px;
+  height: 32px;
+  background-color: #fff4df;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 133%;
+  letter-spacing: -0.02em;
+  color: #f6b83d;
+}
+
+.information {
+  display: flex;
+  flex-direction: row;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.image {
+  border-radius: 100%;
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 125%;
+  letter-spacing: -0.04em;
+  color: var(--foreground);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.list > li {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.02em;
+  color: var(--foreground);
+}
+
+.list span {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.02em;
+  color: rgba(38, 38, 38, 0.5);
+}
+
+@media (min-width: 320px) and (max-width: 374px) {
+  .card {
+    width: 100%;
+    max-width: 335px;
+  }
+}
