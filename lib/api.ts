@@ -1,3 +1,4 @@
+import { Friend } from "@/types/friend";
 import type { News } from "@/types/news";
 import axios from "axios";
 
@@ -28,5 +29,14 @@ export const fetchNews = async ({
       limit,
     },
   });
+  return response.data;
+};
+
+interface FetchFriendsResponse {
+  friends: Friend[];
+}
+
+export const fetchFriends = async (): Promise<FetchFriendsResponse> => {
+  const response = await axios.get<FetchFriendsResponse>("/friends/");
   return response.data;
 };
