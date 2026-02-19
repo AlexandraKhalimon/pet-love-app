@@ -45,7 +45,10 @@ export default function SearchField({ onSearch }: Props) {
           className={css.cross}
           type="button"
           aria-label="Clear query"
-          onClick={() => setQuery("")}
+          onClick={() => {
+            setQuery("");
+            onSearch("");
+          }}
         >
           <svg width={18} height={18} className={css.icon} aria-hidden="true">
             <use href="/icons.svg#icon-cross-small"></use>

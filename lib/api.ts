@@ -4,26 +4,28 @@ import axios from "axios";
 axios.defaults.baseURL = "https://petlove.b.goit.study/api";
 
 interface FetchNewsResponse {
-  results: News[];
+  page: number;
+  perPage: number;
   totalPages: number;
+  results: News[];
 }
 
 interface FetchNewsParams {
-  search: string;
+  keyword: string;
   page: number;
   limit: number;
 }
 
 export const fetchNews = async ({
-  search,
+  keyword,
   page,
   limit,
 }: FetchNewsParams): Promise<FetchNewsResponse> => {
   const response = await axios.get<FetchNewsResponse>("/news", {
     params: {
-      search,
+      keyword,
       page,
-      perPage: limit,
+      limit,
     },
   });
   return response.data;

@@ -11,7 +11,7 @@ export default async function NewsPage() {
 
   await queryClient.prefetchQuery({
     queryKey: ["news", "", 1],
-    queryFn: () => fetchNews({ search: "", page: 1, limit: 6 }),
+    queryFn: () => fetchNews({ keyword: "", page: 1, limit: 6 }),
   });
 
   return (

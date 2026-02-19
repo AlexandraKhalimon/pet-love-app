@@ -18,7 +18,7 @@ export default function NewsClient() {
   const { data, isLoading, error } = useQuery({
     queryKey: ["news", debouncedSearchQuery, currentPage],
     queryFn: () =>
-      fetchNews({ search: debouncedSearchQuery, page: currentPage, limit: 6 }),
+      fetchNews({ keyword: debouncedSearchQuery, page: currentPage, limit: 6 }),
     placeholderData: keepPreviousData,
   });
 
