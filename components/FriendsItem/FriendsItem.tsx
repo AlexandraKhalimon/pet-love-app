@@ -7,9 +7,20 @@ interface Props {
 }
 
 export default function FriendsItem({ friend }: Props) {
+  const open = friend.workDays?.find((day) => day.isOpen);
+  const time = open ? `${open.from} - ${open.to}` : "Day and night";
+
+  const email = !friend.email
+    ? "phone only"
+    : friend.email.slice(0, 20) + "...";
+  const address = !friend.address
+    ? "website only"
+    : friend.address.slice(0, 18) + "...";
+  const phone = !friend.phone ? "email only" : friend.phone;
+
   return (
     <li className={css.card}>
-      <p className={css.time}>Time</p>
+      <p className={css.time}>{time}</p>
       <div className={css.information}>
         <Image
           src={friend.imageUrl}
@@ -23,13 +34,13 @@ export default function FriendsItem({ friend }: Props) {
           <h3 className={css.title}>{friend.title}</h3>
           <ul className={css.list}>
             <li>
-              <span>Email:</span> {friend.email}
+              <span>Email:</span> {email}
             </li>
             <li>
-              <span>Address: </span> {friend.address}
+              <span>Address: </span> {address}
             </li>
             <li>
-              <span>Phone: </span> {friend.phone}
+              <span>Phone: </span> {phone}
             </li>
           </ul>
         </div>
