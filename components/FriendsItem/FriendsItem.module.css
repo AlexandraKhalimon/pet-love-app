@@ -4,6 +4,7 @@
   height: 184px;
   background-color: #fff;
   position: relative;
+  padding: 40px 25px 40px 20px;
 }
 
 .time {
@@ -74,4 +75,10 @@
     width: 100%;
     max-width: 335px;
   }
+}
+
+@media (min-width: 768px) {
+}
+
+@media (min-width: 1280px) {
 }
