@@ -34,13 +34,16 @@ export default function FriendsItem({ friend }: Props) {
           <h3 className={css.title}>{friend.title}</h3>
           <ul className={css.list}>
             <li>
-              <span>Email:</span> {email}
+              <span>Email:</span> <a href={`mailto:${friend.email}`}>{email}</a>
             </li>
             <li>
-              <span>Address: </span> {address}
+              <span>Address: </span>{" "}
+              <a href={friend.addressUrl} target="_blank">
+                {address}
+              </a>
             </li>
             <li>
-              <span>Phone: </span> {phone}
+              <span>Phone: </span> <a href={`tel:${friend.phone}`}>{phone}</a>
             </li>
           </ul>
         </div>
