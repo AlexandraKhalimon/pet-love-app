@@ -32,11 +32,11 @@ export const fetchNews = async ({
   return response.data;
 };
 
-interface FetchFriendsResponse {
-  friends: Friend[];
-}
+// interface FetchFriendsResponse {
+//   friends: Friend[];
+// }
 
-export const fetchFriends = async (): Promise<FetchFriendsResponse> => {
-  const response = await axios.get<FetchFriendsResponse>("/friends/");
+export const fetchFriends = async (): Promise<Friend[]> => {
+  const response = await axios.get<Friend[]>("/friends/");
   return response.data;
 };
