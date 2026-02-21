@@ -10,7 +10,7 @@ export default async function FriendsPage() {
   const queryClient = new QueryClient();
   await queryClient.prefetchQuery({
     queryKey: ["friends"],
-    queryFn: () => fetchFriends(),
+    queryFn: fetchFriends,
   });
 
   return (
