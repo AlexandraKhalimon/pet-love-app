@@ -50,6 +50,7 @@ export default function FriendsItem({ friend }: Props) {
                 <a
                   href={friend.addressUrl}
                   target="_blank"
+                  rel="noopener noreferrer"
                   className={css.link}
                 >
                   {address}

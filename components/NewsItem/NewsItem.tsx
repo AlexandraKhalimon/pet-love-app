@@ -27,7 +27,12 @@ export default function NewsItem({ news }: Props) {
       <p className={css.text}>{text}</p>
       <div className={css.newsInfo}>
         <p className={css.date}>{date}</p>
-        <a href={news.url} target="_blank" className={css.link}>
+        <a
+          href={news.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={css.link}
+        >
           Read more
         </a>
       </div>
