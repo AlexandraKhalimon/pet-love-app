@@ -25,6 +25,7 @@ export default function FriendsItem({ friend }: Props) {
         <Image
           src={friend.imageUrl}
           alt="Company logo"
+          sizes="(max-width: 767px) 80px, (min-width: 768px) 90px"
           width={80}
           height={80}
           loading="lazy"
