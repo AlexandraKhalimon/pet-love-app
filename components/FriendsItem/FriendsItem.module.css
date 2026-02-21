@@ -13,7 +13,7 @@
   right: 12px;
   border-radius: 30px;
   padding: 8px;
-  width: 88px;
+  width: auto;
   height: 32px;
   background-color: #fff4df;
   font-weight: 500;
@@ -62,7 +62,7 @@
   color: var(--foreground);
 }
 
-.list span {
+.point {
   font-weight: 500;
   font-size: 14px;
   line-height: 129%;
@@ -70,10 +70,34 @@
   color: rgba(38, 38, 38, 0.5);
 }
 
+.link:hover,
+.link:active {
+  color: #f6b83d;
+  text-decoration-line: underline;
+}
+
 @media (min-width: 320px) and (max-width: 374px) {
   .card {
     width: 100%;
     max-width: 335px;
+  }
+
+  .time {
+    padding: 8px;
+    font-size: 11px;
+    height: 30px;
+  }
+
+  .information {
+    gap: 10px;
+  }
+
+  .list > li {
+    font-size: 12px;
+  }
+
+  .point {
+    font-size: 12px;
   }
 }
 
