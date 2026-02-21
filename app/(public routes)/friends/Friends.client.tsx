@@ -20,10 +20,6 @@ export default function FriendsClient() {
     return <p>Sorry, there is an error</p>;
   }
 
-  if (data) {
-    console.log(data);
-  }
-
   return (
     <section className={css.section}>
       <Title title={"Our friends"} />
