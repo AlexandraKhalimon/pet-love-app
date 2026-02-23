@@ -1,5 +1,6 @@
 import { Friend } from "@/types/friend";
 import type { News } from "@/types/news";
+import { Category, Notice, Sex, Species } from "@/types/notice";
 import axios from "axios";
 
 axios.defaults.baseURL = "https://petlove.b.goit.study/api";
@@ -34,5 +35,69 @@ export const fetchNews = async ({
 
 export const fetchFriends = async (): Promise<Friend[]> => {
   const response = await axios.get<Friend[]>("/friends/");
+  return response.data;
+};
+
+interface FetchNoticesResponse {
+  page: number;
+  perPage: number;
+  totalPages: number;
+  results: Notice[];
+}
+
+interface FetchNoticesParams {
+  keyword?: string;
+  category?: Category;
+  species?: Species;
+  locationId?: string;
+  byDate?: boolean;
+  byPrice?: boolean;
+  byPopularity?: boolean;
+  page: number;
+  limit: number;
+  sex?: Sex;
+}
+
+export const fetchNotices = async ({
+  keyword,
+  category,
+  species,
+  locationId,
+  byDate,
+  byPrice,
+  byPopularity,
+  page,
+  limit,
+  sex,
+}: FetchNoticesParams): Promise<FetchNoticesResponse> => {
+  const response = await axios.get<FetchNoticesResponse>("/notices", {
+    params: {
+      keyword,
+      category,
+      species,
+      locationId,
+      byDate,
+      byPrice,
+      byPopularity,
+      page,
+      limit,
+      sex,
+    },
+  });
+  return response.data;
+};
+
+export const fetchNoticeCategories = async (): Promise<Category[]> => {
+  const response = await axios.get<Category[]>("/notices/categories");
+  return response.data;
+};
+
+export const fetchNoticeSex = async (): Promise<Sex[]> => {
+  const response = await axios.get<Sex[]>("/notices/sex");
+  return response.data;
+};
+
+export const fetchNoticeSpecies = async (): Promise<Species[]> => {
+  const response = await axios.get<Species[]>("/notices/species");
   return response.data;
 };
