@@ -1,3 +1,4 @@
+import { City } from "@/types/city";
 import { Friend } from "@/types/friend";
 import type { News } from "@/types/news";
 import { Category, Notice, Sex, Species } from "@/types/notice";
@@ -99,5 +100,25 @@ export const fetchNoticeSex = async (): Promise<Sex[]> => {
 
 export const fetchNoticeSpecies = async (): Promise<Species[]> => {
   const response = await axios.get<Species[]>("/notices/species");
+  return response.data;
+};
+
+interface FetchCitiesParams {
+  keyword: string;
+}
+
+export const fetchCities = async ({
+  keyword,
+}: FetchCitiesParams): Promise<City[]> => {
+  const response = await axios.get<City[]>("/cities/", {
+    params: {
+      keyword,
+    },
+  });
+  return response.data;
+};
+
+export const fetchLocations = async (): Promise<City[]> => {
+  const response = await axios.get<City[]>("/cities/locations");
   return response.data;
 };
