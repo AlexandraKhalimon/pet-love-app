@@ -3,12 +3,19 @@
 import css from "./NoticesFilters.module.css";
 import { Category, Sex, Species } from "@/types/notice";
 import SearchField from "../SearchField/SearchField";
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
+import AsyncSelect from "react-select/async";
+
+interface LocationSelect {
+  label: string;
+  value: string;
+}
 
 interface FiltersFormValues {
   category: Category | "";
   sex: Sex | "";
   species: Species | "";
+  location: LocationSelect | null;
 }
 
 interface Props {
@@ -16,6 +23,7 @@ interface Props {
   categories: Category[];
   sexes: Sex[];
   types: Species[];
+  locations: (query: string) => Promise<LocationSelect[]>;
 }
 
 export default function NoticesFilters({
@@ -23,12 +31,14 @@ export default function NoticesFilters({
   categories,
   sexes,
   types,
+  locations,
 }: Props) {
-  const { register } = useForm<FiltersFormValues>({
+  const { register, control } = useForm<FiltersFormValues>({
     defaultValues: {
       category: "",
       sex: "",
       species: "",
+      location: null,
     },
   });
 
@@ -70,6 +80,19 @@ export default function NoticesFilters({
           ))}
         </select>
       </label>
+      <Controller
+        name="location"
+        control={control}
+        render={({ field }) => (
+          <AsyncSelect
+            {...field}
+            cacheOptions
+            defaultOptions
+            isClearable
+            loadOptions={locations}
+          />
+        )}
+      />
     </form>
   );
 }
