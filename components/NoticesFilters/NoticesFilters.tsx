@@ -16,6 +16,7 @@ interface FiltersFormValues {
   sex: Sex | "";
   species: Species | "";
   location: LocationSelect | null;
+  notice: string;
 }
 
 interface Props {
@@ -39,6 +40,7 @@ export default function NoticesFilters({
       sex: "",
       species: "",
       location: null,
+      notice: "",
     },
   });
 
@@ -93,6 +95,25 @@ export default function NoticesFilters({
           />
         )}
       />
+      <hr />
+      <div>
+        <label>
+          <input {...register("notice")} type="radio" value="Popular" />
+          Popular
+        </label>
+        <label>
+          <input {...register("notice")} type="radio" value="Unpopular" />
+          Unpopular
+        </label>
+        <label>
+          <input {...register("notice")} type="radio" value="Cheap" />
+          Cheap
+        </label>
+        <label>
+          <input {...register("notice")} type="radio" value="Expensive" />
+          Expensive
+        </label>
+      </div>
     </form>
   );
 }
