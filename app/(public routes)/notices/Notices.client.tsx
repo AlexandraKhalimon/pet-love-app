@@ -4,30 +4,49 @@ import NoticesFilters from "@/components/NoticesFilters/NoticesFilters";
 import {
   fetchCities,
   fetchNoticeCategories,
+  fetchNotices,
   fetchNoticeSex,
   fetchNoticeSpecies,
 } from "@/lib/api";
 import { City } from "@/types/city";
-import { Category, Sex, Species } from "@/types/notice";
-import { useEffect, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
+import { useState } from "react";
 
 export default function NoticesClient() {
   const [searchQuery, setSearchQuery] = useState("");
-  const [categories, setCategories] = useState<Category[]>([]);
-  const [sexes, setSexes] = useState<Sex[]>([]);
-  const [types, setTypes] = useState<Species[]>([]);
 
-  useEffect(() => {
-    fetchNoticeCategories().then(setCategories);
-    fetchNoticeSex().then(setSexes);
-    fetchNoticeSpecies().then(setTypes);
-  }, [categories, sexes, types]);
+  const { data } = useQuery({
+    queryKey: ["notices", searchQuery, 1, 6],
+    queryFn: () => fetchNotices({ keyword: searchQuery, page: 1, limit: 6 }),
+  });
+
+  if (data) {
+    console.log(data?.results);
+  }
+
+  const { data: categories = [] } = useQuery({
+    queryKey: ["categories"],
+    queryFn: fetchNoticeCategories,
+  });
+
+  const { data: sexes = [] } = useQuery({
+    queryKey: ["sexes"],
+    queryFn: fetchNoticeSex,
+  });
+
+  const { data: types = [] } = useQuery({
+    queryKey: ["types"],
+    queryFn: fetchNoticeSpecies,
+  });
 
   const handleSearch = (query: string) => {
     setSearchQuery(query);
   };
 
   const getLocationOptions = async (query: string) => {
+    if (!query) {
+      return [];
+    }
     const locations = await fetchCities({ keyword: query });
 
     return locations.map((location: City) => ({
