@@ -11,7 +11,7 @@ import { City } from "@/types/city";
 import { Category, Sex, Species } from "@/types/notice";
 import { useEffect, useState } from "react";
 
-export default function Notices() {
+export default function NoticesClient() {
   const [searchQuery, setSearchQuery] = useState("");
   const [categories, setCategories] = useState<Category[]>([]);
   const [sexes, setSexes] = useState<Sex[]>([]);
