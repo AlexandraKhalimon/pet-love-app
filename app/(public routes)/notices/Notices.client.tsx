@@ -9,15 +9,19 @@ import {
   fetchNoticeSpecies,
 } from "@/lib/api";
 import { City } from "@/types/city";
-import { useQuery } from "@tanstack/react-query";
+import { keepPreviousData, useQuery } from "@tanstack/react-query";
 import { useState } from "react";
+import { useDebounce } from "use-debounce";
 
 export default function NoticesClient() {
   const [searchQuery, setSearchQuery] = useState("");
+  const [debouncedSearchQuery] = useDebounce(searchQuery, 300);
 
   const { data } = useQuery({
-    queryKey: ["notices", searchQuery, 1, 6],
-    queryFn: () => fetchNotices({ keyword: searchQuery, page: 1, limit: 6 }),
+    queryKey: ["notices", debouncedSearchQuery, 1, 6],
+    queryFn: () =>
+      fetchNotices({ keyword: debouncedSearchQuery, page: 1, limit: 6 }),
+    placeholderData: keepPreviousData,
   });
 
   if (data) {
