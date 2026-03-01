@@ -2,13 +2,12 @@
 
 import NoticesFilters from "@/components/NoticesFilters/NoticesFilters";
 import {
-  fetchCities,
+  fetchLocations,
   fetchNoticeCategories,
   fetchNotices,
   fetchNoticeSex,
   fetchNoticeSpecies,
 } from "@/lib/api";
-import { City } from "@/types/city";
 import { keepPreviousData, useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 import { useDebounce } from "use-debounce";
@@ -43,21 +42,21 @@ export default function NoticesClient() {
     queryFn: fetchNoticeSpecies,
   });
 
+  const { data: cities = [] } = useQuery({
+    queryKey: ["cities"],
+    queryFn: () => fetchLocations(),
+  });
+
+  console.log(cities);
+
   const handleSearch = (query: string) => {
     setSearchQuery(query);
   };
 
-  const getLocationOptions = async (query: string) => {
-    if (!query) {
-      return [];
-    }
-    const locations = await fetchCities({ keyword: query });
-
-    return locations.map((location: City) => ({
-      label: location.cityEn,
-      value: location._id,
-    }));
-  };
+  const cityOptions = cities.map((city) => ({
+    value: city._id,
+    label: city.cityEn,
+  }));
 
   return (
     <>
@@ -66,7 +65,7 @@ export default function NoticesClient() {
         categories={categories}
         sexes={sexes}
         types={types}
-        locations={getLocationOptions}
+        locations={cityOptions}
       />
     </>
   );

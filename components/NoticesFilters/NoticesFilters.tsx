@@ -4,11 +4,11 @@ import css from "./NoticesFilters.module.css";
 import { Category, Sex, Species } from "@/types/notice";
 import SearchField from "../SearchField/SearchField";
 import { Controller, useForm } from "react-hook-form";
-import AsyncSelect from "react-select/async";
+import Select from "react-select";
 
 interface LocationSelect {
-  label: string;
   value: string;
+  label: string;
 }
 
 interface FiltersFormValues {
@@ -24,7 +24,7 @@ interface Props {
   categories: Category[];
   sexes: Sex[];
   types: Species[];
-  locations: (query: string) => Promise<LocationSelect[]>;
+  locations: LocationSelect[];
 }
 
 export default function NoticesFilters({
@@ -45,56 +45,72 @@ export default function NoticesFilters({
   });
 
   return (
-    <form>
-      <SearchField onSearch={search} />
-      <div>
-        <label>
-          By category
-          <select {...register("category")} className={css.select}>
-            <option value="">Show all</option>
-            {categories.map((category) => (
-              <option key={category} value={category}>
-                {category}
+    <form className={css.form}>
+      <div className={css.filters}>
+        <SearchField onSearch={search} />
+        <div className={css.selectGroup}>
+          <label>
+            <select {...register("category")} className={css.select}>
+              <option value="" hidden disabled className={css.option}>
+                Category
               </option>
-            ))}
-          </select>
-        </label>
-        <label>
-          By gender
-          <select {...register("sex")} className={css.select}>
-            <option value="">Show all</option>
-            {sexes.map((sex) => (
-              <option key={sex} value={sex}>
-                {sex}
+              <option value="" className={css.option}>
+                Show all
               </option>
-            ))}
-          </select>
-        </label>
-      </div>
-      <label>
-        By type
-        <select {...register("species")} className={css.select}>
-          <option value="">Show all</option>
-          {types.map((type) => (
-            <option key={type} value={type}>
-              {type}
+              {categories.map((category) => (
+                <option key={category} value={category}>
+                  {category}
+                </option>
+              ))}
+            </select>
+          </label>
+          <label>
+            <select {...register("sex")} className={css.select}>
+              <option value="" hidden disabled>
+                By gender
+              </option>
+              <option value="">Show all</option>
+              {sexes.map((sex) => (
+                <option key={sex} value={sex}>
+                  {sex}
+                </option>
+              ))}
+            </select>
+          </label>
+        </div>
+        <label>
+          <select {...register("species")} className={css.select}>
+            <option value="" hidden disabled>
+              By type
             </option>
-          ))}
-        </select>
-      </label>
-      <Controller
-        name="location"
-        control={control}
-        render={({ field }) => (
-          <AsyncSelect
-            {...field}
-            cacheOptions
-            defaultOptions
-            isClearable
-            loadOptions={locations}
-          />
-        )}
-      />
+            <option value="">Show all</option>
+            {types.map((type) => (
+              <option key={type} value={type}>
+                {type}
+              </option>
+            ))}
+          </select>
+        </label>
+        <Controller
+          name="location"
+          control={control}
+          render={({ field }) => {
+            if (locations.length === 0 || !locations) {
+              return <Select options={[]} {...field} isClearable />;
+            }
+            return (
+              <Select
+                {...field}
+                isClearable
+                options={locations}
+                key={locations.length}
+                placeholder="Location"
+                isLoading={locations.length === 0}
+              />
+            );
+          }}
+        />
+      </div>
       <hr />
       <div>
         <label>

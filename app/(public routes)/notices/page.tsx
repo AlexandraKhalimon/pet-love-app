@@ -1,4 +1,5 @@
 import {
+  fetchLocations,
   fetchNoticeCategories,
   fetchNotices,
   fetchNoticeSex,
@@ -46,7 +47,20 @@ export default async function NoticesPage() {
     });
   };
 
-  await Promise.all([getNotices(), getCategories(), getSexes(), getTypes()]);
+  const getLocations = () => {
+    queryClient.prefetchQuery({
+      queryKey: ["locations"],
+      queryFn: fetchLocations,
+    });
+  };
+
+  await Promise.all([
+    getNotices(),
+    getCategories(),
+    getSexes(),
+    getTypes(),
+    getLocations(),
+  ]);
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
