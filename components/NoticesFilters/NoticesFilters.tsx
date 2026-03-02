@@ -47,7 +47,11 @@ export default function NoticesFilters({
   return (
     <form className={css.form}>
       <div className={css.filters}>
-        <SearchField onSearch={search} />
+        <SearchField
+          onSearch={search}
+          searchClass={css.search}
+          inputClass={css.input}
+        />
         <div className={css.selectGroup}>
           <label>
             <select {...register("category")} className={css.select}>

@@ -45,7 +45,11 @@ export default function NewsClient() {
     <section className={css.section}>
       <div className={css.newsHeader}>
         <Title title={"News"} />
-        <SearchField onSearch={handleSearch} />
+        <SearchField
+          onSearch={handleSearch}
+          searchClass={css.search}
+          inputClass={css.input}
+        />
       </div>
       {data && data.results.length > 0 && <NewsList news={data.results} />}
       {totalPages > 1 && (

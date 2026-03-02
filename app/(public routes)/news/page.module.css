@@ -10,6 +10,27 @@
   margin-bottom: 24px;
 }
 
+.search {
+  width: 335px;
+}
+
+.input {
+  width: 335px;
+  border: 1px solid rgba(38, 38, 38, 0.15);
+}
+
+.input:focus,
+.input:hover {
+  border: 1px solid #f6b83d;
+}
+
+@media (min-width: 320px) and (max-width: 374px) {
+  .search,
+  .input {
+    width: 100%;
+  }
+}
+
 @media (min-width: 768px) {
   .section {
     padding-top: 85px;
@@ -23,6 +44,11 @@
     justify-content: space-between;
     align-items: flex-end;
     margin-bottom: 44px;
+  }
+
+  .search,
+  .input {
+    width: 230px;
   }
 }
 

@@ -6,3 +6,19 @@
   padding: 20px;
   margin: 40px 0;
 }
+
+.search {
+  width: 295px;
+}
+
+.input {
+  width: 295px;
+  border: none;
+}
+
+@media (min-width: 320px) and (max-width: 374px) {
+  .search,
+  .input {
+    width: 100%;
+  }
+}
