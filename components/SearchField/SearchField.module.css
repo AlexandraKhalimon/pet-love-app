@@ -22,11 +22,6 @@
   color: rgba(38, 38, 38, 0.5);
 }
 
-.input:focus,
-.input:hover {
-  border: 1px solid #f6b83d;
-}
-
 .button {
   position: absolute;
   top: 12px;

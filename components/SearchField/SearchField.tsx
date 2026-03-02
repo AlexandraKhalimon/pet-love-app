@@ -4,11 +4,16 @@ import css from "./SearchField.module.css";
 import { useState } from "react";
 
 interface Props {
-  className: string;
+  searchClass: string;
+  inputClass: string;
   onSearch: (query: string) => void;
 }
 
-export default function SearchField({ className, onSearch }: Props) {
+export default function SearchField({
+  searchClass,
+  inputClass,
+  onSearch,
+}: Props) {
   const [query, setQuery] = useState("");
 
   const handleSearch = () => {
@@ -22,9 +27,9 @@ export default function SearchField({ className, onSearch }: Props) {
   };
 
   return (
-    <div className={`${css.search} ${className}`}>
+    <div className={`${css.search} ${searchClass}`}>
       <input
-        className={`${css.input} ${className}`}
+        className={`${css.input} ${inputClass}`}
         type="text"
         value={query}
         onChange={(event) => setQuery(event.target.value)}
