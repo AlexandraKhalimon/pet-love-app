@@ -1,5 +1,6 @@
 "use client";
 
+import Title from "@/components/Title/Title";
 import css from "./page.module.css";
 import NoticesFilters from "@/components/NoticesFilters/NoticesFilters";
 import {
@@ -61,6 +62,7 @@ export default function NoticesClient() {
 
   return (
     <section className={css.section}>
+      <Title title={"Find your favorite pet"} />
       <NoticesFilters
         search={handleSearch}
         categories={categories}
