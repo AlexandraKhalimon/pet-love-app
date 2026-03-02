@@ -1,5 +1,6 @@
 "use client";
 
+import css from "./page.module.css";
 import NoticesFilters from "@/components/NoticesFilters/NoticesFilters";
 import {
   fetchLocations,
@@ -59,7 +60,7 @@ export default function NoticesClient() {
   }));
 
   return (
-    <>
+    <section className={css.section}>
       <NoticesFilters
         search={handleSearch}
         categories={categories}
@@ -67,6 +68,6 @@ export default function NoticesClient() {
         types={types}
         locations={cityOptions}
       />
-    </>
+    </section>
   );
 }
