@@ -19,7 +19,7 @@ interface LocationSelect {
 interface FiltersFormValues {
   category: FilterSelect | null;
   sex: FilterSelect | null;
-  species: Species | "";
+  species: FilterSelect | null;
   location: LocationSelect | null;
   notice: string;
 }
@@ -43,7 +43,7 @@ export default function NoticesFilters({
     defaultValues: {
       category: null,
       sex: null,
-      species: "",
+      species: null,
       location: null,
       notice: "",
     },
@@ -62,6 +62,14 @@ export default function NoticesFilters({
     ...sexes.map((sex) => ({
       value: sex,
       label: sex,
+    })),
+  ];
+
+  const TypeOptions: FilterSelect[] = [
+    { value: "all", label: "Show all" },
+    ...types.map((type) => ({
+      value: type,
+      label: type,
     })),
   ];
 
@@ -117,7 +125,20 @@ export default function NoticesFilters({
           </label>
         </div>
         <label>
-          <select {...register("species")} className={css.select}>
+          <Controller
+            name="species"
+            control={control}
+            render={({ field }) => {
+              return (
+                <Select<FilterSelect, false>
+                  {...field}
+                  placeholder="By type"
+                  options={TypeOptions}
+                />
+              );
+            }}
+          />
+          {/* <select {...register("species")} className={css.select}>
             <option value="" hidden disabled>
               By type
             </option>
@@ -127,7 +148,7 @@ export default function NoticesFilters({
                 {type}
               </option>
             ))}
-          </select>
+          </select> */}
         </label>
         <Controller
           name="location"
