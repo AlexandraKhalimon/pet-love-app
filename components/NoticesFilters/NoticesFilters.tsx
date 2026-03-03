@@ -6,13 +6,18 @@ import SearchField from "../SearchField/SearchField";
 import { Controller, useForm } from "react-hook-form";
 import Select from "react-select";
 
+interface CategorySelect {
+  value: string;
+  label: string;
+}
+
 interface LocationSelect {
   value: string;
   label: string;
 }
 
 interface FiltersFormValues {
-  category: Category | "";
+  category: CategorySelect | null;
   sex: Sex | "";
   species: Species | "";
   location: LocationSelect | null;
@@ -36,13 +41,21 @@ export default function NoticesFilters({
 }: Props) {
   const { register, control } = useForm<FiltersFormValues>({
     defaultValues: {
-      category: "",
+      category: null,
       sex: "",
       species: "",
       location: null,
       notice: "",
     },
   });
+
+  const CategoriesOptions: CategorySelect[] = [
+    { value: "all", label: "Show all" },
+    ...categories.map((category) => ({
+      value: category,
+      label: category,
+    })),
+  ];
 
   return (
     <form className={css.form}>
@@ -54,19 +67,19 @@ export default function NoticesFilters({
         />
         <div className={css.selectGroup}>
           <label>
-            <select {...register("category")} className={css.select}>
-              <option value="" hidden disabled className={css.option}>
-                Category
-              </option>
-              <option value="" className={css.option}>
-                Show all
-              </option>
-              {categories.map((category) => (
-                <option key={category} value={category}>
-                  {category}
-                </option>
-              ))}
-            </select>
+            <Controller
+              name="category"
+              control={control}
+              render={({ field }) => {
+                return (
+                  <Select<CategorySelect, false>
+                    {...field}
+                    options={CategoriesOptions}
+                    placeholder="Category"
+                  />
+                );
+              }}
+            />
           </label>
           <label>
             <select {...register("sex")} className={css.select}>
