@@ -6,7 +6,7 @@ import SearchField from "../SearchField/SearchField";
 import { Controller, useForm } from "react-hook-form";
 import Select from "react-select";
 
-interface CategorySelect {
+interface FilterSelect {
   value: string;
   label: string;
 }
@@ -17,8 +17,8 @@ interface LocationSelect {
 }
 
 interface FiltersFormValues {
-  category: CategorySelect | null;
-  sex: Sex | "";
+  category: FilterSelect | null;
+  sex: FilterSelect | null;
   species: Species | "";
   location: LocationSelect | null;
   notice: string;
@@ -42,18 +42,26 @@ export default function NoticesFilters({
   const { register, control } = useForm<FiltersFormValues>({
     defaultValues: {
       category: null,
-      sex: "",
+      sex: null,
       species: "",
       location: null,
       notice: "",
     },
   });
 
-  const CategoriesOptions: CategorySelect[] = [
+  const CategoriesOptions: FilterSelect[] = [
     { value: "all", label: "Show all" },
     ...categories.map((category) => ({
       value: category,
       label: category,
+    })),
+  ];
+
+  const GenderOptions: FilterSelect[] = [
+    { value: "all", label: "Show all" },
+    ...sexes.map((sex) => ({
+      value: sex,
+      label: sex,
     })),
   ];
 
@@ -72,7 +80,7 @@ export default function NoticesFilters({
               control={control}
               render={({ field }) => {
                 return (
-                  <Select<CategorySelect, false>
+                  <Select<FilterSelect, false>
                     {...field}
                     options={CategoriesOptions}
                     placeholder="Category"
@@ -82,7 +90,20 @@ export default function NoticesFilters({
             />
           </label>
           <label>
-            <select {...register("sex")} className={css.select}>
+            <Controller
+              name="sex"
+              control={control}
+              render={({ field }) => {
+                return (
+                  <Select<FilterSelect, false>
+                    {...field}
+                    options={GenderOptions}
+                    placeholder="By gender"
+                  />
+                );
+              }}
+            />
+            {/* <select {...register("sex")} className={css.select}>
               <option value="" hidden disabled>
                 By gender
               </option>
@@ -92,7 +113,7 @@ export default function NoticesFilters({
                   {sex}
                 </option>
               ))}
-            </select>
+            </select> */}
           </label>
         </div>
         <label>
