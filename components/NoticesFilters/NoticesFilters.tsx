@@ -189,6 +189,14 @@ export default function NoticesFilters({
                 key={locations.length}
                 placeholder="Location"
                 isLoading={locations.length === 0}
+                unstyled
+                classNames={{
+                  control: () => css.typeControl,
+                  menu: () => css.typeMenu,
+                  menuList: () => css.menuList,
+                  option: ({ isSelected }) =>
+                    isSelected ? css.isSelectedOption : css.option,
+                }}
               />
             );
           }}
