@@ -150,6 +150,14 @@ export default function NoticesFilters({
                   {...field}
                   placeholder="By type"
                   options={TypeOptions}
+                  unstyled
+                  classNames={{
+                    control: () => css.typeControl,
+                    menu: () => css.typeMenu,
+                    menuList: () => css.menuList,
+                    option: ({ isSelected }) =>
+                      isSelected ? css.isSelectedOption : css.option,
+                  }}
                 />
               );
             }}

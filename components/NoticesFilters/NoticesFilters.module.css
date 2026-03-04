@@ -58,6 +58,23 @@
   color: rgba(38, 38, 38, 0.6);
 }
 
+.typeControl {
+  border-radius: 30px;
+  padding: 12px;
+  width: 295px;
+  height: 42px;
+  background-color: #fff;
+}
+
+.typeMenu {
+  margin-top: 4px;
+  border-radius: 15px;
+  width: 295px;
+  height: auto;
+  padding: 12px;
+  background-color: #fff;
+}
+
 .menuList {
   display: flex;
   flex-direction: column;
