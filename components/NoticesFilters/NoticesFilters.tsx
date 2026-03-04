@@ -92,6 +92,14 @@ export default function NoticesFilters({
                     {...field}
                     options={CategoriesOptions}
                     placeholder="Category"
+                    unstyled
+                    classNames={{
+                      control: () => css.control,
+                      menu: () => css.menu,
+                      menuList: () => css.menuList,
+                      option: ({ isSelected }) =>
+                        isSelected ? css.isSelectedOption : css.option,
+                    }}
                   />
                 );
               }}
@@ -107,6 +115,14 @@ export default function NoticesFilters({
                     {...field}
                     options={GenderOptions}
                     placeholder="By gender"
+                    unstyled
+                    classNames={{
+                      control: () => css.control,
+                      menu: () => css.menu,
+                      menuList: () => css.menuList,
+                      option: ({ isSelected }) =>
+                        isSelected ? css.isSelectedOption : css.option,
+                    }}
                   />
                 );
               }}

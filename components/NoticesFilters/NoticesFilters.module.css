@@ -7,6 +7,12 @@
   margin: 40px 0;
 }
 
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
 .search {
   width: 295px;
 }
@@ -14,6 +20,69 @@
 .input {
   width: 295px;
   border: none;
+}
+
+.selectGroup {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+
+.control {
+  border-radius: 30px;
+  padding: 12px;
+  width: 143px;
+  height: 42px;
+  background-color: #fff;
+}
+
+.dropdownIndicator {
+  transition: transform 0.3s ease;
+}
+
+.dropdownIndicator:focus {
+  transform: rotate(180deg);
+}
+
+.menu {
+  margin-top: 4px;
+  border-radius: 15px;
+  width: 143px;
+  height: auto;
+  padding: 12px;
+  background-color: #fff;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.03em;
+  color: rgba(38, 38, 38, 0.6);
+}
+
+.menuList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.03em;
+  color: rgba(38, 38, 38, 0.6);
+}
+
+.option {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.03em;
+  color: rgba(38, 38, 38, 0.6);
+}
+
+.isSelectedOption {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.03em;
+  color: #f6b83d;
 }
 
 @media (min-width: 320px) and (max-width: 374px) {
