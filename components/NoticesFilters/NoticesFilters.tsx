@@ -202,23 +202,43 @@ export default function NoticesFilters({
           }}
         />
       </div>
-      <hr />
-      <div>
-        <label>
-          <input {...register("notice")} type="radio" value="Popular" />
-          Popular
+      <hr className={css.hr} />
+      <div className={css.radioButtons}>
+        <label className={css.radioLabel}>
+          <input
+            {...register("notice")}
+            type="radio"
+            value="Popular"
+            className={css.radio}
+          />
+          <span className={css.radioText}>Popular</span>
         </label>
-        <label>
-          <input {...register("notice")} type="radio" value="Unpopular" />
-          Unpopular
+        <label className={css.radioLabel}>
+          <input
+            {...register("notice")}
+            type="radio"
+            value="Unpopular"
+            className={css.radio}
+          />
+          <span className={css.radioText}>Unpopular</span>
         </label>
-        <label>
-          <input {...register("notice")} type="radio" value="Cheap" />
-          Cheap
+        <label className={css.radioLabel}>
+          <input
+            {...register("notice")}
+            type="radio"
+            value="Cheap"
+            className={css.radio}
+          />
+          <span className={css.radioText}>Cheap</span>
         </label>
-        <label>
-          <input {...register("notice")} type="radio" value="Expensive" />
-          Expensive
+        <label className={css.radioLabel}>
+          <input
+            {...register("notice")}
+            type="radio"
+            value="Expensive"
+            className={css.radio}
+          />
+          <span className={css.radioText}>Expensive</span>
         </label>
       </div>
     </form>
