@@ -110,10 +110,13 @@
 }
 
 .radioLabel {
-  position: relative;
   width: auto;
   height: 42px;
   cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
 }
 
 .radio {
@@ -122,6 +125,9 @@
 }
 
 .radioText {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
   border-radius: 30px;
   padding: 12px;
   width: auto;
@@ -144,6 +150,20 @@
 .radio:checked + .radioText {
   background-color: #f6b83d;
   color: #fff;
+}
+
+.cross {
+  display: none;
+}
+
+.radio:checked + .radioText > .cross {
+  display: inline-flex;
+  background-color: transparent;
+}
+
+.icon {
+  fill: transparent;
+  stroke: #fff;
 }
 
 @media (min-width: 320px) and (max-width: 374px) {

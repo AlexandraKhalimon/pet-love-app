@@ -3,7 +3,7 @@
 import css from "./NoticesFilters.module.css";
 import { Category, Sex, Species } from "@/types/notice";
 import SearchField from "../SearchField/SearchField";
-import { Controller, useForm } from "react-hook-form";
+import { Controller, useForm, useWatch } from "react-hook-form";
 import Select from "react-select";
 
 interface FilterSelect {
@@ -39,7 +39,7 @@ export default function NoticesFilters({
   types,
   locations,
 }: Props) {
-  const { register, control } = useForm<FiltersFormValues>({
+  const { register, control, setValue } = useForm<FiltersFormValues>({
     defaultValues: {
       category: null,
       sex: null,
@@ -72,6 +72,11 @@ export default function NoticesFilters({
       label: type,
     })),
   ];
+
+  const noticeWatched = useWatch({
+    control,
+    name: "notice",
+  });
 
   return (
     <form className={css.form}>
@@ -211,7 +216,24 @@ export default function NoticesFilters({
             value="Popular"
             className={css.radio}
           />
-          <span className={css.radioText}>Popular</span>
+          <span className={css.radioText}>
+            Popular
+            {noticeWatched === "Popular" && (
+              <button
+                className={css.cross}
+                type="button"
+                onClick={(event) => {
+                  event.preventDefault();
+                  event.stopPropagation();
+                  setValue("notice", "");
+                }}
+              >
+                <svg width={18} height={18} className={css.icon}>
+                  <use href="/icons.svg#icon-cross-small"></use>
+                </svg>
+              </button>
+            )}
+          </span>
         </label>
         <label className={css.radioLabel}>
           <input
@@ -220,7 +242,24 @@ export default function NoticesFilters({
             value="Unpopular"
             className={css.radio}
           />
-          <span className={css.radioText}>Unpopular</span>
+          <span className={css.radioText}>
+            Unpopular
+            {noticeWatched === "Unpopular" && (
+              <button
+                className={css.cross}
+                type="button"
+                onClick={(event) => {
+                  event.preventDefault();
+                  event.stopPropagation();
+                  setValue("notice", "");
+                }}
+              >
+                <svg width={18} height={18} className={css.icon}>
+                  <use href="/icons.svg#icon-cross-small"></use>
+                </svg>
+              </button>
+            )}
+          </span>
         </label>
         <label className={css.radioLabel}>
           <input
@@ -229,7 +268,24 @@ export default function NoticesFilters({
             value="Cheap"
             className={css.radio}
           />
-          <span className={css.radioText}>Cheap</span>
+          <span className={css.radioText}>
+            Cheap
+            {noticeWatched === "Cheap" && (
+              <button
+                className={css.cross}
+                type="button"
+                onClick={(event) => {
+                  event.preventDefault();
+                  event.stopPropagation();
+                  setValue("notice", "");
+                }}
+              >
+                <svg width={18} height={18} className={css.icon}>
+                  <use href="/icons.svg#icon-cross-small"></use>
+                </svg>
+              </button>
+            )}
+          </span>
         </label>
         <label className={css.radioLabel}>
           <input
@@ -238,7 +294,24 @@ export default function NoticesFilters({
             value="Expensive"
             className={css.radio}
           />
-          <span className={css.radioText}>Expensive</span>
+          <span className={css.radioText}>
+            Expensive
+            {noticeWatched === "Expensive" && (
+              <button
+                className={css.cross}
+                type="button"
+                onClick={(event) => {
+                  event.preventDefault();
+                  event.stopPropagation();
+                  setValue("notice", "");
+                }}
+              >
+                <svg width={18} height={18} className={css.icon}>
+                  <use href="/icons.svg#icon-cross-small"></use>
+                </svg>
+              </button>
+            )}
+          </span>
         </label>
       </div>
     </form>
