@@ -13,6 +13,7 @@ import {
 import { keepPreviousData, useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 import { useDebounce } from "use-debounce";
+import NoticesList from "@/components/NoticesList/NoticesList";
 
 export default function NoticesClient() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -70,6 +71,9 @@ export default function NoticesClient() {
         types={types}
         locations={cityOptions}
       />
+      {data && data.results.length > 0 && (
+        <NoticesList notices={data.results} />
+      )}
     </section>
   );
 }
