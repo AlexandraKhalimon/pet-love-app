@@ -26,6 +26,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   gap: 8px;
 }
 
@@ -35,6 +36,11 @@
   width: 143px;
   height: 42px;
   background-color: #fff;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.03em;
+  color: var(--foreground);
 }
 
 /* .dropdownIndicator {
@@ -60,6 +66,11 @@
   width: 295px;
   height: 42px;
   background-color: #fff;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.03em;
+  color: var(--foreground);
 }
 
 .typeMenu {
@@ -169,7 +180,11 @@
 
 @media (min-width: 320px) and (max-width: 374px) {
   .search,
-  .input {
+  .input,
+  .form,
+  .control,
+  .menu,
+  .typeControl {
     width: 100%;
   }
 }

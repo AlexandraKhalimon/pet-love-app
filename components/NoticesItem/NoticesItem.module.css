@@ -128,3 +128,10 @@
 .heartBtn:hover {
   background-color: #fbe7c1;
 }
+
+@media (min-width: 320px) and (max-width: 374px) {
+  .card {
+    width: 100%;
+    height: auto;
+  }
+}

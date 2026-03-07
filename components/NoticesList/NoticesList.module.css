@@ -5,3 +5,9 @@
   margin: 0 auto;
   margin-bottom: 44px;
 }
+
+@media (min-width: 320px) and (max-width: 374px) {
+  .list {
+    width: 100%;
+  }
+}
