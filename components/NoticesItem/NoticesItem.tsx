@@ -12,6 +12,7 @@ export default function NoticesItem({ notice }: Props) {
       <Image
         src={notice.imgURL}
         alt={notice.species}
+        sizes="(max-width: 767px) 287px, (min-width: 768px) 294px, (min-width: 1280px) 315px"
         width={287}
         height={178}
         className={css.image}
