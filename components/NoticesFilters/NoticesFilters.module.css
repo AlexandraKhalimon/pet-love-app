@@ -25,6 +25,7 @@
 .selectGroup {
   display: flex;
   flex-direction: row;
+  align-items: center;
   gap: 8px;
 }
 
@@ -36,13 +37,13 @@
   background-color: #fff;
 }
 
-.dropdownIndicator {
+/* .dropdownIndicator {
   transition: transform 0.3s ease;
 }
 
 .dropdownIndicator:focus {
   transform: rotate(180deg);
-}
+} */
 
 .menu {
   margin-top: 4px;
@@ -170,5 +171,96 @@
   .search,
   .input {
     width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .form {
+    width: 704px;
+    height: 280px;
+    padding: 40px 32px;
+    margin: 44px 0 32px;
+  }
+
+  .filters {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .search {
+    width: 265px;
+  }
+
+  .input {
+    width: 265px;
+  }
+
+  .selectGroup {
+    gap: 16px;
+  }
+
+  .control {
+    padding: 14px;
+    width: 170px;
+    height: 48px;
+  }
+
+  .menu {
+    width: 170px;
+    padding: 14px;
+  }
+
+  .typeControl {
+    padding: 14px;
+    width: 190px;
+    height: 48px;
+  }
+
+  .typeMenu {
+    width: 190px;
+    padding: 14px;
+  }
+
+  .option {
+    font-size: 16px;
+    line-height: 125%;
+  }
+
+  .isSelectedOption {
+    font-size: 16px;
+    line-height: 125%;
+  }
+
+  .radioButtons {
+    gap: 8px;
+  }
+
+  .radioLabel {
+    height: 48px;
+  }
+
+  .radioText {
+    padding: 14px;
+    height: 48px;
+    font-size: 16px;
+    line-height: 125%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .form {
+    width: 1216px;
+    height: 216px;
+    padding: 40px 40px;
+    margin: 40px 0;
+  }
+
+  .control {
+    width: 200px;
+  }
+
+  .menu {
+    width: 190px;
   }
 }
