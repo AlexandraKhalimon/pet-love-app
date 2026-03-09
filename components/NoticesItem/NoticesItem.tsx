@@ -7,6 +7,9 @@ interface Props {
 }
 
 export default function NoticesItem({ notice }: Props) {
+  const price = notice.price ? `$${notice.price}` : "Free";
+  const birthday = notice.birthday.split("-").reverse().join(".");
+
   return (
     <li className={css.card}>
       <Image
@@ -34,7 +37,7 @@ export default function NoticesItem({ notice }: Props) {
           </li>
           <li className={css.item}>
             <p className={css.label}>Birthday</p>
-            <p className={css.value}>{notice.birthday}</p>
+            <p className={css.value}>{birthday}</p>
           </li>
           <li className={css.item}>
             <p className={css.label}>Sex</p>
@@ -51,7 +54,7 @@ export default function NoticesItem({ notice }: Props) {
         </ul>
         <p className={css.comment}>{notice.comment}</p>
         <div className={css.footer}>
-          <p className={css.price}>${notice.price}</p>
+          <p className={css.price}>{price}</p>
           <div className={css.actions}>
             <button type="button" className={css.moreBtn}>
               Learn more
