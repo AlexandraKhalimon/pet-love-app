@@ -98,6 +98,7 @@ export default function NoticesFilters({
                     options={CategoriesOptions}
                     placeholder="Category"
                     unstyled
+                    isSearchable={false}
                     classNames={{
                       control: () => css.control,
                       menu: () => css.menu,
@@ -121,6 +122,7 @@ export default function NoticesFilters({
                     options={GenderOptions}
                     placeholder="By gender"
                     unstyled
+                    isSearchable={false}
                     classNames={{
                       control: () => css.control,
                       menu: () => css.menu,
@@ -156,6 +158,7 @@ export default function NoticesFilters({
                   placeholder="By type"
                   options={TypeOptions}
                   unstyled
+                  isSearchable={false}
                   classNames={{
                     control: () => css.typeControl,
                     menu: () => css.typeMenu,

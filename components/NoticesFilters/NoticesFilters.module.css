@@ -58,6 +58,7 @@
   height: auto;
   padding: 12px;
   background-color: #fff;
+  text-transform: capitalize;
 }
 
 .typeControl {
@@ -80,6 +81,7 @@
   height: auto;
   padding: 12px;
   background-color: #fff;
+  text-transform: capitalize;
 }
 
 .menuList {
