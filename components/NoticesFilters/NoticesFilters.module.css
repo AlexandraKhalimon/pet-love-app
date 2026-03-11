@@ -43,13 +43,13 @@
   color: var(--foreground);
 }
 
-/* .dropdownIndicator {
+.control svg {
   transition: transform 0.3s ease;
 }
 
-.dropdownIndicator:focus {
+.dropDownArrow svg {
   transform: rotate(180deg);
-} */
+}
 
 .menu {
   margin-top: 4px;
@@ -72,6 +72,10 @@
   line-height: 129%;
   letter-spacing: -0.03em;
   color: var(--foreground);
+}
+
+.typeControl svg {
+  transition: transform 0.3s ease;
 }
 
 .typeMenu {

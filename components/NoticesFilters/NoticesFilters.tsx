@@ -108,7 +108,8 @@ export default function NoticesFilters({
                     unstyled
                     isSearchable={false}
                     classNames={{
-                      control: () => css.control,
+                      control: ({ menuIsOpen }) =>
+                        `${css.control} ${menuIsOpen ? css.dropDownArrow : ""}`,
                       menu: () => css.menu,
                       menuList: () => css.menuList,
                       option: ({ isSelected }) =>
@@ -132,7 +133,8 @@ export default function NoticesFilters({
                     unstyled
                     isSearchable={false}
                     classNames={{
-                      control: () => css.control,
+                      control: ({ menuIsOpen }) =>
+                        `${css.control} ${menuIsOpen ? css.dropDownArrow : ""}`,
                       menu: () => css.menu,
                       menuList: () => css.menuList,
                       option: ({ isSelected }) =>
@@ -168,7 +170,8 @@ export default function NoticesFilters({
                   unstyled
                   isSearchable={false}
                   classNames={{
-                    control: () => css.typeControl,
+                    control: ({ menuIsOpen }) =>
+                      `${css.typeControl} ${menuIsOpen ? css.dropDownArrow : ""}`,
                     menu: () => css.typeMenu,
                     menuList: () => css.menuList,
                     option: ({ isSelected }) =>
