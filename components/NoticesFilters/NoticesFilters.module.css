@@ -106,6 +106,11 @@
   color: #f6b83d;
 }
 
+.searchIcon {
+  fill: transparent;
+  stroke: #262626;
+}
+
 .hr {
   display: block;
   width: 100%;

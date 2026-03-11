@@ -78,6 +78,14 @@ export default function NoticesFilters({
     name: "notice",
   });
 
+  const searchIcon = () => {
+    return (
+      <svg width={18} height={18} className={css.searchIcon}>
+        <use href="/icons.svg#icon-search"></use>
+      </svg>
+    );
+  };
+
   return (
     <form className={css.form}>
       <div className={css.filters}>
@@ -205,6 +213,7 @@ export default function NoticesFilters({
                   option: ({ isSelected }) =>
                     isSelected ? css.isSelectedOption : css.option,
                 }}
+                components={{ DropdownIndicator: searchIcon }}
               />
             );
           }}
