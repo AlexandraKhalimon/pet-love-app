@@ -58,7 +58,7 @@ export default function NoticesClient() {
 
   const cityOptions = cities.map((city) => ({
     value: city._id,
-    label: city.cityEn,
+    label: `${city.stateEn}, ${city.cityEn}`,
   }));
 
   return (
