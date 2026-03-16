@@ -1,3 +1,5 @@
+// TODO: implement filtering logic
+
 "use client";
 
 import css from "./NoticesFilters.module.css";

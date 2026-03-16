@@ -1,3 +1,5 @@
+// TODO: connect filters to API
+
 "use client";
 
 import Title from "@/components/Title/Title";
