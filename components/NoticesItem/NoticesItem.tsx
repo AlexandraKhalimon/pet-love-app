@@ -8,7 +8,9 @@ interface Props {
 
 export default function NoticesItem({ notice }: Props) {
   const price = notice.price ? `$${notice.price}` : "Free";
-  const birthday = notice.birthday.split("-").reverse().join(".");
+  const birthday = notice.birthday
+    ? notice.birthday.split("-").reverse().join(".")
+    : "Unknown";
 
   return (
     <li className={css.card}>
