@@ -16,15 +16,21 @@ import { keepPreviousData, useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 import { useDebounce } from "use-debounce";
 import NoticesList from "@/components/NoticesList/NoticesList";
+import Pagination from "@/components/Pagination/Pagination";
 
 export default function NoticesClient() {
   const [searchQuery, setSearchQuery] = useState("");
   const [debouncedSearchQuery] = useDebounce(searchQuery, 300);
+  const [currentPage, setCurrentPage] = useState(1);
 
   const { data } = useQuery({
-    queryKey: ["notices", debouncedSearchQuery, 1, 6],
+    queryKey: ["notices", debouncedSearchQuery, currentPage, 6],
     queryFn: () =>
-      fetchNotices({ keyword: debouncedSearchQuery, page: 1, limit: 6 }),
+      fetchNotices({
+        keyword: debouncedSearchQuery,
+        page: currentPage,
+        limit: 6,
+      }),
     placeholderData: keepPreviousData,
   });
 
@@ -56,12 +62,15 @@ export default function NoticesClient() {
 
   const handleSearch = (query: string) => {
     setSearchQuery(query);
+    setCurrentPage(1);
   };
 
   const cityOptions = cities.map((city) => ({
     value: city._id,
     label: `${city.stateEn}, ${city.cityEn}`,
   }));
+
+  const totalPages = data?.totalPages ?? 0;
 
   return (
     <section className={css.section}>
@@ -75,6 +84,13 @@ export default function NoticesClient() {
       />
       {data && data.results.length > 0 && (
         <NoticesList notices={data.results} />
+      )}
+      {totalPages > 1 && (
+        <Pagination
+          totalPages={totalPages}
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+        />
       )}
     </section>
   );
