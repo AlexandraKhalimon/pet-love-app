@@ -1,12 +1,22 @@
+"use client";
+
 import css from "./NoticesItem.module.css";
 import { Notice } from "@/types/notice";
 import Image from "next/image";
+import { useState } from "react";
+import Modal from "../Modal/Modal";
+import ModalAttention from "../ModalAttention/ModalAttention";
 
 interface Props {
   notice: Notice;
 }
 
 export default function NoticesItem({ notice }: Props) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const modalOpen = () => setIsModalOpen(true);
+  const modalClose = () => setIsModalOpen(false);
+
   const price = notice.price ? `$${notice.price}` : "Free";
   const birthday = notice.birthday
     ? notice.birthday.split("-").reverse().join(".")
@@ -58,10 +68,18 @@ export default function NoticesItem({ notice }: Props) {
         <div className={css.footer}>
           <p className={css.price}>{price}</p>
           <div className={css.actions}>
-            <button type="button" className={css.moreBtn}>
+            <button
+              type="button"
+              className={css.moreBtn}
+              onClick={() => setIsModalOpen(true)}
+            >
               Learn more
             </button>
-            <button className={css.heartBtn} aria-label="Add to favorites">
+            <button
+              className={css.heartBtn}
+              aria-label="Add to favorites"
+              onClick={modalOpen}
+            >
               <svg
                 width={18}
                 height={18}
@@ -71,6 +89,11 @@ export default function NoticesItem({ notice }: Props) {
                 <use href="/icons.svg#icon-heart"></use>
               </svg>
             </button>
+            {isModalOpen && (
+              <Modal onClose={modalClose}>
+                <ModalAttention />
+              </Modal>
+            )}
           </div>
         </div>
       </div>
