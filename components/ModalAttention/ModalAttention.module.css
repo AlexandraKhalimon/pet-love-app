@@ -26,3 +26,47 @@
   color: var(--foreground);
   margin-bottom: 24px;
 }
+
+.navigation {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+.login {
+  border-radius: 30px;
+  padding: 12px;
+  width: 135px;
+  background-color: #f6b83d;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.03em;
+  color: #fff;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.login:hover {
+  background-color: #f9b020;
+}
+
+.register {
+  border-radius: 30px;
+  padding: 12px;
+  width: 129px;
+  background-color: #fff4df;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.03em;
+  color: #f6b83d;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.register:hover {
+  background-color: #fbe7c1;
+}

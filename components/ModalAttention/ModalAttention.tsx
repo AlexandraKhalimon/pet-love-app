@@ -1,4 +1,5 @@
 import css from "./ModalAttention.module.css";
+import Link from "next/link";
 
 export default function ModalAttention() {
   return (
@@ -12,6 +13,14 @@ export default function ModalAttention() {
           your credentials. If you do not already have an account, you must
           register to access these features.
         </p>
+        <div className={css.navigation}>
+          <Link href="/login" className={css.login}>
+            Log In
+          </Link>
+          <Link href="/register" className={css.register}>
+            Registration
+          </Link>
+        </div>
       </div>
     </>
   );
