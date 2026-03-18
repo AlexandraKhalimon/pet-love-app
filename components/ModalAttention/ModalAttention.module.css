@@ -3,6 +3,7 @@
   height: 80px;
   border-radius: 100%;
   background-color: #fff4df;
+  margin: 0 auto;
   margin-bottom: 20px;
 }
 
@@ -13,6 +14,7 @@
   letter-spacing: -0.03em;
   color: #f6b83d;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .text {
