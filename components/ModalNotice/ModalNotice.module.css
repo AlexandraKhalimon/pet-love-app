@@ -1,0 +1,152 @@
+.pet {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.category {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 30px;
+  padding: 8px;
+  width: 48px;
+  height: 32px;
+  background-color: #fff4df;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 133%;
+  letter-spacing: -0.02em;
+  color: #f6b83d;
+  text-align: center;
+}
+
+.image {
+  border-radius: 100px;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 125%;
+  color: var(--foreground);
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.popularity {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 143%;
+  color: var(--foreground);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 27px;
+  margin-top: 24px;
+  margin-bottom: 16px;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.label {
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 140%;
+  letter-spacing: -0.02em;
+  color: rgba(38, 38, 38, 0.5);
+}
+
+.value {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 117%;
+  letter-spacing: -0.02em;
+  color: var(--foreground);
+  text-transform: capitalize;
+}
+
+.comment {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.02em;
+  color: var(--foreground);
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.price {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 125%;
+  color: var(--foreground);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.favorite {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  border-radius: 30px;
+  padding: 12px 31px;
+  width: 135px;
+  height: 44px;
+  background-color: #f6b83d;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 125%;
+  letter-spacing: -0.03em;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.favorite > .icon {
+  stroke: #fff;
+  fill: transparent;
+}
+
+.favorite:hover {
+  background-color: #f9b020;
+}
+
+.contact {
+  border-radius: 30px;
+  padding: 12px 37px;
+  width: 135px;
+  height: 44px;
+  background-color: #fff4df;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 125%;
+  letter-spacing: -0.03em;
+  color: #f6b83d;
+  transition: background-color 0.3s ease;
+}
+
+.contact:hover {
+  background-color: #fbe7c1;
+}
