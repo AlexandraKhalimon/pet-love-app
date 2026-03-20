@@ -69,11 +69,7 @@ export default function NoticesItem({ notice }: Props) {
         <div className={css.footer}>
           <p className={css.price}>{price}</p>
           <div className={css.actions}>
-            <button
-              type="button"
-              className={css.moreBtn}
-              onClick={() => setIsModalOpen(true)}
-            >
+            <button type="button" className={css.moreBtn} onClick={modalOpen}>
               Learn more
             </button>
             <button
