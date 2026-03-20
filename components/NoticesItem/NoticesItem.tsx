@@ -5,7 +5,8 @@ import { Notice } from "@/types/notice";
 import Image from "next/image";
 import { useState } from "react";
 import Modal from "../Modal/Modal";
-import ModalAttention from "../ModalAttention/ModalAttention";
+// import ModalAttention from "../ModalAttention/ModalAttention";
+import ModalNotice from "../ModalNotice/ModalNotice";
 
 interface Props {
   notice: Notice;
@@ -89,9 +90,15 @@ export default function NoticesItem({ notice }: Props) {
                 <use href="/icons.svg#icon-heart"></use>
               </svg>
             </button>
-            {isModalOpen && (
+            {/* TODO: show different modal based on user authorization status */}
+            {/* {isModalOpen && (
               <Modal onClose={modalClose}>
                 <ModalAttention />
+              </Modal>
+            )} */}
+            {isModalOpen && (
+              <Modal onClose={modalClose}>
+                <ModalNotice notice={notice} />
               </Modal>
             )}
           </div>
