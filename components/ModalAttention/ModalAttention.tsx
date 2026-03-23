@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function ModalAttention() {
   return (
-    <>
+    <div className={css.modal}>
       <div className={css.image}></div>
       <div className={css.attention}>
         <h3 className={css.title}>Attention</h3>
@@ -22,6 +22,6 @@ export default function ModalAttention() {
           </Link>
         </div>
       </div>
-    </>
+    </div>
   );
 }
