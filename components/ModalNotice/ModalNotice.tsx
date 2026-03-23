@@ -19,6 +19,7 @@ export default function ModalNotice({ notice }: Props) {
         <Image
           src={notice.imgURL}
           alt={notice.species}
+          sizes="(max-width: 767px) 120px,(min-width: 768px) 150px"
           width={120}
           height={120}
           className={css.image}

@@ -108,6 +108,7 @@
   display: flex;
   flex-direction: row;
   gap: 10px;
+  justify-content: center;
 }
 
 .favorite {
@@ -153,4 +154,53 @@
 
 .contact:hover {
   background-color: #fbe7c1;
+}
+
+@media (min-width: 768px) {
+  .modal {
+    padding: 40px 72px;
+  }
+
+  .pet {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 16px;
+  }
+
+  .category {
+    width: 52px;
+    height: 34px;
+    font-size: 14px;
+    line-height: 129%;
+  }
+
+  .image {
+    width: 100%;
+  }
+
+  .title {
+    font-size: 18px;
+    line-height: 133%;
+  }
+
+  .list {
+    margin-top: 20px;
+  }
+
+  .price {
+    font-size: 18px;
+    line-height: 133%;
+  }
+
+  .favorite {
+    padding: 14px 43px;
+    width: 160px;
+    height: 48px;
+  }
+
+  .contact {
+    padding: 14px 50px;
+    width: 160px;
+    height: 48px;
+  }
 }
