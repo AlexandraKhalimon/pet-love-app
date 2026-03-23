@@ -13,7 +13,7 @@ export default function ModalNotice({ notice }: Props) {
     : "Unknown";
 
   return (
-    <>
+    <div className={css.modal}>
       <div className={css.pet}>
         <p className={css.category}>{notice.category}</p>
         <Image
@@ -65,6 +65,6 @@ export default function ModalNotice({ notice }: Props) {
           Contact
         </a>
       </div>
-    </>
+    </div>
   );
 }
