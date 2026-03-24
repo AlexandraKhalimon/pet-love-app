@@ -26,4 +26,8 @@
     line-height: 125%;
     color: #fff;
   }
+
+  .button:hover {
+    background-color: #f9b020;
+  }
 }
