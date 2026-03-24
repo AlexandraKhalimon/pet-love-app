@@ -23,7 +23,7 @@ export default function LogOutBtn({ className }: Props) {
       </button>
       {isModalOpen && (
         <Modal onClose={() => setIsModalOpen(false)}>
-          <ModalApproveAction />
+          <ModalApproveAction onClose={() => setIsModalOpen(false)} />
         </Modal>
       )}
     </>
