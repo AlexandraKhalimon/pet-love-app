@@ -4,9 +4,10 @@ import Link from "next/link";
 import css from "./Header.module.css";
 import { useState } from "react";
 import BurgerMenu from "../BurgerMenu/BurgerMenu";
-import AuthNav from "../AuthNav/AuthNav";
+// import AuthNav from "../AuthNav/AuthNav";
 import Nav from "../Nav/Nav";
 import { usePathname } from "next/navigation";
+import UserNav from "../UserNav/UserNav";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,7 +23,9 @@ export default function Header() {
           </svg>
         </Link>
         <Nav className={css.nav} link={"white"} />
-        <AuthNav className={css.authNav} border={"white"} />
+        {/* TODO: render UserNav when user is authenticated and AuthNav for visitors */}
+        {/* <AuthNav className={css.authNav} border={"white"} /> */}
+        <UserNav />
         <button className={css.homeButton} onClick={() => setIsMenuOpen(true)}>
           <svg width={32} height={32} className={css.icon}>
             <use href="/icons.svg#icon-menu"></use>
@@ -39,7 +42,9 @@ export default function Header() {
         </svg>
       </Link>
       <Nav className={css.nav} link={"grey"} />
-      <AuthNav className={css.authNav} border={"orange"} />
+      {/* TODO: render UserNav when user is authenticated and AuthNav for visitors */}
+      {/* <AuthNav className={css.authNav} border={"orange"} /> */}
+      <UserNav />
       <button className={css.button} onClick={() => setIsMenuOpen(true)}>
         <svg width={32} height={32} className={css.icon}>
           <use href="/icons.svg#icon-menu"></use>
