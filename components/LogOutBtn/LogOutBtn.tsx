@@ -1,5 +1,9 @@
 import css from "./LogOutBtn.module.css";
 
-export default function LogOutBtn() {
-  return <button className={css.button}>Log out</button>;
+interface Props {
+  className?: string;
+}
+
+export default function LogOutBtn({ className }: Props) {
+  return <button className={`${css.button} ${className}`}>Log out</button>;
 }
