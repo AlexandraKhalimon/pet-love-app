@@ -5,7 +5,7 @@ import css from "./BurgerMenu.module.css";
 import Nav from "../Nav/Nav";
 // import AuthNav from "../AuthNav/AuthNav";
 import { usePathname } from "next/navigation";
-import UserNav from "../UserNav/UserNav";
+import LogOutBtn from "../LogOutBtn/LogOutBtn";
 
 interface Props {
   onClose: () => void;
@@ -29,9 +29,9 @@ export default function BurgerMenu({ onClose }: Props) {
           </svg>
         </button>
         <Nav link={nav} />
-        {/* // TODO: render UserNav when user is authenticated and AuthNav for visitors */}
+        {/* // TODO: render LogOutBtn when user is authenticated and AuthNav for visitors */}
         {/* <AuthNav border={auth} /> */}
-        <UserNav />
+        <LogOutBtn className={css.logout} />
       </div>
     </div>,
     document.body,
