@@ -3,8 +3,9 @@
 import { createPortal } from "react-dom";
 import css from "./BurgerMenu.module.css";
 import Nav from "../Nav/Nav";
-import AuthNav from "../AuthNav/AuthNav";
+// import AuthNav from "../AuthNav/AuthNav";
 import { usePathname } from "next/navigation";
+import UserNav from "../UserNav/UserNav";
 
 interface Props {
   onClose: () => void;
@@ -17,7 +18,7 @@ export default function BurgerMenu({ onClose }: Props) {
   const menuBackground = isHomePage ? css.white : css.orange;
   const icon = isHomePage ? css.blackIcon : css.whiteIcon;
   const nav = isHomePage ? "grey" : "white";
-  const auth = isHomePage ? "orange" : "white";
+  // const auth = isHomePage ? "orange" : "white";
 
   return createPortal(
     <div className={css.backdrop}>
@@ -28,7 +29,9 @@ export default function BurgerMenu({ onClose }: Props) {
           </svg>
         </button>
         <Nav link={nav} />
-        <AuthNav border={auth} />
+        {/* // TODO: render UserNav when user is authenticated and AuthNav for visitors */}
+        {/* <AuthNav border={auth} /> */}
+        <UserNav />
       </div>
     </div>,
     document.body,
