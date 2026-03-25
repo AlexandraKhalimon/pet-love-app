@@ -1,0 +1,70 @@
+.modal {
+  padding: 40px 28px;
+}
+
+.image {
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  background-color: #fff4df;
+  margin: 0 auto;
+  font-weight: 800;
+  font-size: 44px;
+  line-height: 100%;
+  letter-spacing: -0.04em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.question {
+  margin-top: 20px;
+  margin-bottom: 28px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: -0.03em;
+  color: var(--foreground);
+  text-align: center;
+}
+
+.approval {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  justify-content: center;
+}
+
+.yes {
+  border-radius: 30px;
+  padding: 12px;
+  width: 137px;
+  height: 42px;
+  background-color: #f6b83d;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.03em;
+  color: #fff;
+}
+
+.yes:hover {
+  background-color: #f9b020;
+}
+
+.cancel {
+  border-radius: 30px;
+  padding: 12px;
+  width: 134px;
+  height: 42px;
+  background-color: rgba(38, 38, 38, 0.05);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.03em;
+  color: var(--foreground);
+}
+
+.cancel:hover {
+  background-color: #fff4df;
+}

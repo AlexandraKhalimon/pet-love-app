@@ -8,7 +8,7 @@ export default function ModalApproveAction({ onClose }: Props) {
   return (
     <div className={css.modal}>
       <div className={css.image}>🐈</div>
-      <p className={css.quastion}>Already leaving?</p>
+      <p className={css.question}>Already leaving?</p>
       <div className={css.approval}>
         <button className={css.yes}>Yes</button>
         <button className={css.cancel} onClick={onClose}>
