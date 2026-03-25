@@ -68,3 +68,30 @@
 .cancel:hover {
   background-color: #fff4df;
 }
+
+@media (min-width: 768px) {
+  .modal {
+    padding: 80px;
+  }
+
+  .question {
+    font-size: 24px;
+    line-height: 117%;
+  }
+
+  .yes {
+    padding: 14px;
+    width: 140px;
+    height: 48px;
+    font-size: 16px;
+    line-height: 125%;
+  }
+
+  .cancel {
+    padding: 14px;
+    width: 140px;
+    height: 48px;
+    font-size: 16px;
+    line-height: 125%;
+  }
+}
