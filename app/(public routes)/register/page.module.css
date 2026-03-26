@@ -3,5 +3,13 @@
 }
 
 .image {
-  margin-bottom: 37px;
+  margin-bottom: 10px;
+}
+
+.form {
+  border-radius: 30px;
+  width: 335px;
+  height: 422px;
+  padding: 27px 20px;
+  background-color: #fff;
 }

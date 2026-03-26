@@ -11,8 +11,10 @@ export default function Register() {
         alt="Cat"
         className={css.image}
       />
-      <Title title={"Registration"} />
-      <RegistrationForm />
+      <div className={css.form}>
+        <Title title={"Registration"} />
+        <RegistrationForm />
+      </div>
     </section>
   );
 }
