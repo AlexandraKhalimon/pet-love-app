@@ -82,3 +82,10 @@
   color: #f6b83d;
   cursor: pointer;
 }
+
+@media (min-width: 320px) and (max-width: 374px) {
+  .input,
+  .submit {
+    width: 100%;
+  }
+}
