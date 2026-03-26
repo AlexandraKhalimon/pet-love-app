@@ -9,7 +9,7 @@
 .form {
   border-radius: 30px;
   width: 335px;
-  height: 422px;
+  height: auto;
   padding: 27px 20px;
   background-color: #fff;
 }
