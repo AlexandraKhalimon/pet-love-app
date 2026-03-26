@@ -1,5 +1,6 @@
 import css from "./page.module.css";
 import PetBlock from "@/components/PetBlock/PetBlock";
+import RegistrationForm from "@/components/RegistrationForm/RegistrationForm";
 import Title from "@/components/Title/Title";
 
 export default function Register() {
@@ -11,6 +12,7 @@ export default function Register() {
         className={css.image}
       />
       <Title title={"Registration"} />
+      <RegistrationForm />
     </section>
   );
 }
