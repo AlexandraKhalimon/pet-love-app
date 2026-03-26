@@ -89,3 +89,48 @@
     width: 100%;
   }
 }
+
+@media (min-width: 768px) {
+  .form {
+    margin-top: 16px;
+  }
+
+  .greeting {
+    font-size: 18px;
+    line-height: 122%;
+    margin-bottom: 32px;
+  }
+
+  .formInputs {
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .input {
+    width: 424px;
+    height: 52px;
+    padding: 16px;
+  }
+
+  .submit {
+    padding: 16px;
+    width: 424px;
+    height: 52px;
+    font-size: 16px;
+    line-height: 125%;
+    margin-bottom: 16px;
+  }
+
+  .question {
+    font-size: 14px;
+    line-height: 143%;
+  }
+
+  .link {
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    color: #f6b83d;
+    cursor: pointer;
+  }
+}
