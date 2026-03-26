@@ -17,12 +17,12 @@ export default function RegistrationForm() {
   const onSubmit = (data: RegisterFormValues) => console.log(data);
 
   return (
-    <div>
+    <div className={css.form}>
       <p className={css.greeting}>
         Thank you for your interest in our platform.
       </p>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div>
+        <div className={css.formInputs}>
           <input
             {...register("name")}
             className={css.input}
@@ -52,7 +52,10 @@ export default function RegistrationForm() {
         </button>
       </form>
       <p className={css.question}>
-        Already have an account? <Link href="/login">Login</Link>
+        Already have an account?
+        <Link href="/login" className={css.link}>
+          Login
+        </Link>
       </p>
     </div>
   );
