@@ -19,3 +19,18 @@
     width: 100%;
   }
 }
+
+@media (min-width: 768px) {
+  .section {
+    padding: 32px;
+  }
+
+  .image {
+    margin-bottom: 16px;
+  }
+
+  .form {
+    padding: 30px 140px;
+    width: 100%;
+  }
+}
