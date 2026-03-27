@@ -31,6 +31,26 @@
 
   .form {
     padding: 30px 140px;
-    width: 100%;
+    border-radius: 60px;
+    width: 704px;
+    height: 560px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .section {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+  }
+
+  .image {
+    margin-bottom: 0px;
+  }
+
+  .form {
+    padding: 77px 84px;
+    width: 592px;
+    height: 654px;
   }
 }
