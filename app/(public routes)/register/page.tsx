@@ -8,6 +8,8 @@ export default function Register() {
     <section className={css.section}>
       <PetBlock
         src="/images/pet-cat-mobile.png"
+        tablet="/images/pet-cat-tablet.png"
+        desktop="/images/pet-cat-desktop.png"
         alt="Cat"
         className={css.image}
       />
