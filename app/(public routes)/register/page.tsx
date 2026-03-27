@@ -7,7 +7,7 @@ export default function Register() {
   return (
     <section className={css.section}>
       <PetBlock
-        src="/images/pet-cat-mobile.jpg"
+        src="/images/pet-cat-mobile.png"
         alt="Cat"
         className={css.image}
       />
