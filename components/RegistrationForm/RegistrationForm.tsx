@@ -3,6 +3,31 @@
 import Link from "next/link";
 import css from "./RegistrationForm.module.css";
 import { useForm } from "react-hook-form";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+
+const registerSchema = yup.object({
+  name: yup
+    .string()
+    .min(2, "Name must be at least 2 characters")
+    .required("Enter your name"),
+  email: yup
+    .string()
+    .email("Enter a valid email")
+    .matches(
+      /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/,
+      "Enter a valid Email",
+    )
+    .required("Enter your email"),
+  password: yup
+    .string()
+    .min(7, "Password must be at least 7 characters")
+    .required("Enter your password"),
+  confirm: yup
+    .string()
+    .oneOf([yup.ref("password")], "Passwords must match")
+    .required("Confirm your password"),
+});
 
 interface RegisterFormValues {
   name: string;
@@ -13,6 +38,7 @@ interface RegisterFormValues {
 
 export default function RegistrationForm() {
   const { register, handleSubmit } = useForm<RegisterFormValues>({
+    resolver: yupResolver(registerSchema),
     defaultValues: {
       name: "",
       email: "",
