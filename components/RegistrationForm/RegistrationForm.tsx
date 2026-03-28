@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { useRouter } from "next/navigation";
 
 const registerSchema = yup.object({
   name: yup
@@ -41,6 +42,7 @@ export default function RegistrationForm() {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm<RegisterFormValues>({
     resolver: yupResolver(registerSchema),
     defaultValues: {
@@ -51,7 +53,15 @@ export default function RegistrationForm() {
     },
   });
 
-  const onSubmit = (data: RegisterFormValues) => console.log(data);
+  const router = useRouter();
+
+  const onSubmit = (data: RegisterFormValues) => {
+    console.log(data);
+    router.push("/profile");
+    reset();
+
+    return;
+  };
 
   return (
     <div className={css.form}>
