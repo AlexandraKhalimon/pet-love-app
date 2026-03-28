@@ -1,7 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import css from "./RegistrationForm.module.css";
+import Link from "next/link";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -37,7 +37,11 @@ interface RegisterFormValues {
 }
 
 export default function RegistrationForm() {
-  const { register, handleSubmit } = useForm<RegisterFormValues>({
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<RegisterFormValues>({
     resolver: yupResolver(registerSchema),
     defaultValues: {
       name: "",
@@ -56,29 +60,41 @@ export default function RegistrationForm() {
       </p>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className={css.formInputs}>
-          <input
-            {...register("name")}
-            className={css.input}
-            placeholder="Name"
-          />
-          <input
-            {...register("email")}
-            className={css.input}
-            placeholder="Email"
-            type="email"
-          />
-          <input
-            {...register("password")}
-            className={css.input}
-            placeholder="Password"
-            type="password"
-          />
-          <input
-            {...register("confirm")}
-            className={css.input}
-            placeholder="Confirm password"
-            type="password"
-          />
+          <label className={css.label}>
+            <input
+              {...register("name")}
+              className={css.input}
+              placeholder="Name"
+            />
+            <p className={css.error}>{errors.name?.message}</p>
+          </label>
+          <label className={css.label}>
+            <input
+              {...register("email")}
+              className={css.input}
+              placeholder="Email"
+              type="email"
+            />
+            <p className={css.error}>{errors.email?.message}</p>
+          </label>
+          <label className={css.label}>
+            <input
+              {...register("password")}
+              className={css.input}
+              placeholder="Password"
+              type="password"
+            />
+            <p className={css.error}>{errors.password?.message}</p>
+          </label>
+          <label className={css.label}>
+            <input
+              {...register("confirm")}
+              className={css.input}
+              placeholder="Confirm password"
+              type="password"
+            />
+            <p className={css.error}>{errors.confirm?.message}</p>
+          </label>
         </div>
         <button type="submit" className={css.submit}>
           Registration
