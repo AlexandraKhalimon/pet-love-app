@@ -12,7 +12,14 @@ interface RegisterFormValues {
 }
 
 export default function RegistrationForm() {
-  const { register, handleSubmit } = useForm<RegisterFormValues>();
+  const { register, handleSubmit } = useForm<RegisterFormValues>({
+    defaultValues: {
+      name: "",
+      email: "",
+      password: "",
+      confirm: "",
+    },
+  });
 
   const onSubmit = (data: RegisterFormValues) => console.log(data);
 
