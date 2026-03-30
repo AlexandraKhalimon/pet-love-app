@@ -14,3 +14,9 @@
   height: 422px;
   background-color: #fff;
 }
+
+@media (min-width: 320px) and (max-width: 374px) {
+  .form {
+    width: 100%;
+  }
+}

@@ -52,7 +52,7 @@
   width: 295px;
   height: 42px;
   border-radius: 30px;
-  padding: 12px 126px;
+  padding: 12px;
   background-color: #f6b83d;
   font-weight: 700;
   font-size: 14px;
@@ -82,4 +82,11 @@
   text-decoration-skip-ink: none;
   color: #f6b83d;
   cursor: pointer;
+}
+
+@media (min-width: 320px) and (max-width: 374px) {
+  .input,
+  .login {
+    width: 100%;
+  }
 }
