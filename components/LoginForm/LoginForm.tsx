@@ -1,3 +1,5 @@
+"use client";
+
 import css from "./LoginForm.module.css";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
