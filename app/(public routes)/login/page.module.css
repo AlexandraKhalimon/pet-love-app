@@ -20,3 +20,30 @@
     width: 100%;
   }
 }
+
+@media (min-width: 768px) {
+  .section {
+    padding: 32px;
+    gap: 16px;
+  }
+
+  .form {
+    padding: 71px 140px;
+    border-radius: 60px;
+    width: 704px;
+    height: 560px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .section {
+    flex-direction: row;
+    gap: 32px;
+  }
+
+  .form {
+    padding: 118px 84px;
+    width: 592px;
+    height: 654px;
+  }
+}
