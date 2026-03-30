@@ -50,7 +50,10 @@ export default function LoginForm() {
         </button>
       </form>
       <p className={css.question}>
-        Don’t have an account? <Link href="/register">Register</Link>
+        Don’t have an account?{" "}
+        <Link href="/register" className={css.link}>
+          Register
+        </Link>
       </p>
     </div>
   );

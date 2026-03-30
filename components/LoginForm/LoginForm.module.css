@@ -1,0 +1,85 @@
+.form {
+  margin-top: 12px;
+}
+
+.welcome {
+  margin-bottom: 24px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.02em;
+  color: var(--foreground);
+}
+
+.formInputs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.input {
+  width: 295px;
+  height: 42px;
+  padding: 12px;
+  border: 1px solid rgba(38, 38, 38, 0.15);
+  border-radius: 30px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.03em;
+  color: rgba(38, 38, 38, 0.8);
+  outline: none;
+  transition: border-color 250ms ease;
+}
+
+.input::placeholder {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.03em;
+  color: rgba(38, 38, 38, 0.5);
+}
+
+.input:focus,
+.input:hover {
+  border-color: #f6b83d;
+}
+
+.login {
+  width: 295px;
+  height: 42px;
+  border-radius: 30px;
+  padding: 12px 126px;
+  background-color: #f6b83d;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.login:hover {
+  background-color: #f9b020;
+}
+
+.question {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 117%;
+  letter-spacing: -0.03em;
+  color: rgba(38, 38, 38, 0.5);
+  text-align: center;
+}
+
+.link {
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: #f6b83d;
+  cursor: pointer;
+}
