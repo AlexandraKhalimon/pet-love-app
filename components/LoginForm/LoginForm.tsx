@@ -26,7 +26,11 @@ interface LoginFormValues {
 }
 
 export default function LoginForm() {
-  const { register, handleSubmit } = useForm<LoginFormValues>({
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<LoginFormValues>({
     resolver: yupResolver(LoginSchema),
     defaultValues: {
       email: "",
@@ -52,6 +56,7 @@ export default function LoginForm() {
               placeholder="Email"
               type="email"
             />
+            <p className={css.error}>{errors.email?.message}</p>
           </label>
           <label className={css.label}>
             <input
@@ -60,6 +65,7 @@ export default function LoginForm() {
               placeholder="Password"
               type="password"
             />
+            <p className={css.error}>{errors.password?.message}</p>
           </label>
         </div>
         <button className={css.login} type="submit">
