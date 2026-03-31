@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { useRouter } from "next/navigation";
 
 const LoginSchema = yup.object({
   email: yup
@@ -30,6 +31,7 @@ export default function LoginForm() {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm<LoginFormValues>({
     resolver: yupResolver(LoginSchema),
     defaultValues: {
@@ -38,8 +40,12 @@ export default function LoginForm() {
     },
   });
 
+  const router = useRouter();
+
   const onSubmit = (data: LoginFormValues) => {
     console.log(data);
+    router.push("/profile");
+    reset();
   };
 
   return (
