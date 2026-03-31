@@ -20,6 +20,13 @@
   margin-bottom: 40px;
 }
 
+.label {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-bottom: 6px;
+}
+
 .input {
   width: 295px;
   height: 42px;
@@ -46,6 +53,18 @@
 .input:focus,
 .input:hover {
   border-color: #f6b83d;
+}
+
+.error {
+  position: absolute;
+  top: 100%;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 120%;
+  letter-spacing: -0.03em;
+  color: #ef2447;
+  margin-top: 2px;
+  margin-left: 12px;
 }
 
 .login {
@@ -107,6 +126,10 @@
     margin-bottom: 64px;
   }
 
+  .label {
+    margin-bottom: 12px;
+  }
+
   .input {
     width: 424px;
     height: 52px;
@@ -118,6 +141,13 @@
   .input::placeholder {
     font-size: 16px;
     line-height: 125%;
+  }
+
+  .error {
+    font-size: 12px;
+    line-height: 117%;
+    margin-top: 4px;
+    margin-left: 16px;
   }
 
   .login {
