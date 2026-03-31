@@ -3,6 +3,22 @@
 import css from "./LoginForm.module.css";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+
+const LoginSchema = yup.object({
+  email: yup
+    .string()
+    .matches(
+      /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/,
+      "Enter a valid Email",
+    )
+    .required("Enter your email"),
+  password: yup
+    .string()
+    .min(7, "Password must be at least 7 characters")
+    .required("Enter your password"),
+});
 
 interface LoginFormValues {
   email: string;
@@ -11,6 +27,7 @@ interface LoginFormValues {
 
 export default function LoginForm() {
   const { register, handleSubmit } = useForm<LoginFormValues>({
+    resolver: yupResolver(LoginSchema),
     defaultValues: {
       email: "",
       password: "",
