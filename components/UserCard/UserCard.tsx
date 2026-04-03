@@ -3,7 +3,7 @@ import EditUserBtn from "../EditUserBtn/EditUserBtn";
 
 export default function UserCard() {
   return (
-    <section>
+    <section className={css.section}>
       <div className={css.header}>
         <p className={css.user}>
           User{" "}
