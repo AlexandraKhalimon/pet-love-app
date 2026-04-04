@@ -2,6 +2,7 @@ import { City } from "@/types/city";
 import { Friend } from "@/types/friend";
 import type { News } from "@/types/news";
 import { Category, Notice, Sex, Species } from "@/types/notice";
+import { FullUser, User } from "@/types/user";
 import axios from "axios";
 
 axios.defaults.baseURL = "https://petlove.b.goit.study/api";
@@ -120,5 +121,15 @@ export const fetchCities = async ({
 
 export const fetchLocations = async (): Promise<City[]> => {
   const response = await axios.get<City[]>("/cities/locations");
+  return response.data;
+};
+
+export const fetchUserInfo = async (): Promise<User> => {
+  const response = await axios.get<User>("/users/current");
+  return response.data;
+};
+
+export const fetchUserFullInfo = async (): Promise<FullUser> => {
+  const response = await axios.get<FullUser>("/users/current/full");
   return response.data;
 };
