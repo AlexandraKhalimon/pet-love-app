@@ -7,6 +7,10 @@ interface Props {
 }
 
 export default function UserBlock({ user }: Props) {
+  const name = user.name ?? "Name";
+  const email = user.email ?? "name@gmail.com";
+  const phone = user.phone ?? "+380";
+
   return (
     <section className={css.section}>
       {user.avatar ? (
@@ -29,6 +33,18 @@ export default function UserBlock({ user }: Props) {
           </button>
         </div>
       )}
+      <h2 className={css.heading}>My information</h2>
+      <ul className={css.infoList}>
+        <li className={css.infoItem}>
+          <p>{name}</p>
+        </li>
+        <li className={css.infoItem}>
+          <p>{email}</p>
+        </li>
+        <li className={css.infoItem}>
+          <p>{phone}</p>
+        </li>
+      </ul>
     </section>
   );
 }
