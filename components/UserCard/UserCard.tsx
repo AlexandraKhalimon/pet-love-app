@@ -1,7 +1,13 @@
 import css from "./UserCard.module.css";
 import EditUserBtn from "../EditUserBtn/EditUserBtn";
+import UserBlock from "../UserBlock/UserBlock";
+import { FullUser } from "@/types/user";
 
-export default function UserCard() {
+interface Props {
+  user: FullUser;
+}
+
+export default function UserCard({ user }: Props) {
   return (
     <section className={css.section}>
       <div className={css.header}>
@@ -12,6 +18,7 @@ export default function UserCard() {
           </svg>
         </p>
         <EditUserBtn />
+        <UserBlock user={user} />
       </div>
     </section>
   );
