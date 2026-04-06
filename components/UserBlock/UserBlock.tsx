@@ -11,6 +11,10 @@ export default function UserBlock({ user }: Props) {
   const email = user.email ?? "name@gmail.com";
   const phone = user.phone ?? "+380";
 
+  const nameStyle = user.name ? css.active : css.none;
+  const emailStyle = user.email ? css.active : css.none;
+  const phoneStyle = user.phone ? css.active : css.none;
+
   return (
     <section className={css.section}>
       {user.avatar ? (
@@ -35,13 +39,13 @@ export default function UserBlock({ user }: Props) {
       )}
       <h2 className={css.heading}>My information</h2>
       <ul className={css.infoList}>
-        <li className={css.infoItem}>
+        <li className={`${css.infoItem} ${nameStyle}`}>
           <p>{name}</p>
         </li>
-        <li className={css.infoItem}>
+        <li className={`${css.infoItem} ${emailStyle}`}>
           <p>{email}</p>
         </li>
-        <li className={css.infoItem}>
+        <li className={`${css.infoItem} ${phoneStyle}`}>
           <p>{phone}</p>
         </li>
       </ul>
