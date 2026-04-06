@@ -32,3 +32,9 @@
 .icon {
   fill: #fff;
 }
+
+@media (min-width: 320px) and (max-width: 374px) {
+  .section {
+    width: 100%;
+  }
+}

@@ -80,3 +80,9 @@
   letter-spacing: -0.03em;
   color: var(--foreground);
 }
+
+@media (min-width: 320px) and (max-width: 374px) {
+  .infoItem {
+    width: 100%;
+  }
+}
