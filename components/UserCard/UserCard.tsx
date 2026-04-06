@@ -18,8 +18,8 @@ export default function UserCard({ user }: Props) {
           </svg>
         </p>
         <EditUserBtn />
-        <UserBlock user={user} />
       </div>
+      <UserBlock user={user} />
     </section>
   );
 }
