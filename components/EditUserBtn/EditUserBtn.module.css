@@ -12,5 +12,6 @@
 }
 
 .icon {
-  fill: #f6b83d;
+  stroke: #f6b83d;
+  fill: transparent;
 }
