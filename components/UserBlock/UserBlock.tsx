@@ -21,6 +21,7 @@ export default function UserBlock({ user }: Props) {
         <Image
           src={user.avatar}
           alt="Profile photo"
+          sizes="(max-width: 767px) 94px, (min-width: 768px) 110px"
           width={94}
           height={94}
           className={css.avatar}
