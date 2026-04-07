@@ -2,6 +2,7 @@ import css from "./UserCard.module.css";
 import EditUserBtn from "../EditUserBtn/EditUserBtn";
 import UserBlock from "../UserBlock/UserBlock";
 import { FullUser } from "@/types/user";
+import PetsBlock from "../PetsBlock/PetsBlock";
 
 interface Props {
   user: FullUser;
@@ -20,6 +21,7 @@ export default function UserCard({ user }: Props) {
         <EditUserBtn />
       </div>
       <UserBlock user={user} />
+      <PetsBlock />
     </section>
   );
 }
