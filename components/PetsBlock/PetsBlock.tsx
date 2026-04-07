@@ -13,8 +13,8 @@ export default function PetsBlock({ pets }: Props) {
       <div className={css.headingContainer}>
         <h2 className={css.heading}>My pets</h2>
         <AddPet />
-        <PetsList pets={pets} />
       </div>
+      <PetsList pets={pets} />
     </>
   );
 }
