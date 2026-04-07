@@ -1,0 +1,12 @@
+.headingContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.heading {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 125%;
+  color: #2b2b2a;
+}
