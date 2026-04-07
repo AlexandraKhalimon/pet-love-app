@@ -23,7 +23,7 @@ export default function ProfilePage() {
 
   return (
     <section className={css.section}>
-      {data && <UserCard user={data} />}
+      {data && <UserCard user={data} pets={data.pets} />}
     </section>
   );
 }

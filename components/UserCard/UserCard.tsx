@@ -1,14 +1,15 @@
 import css from "./UserCard.module.css";
 import EditUserBtn from "../EditUserBtn/EditUserBtn";
 import UserBlock from "../UserBlock/UserBlock";
-import { FullUser } from "@/types/user";
+import { FullUser, Pet } from "@/types/user";
 import PetsBlock from "../PetsBlock/PetsBlock";
 
 interface Props {
   user: FullUser;
+  pets: Pet[];
 }
 
-export default function UserCard({ user }: Props) {
+export default function UserCard({ user, pets }: Props) {
   return (
     <section className={css.section}>
       <div className={css.header}>
@@ -21,7 +22,7 @@ export default function UserCard({ user }: Props) {
         <EditUserBtn />
       </div>
       <UserBlock user={user} />
-      <PetsBlock />
+      <PetsBlock pets={pets} />
     </section>
   );
 }
