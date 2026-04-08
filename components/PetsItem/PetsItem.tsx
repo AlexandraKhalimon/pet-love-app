@@ -7,6 +7,13 @@ interface Props {
 }
 
 export default function PetsItem({ pet }: Props) {
+  const title =
+    pet.title.length > 18 ? pet.title.slice(0, 18) + "..." : pet.title;
+
+  const birthday = pet.birthday
+    ? pet.birthday.split("-").reverse().join(".")
+    : "Unknown";
+
   return (
     <li className={css.card}>
       <Image
@@ -17,7 +24,7 @@ export default function PetsItem({ pet }: Props) {
         className={css.image}
       />
       <div className={css.infoContainer}>
-        <h3 className={css.title}>{pet.title}</h3>
+        <h3 className={css.title}>{title}</h3>
         <ul className={css.list}>
           <li className={css.item}>
             <p className={css.label}>Name</p>
@@ -25,7 +32,7 @@ export default function PetsItem({ pet }: Props) {
           </li>
           <li className={css.item}>
             <p className={css.label}>Birthday</p>
-            <p className={css.value}>{pet.birthday}</p>
+            <p className={css.value}>{birthday}</p>
           </li>
           <li className={css.item}>
             <p className={css.label}>Sex</p>
