@@ -19,6 +19,7 @@ export default function PetsItem({ pet }: Props) {
       <Image
         src={pet.imgURL}
         alt={pet.species}
+        sizes="(max-width: 767px) 66px, (min-width: 768px) 75px, (min-width: 1280px) 90px"
         width={66}
         height={66}
         className={css.image}
