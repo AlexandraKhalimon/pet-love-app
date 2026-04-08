@@ -4,3 +4,16 @@
   gap: 14px;
   margin-bottom: 20px;
 }
+
+@media (min-width: 768px) {
+  .list {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 1280px) {
+  .list {
+    flex-direction: column;
+    margin-bottom: 40px;
+  }
+}
