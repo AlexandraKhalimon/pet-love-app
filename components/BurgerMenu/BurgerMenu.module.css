@@ -44,6 +44,24 @@
   stroke: #262626;
 }
 
+.logout {
+  background-color: #fff4df;
+  color: #f6b83d;
+}
+
+.logout:hover {
+  background-color: #fbe7c1;
+}
+
+.homeLogout {
+  background-color: #f6b83d;
+  color: #fff;
+}
+
+.homeLogout:hover {
+  background-color: #f9b020;
+}
+
 @media (min-width: 768px) {
   .menu {
     width: 374px;
@@ -53,9 +71,5 @@
   .button {
     top: 39px;
     right: 32px;
-  }
-
-  .logout {
-    display: none;
   }
 }
