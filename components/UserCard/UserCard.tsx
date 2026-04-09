@@ -3,6 +3,7 @@ import EditUserBtn from "../EditUserBtn/EditUserBtn";
 import UserBlock from "../UserBlock/UserBlock";
 import { FullUser, Pet } from "@/types/user";
 import PetsBlock from "../PetsBlock/PetsBlock";
+import LogOutBtn from "../LogOutBtn/LogOutBtn";
 
 interface Props {
   user: FullUser;
@@ -23,6 +24,7 @@ export default function UserCard({ user, pets }: Props) {
       </div>
       <UserBlock user={user} />
       <PetsBlock pets={pets} />
+      <LogOutBtn />
     </section>
   );
 }
