@@ -24,7 +24,7 @@ export default function UserCard({ user, pets }: Props) {
       </div>
       <UserBlock user={user} />
       <PetsBlock pets={pets} />
-      <LogOutBtn />
+      <LogOutBtn className={css.logout} />
     </section>
   );
 }

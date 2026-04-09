@@ -33,6 +33,15 @@
   fill: #fff;
 }
 
+.logout {
+  background-color: #fff4df;
+  color: #f6b83d;
+}
+
+.logout:hover {
+  background-color: #fbe7c1;
+}
+
 @media (min-width: 320px) and (max-width: 374px) {
   .section {
     width: 100%;
