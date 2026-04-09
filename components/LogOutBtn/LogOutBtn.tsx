@@ -6,7 +6,7 @@ import Modal from "../Modal/Modal";
 import { useState } from "react";
 
 interface Props {
-  className?: string;
+  className: string;
 }
 
 export default function LogOutBtn({ className }: Props) {
