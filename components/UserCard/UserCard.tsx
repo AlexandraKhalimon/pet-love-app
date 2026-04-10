@@ -20,7 +20,7 @@ export default function UserCard({ user, pets }: Props) {
             <use href="/icons.svg#icon-user"></use>
           </svg>
         </p>
-        <EditUserBtn />
+        <EditUserBtn user={user} />
       </div>
       <UserBlock user={user} />
       <PetsBlock pets={pets} />
