@@ -2,7 +2,7 @@ import { City } from "@/types/city";
 import { Friend } from "@/types/friend";
 import type { News } from "@/types/news";
 import { Category, Notice, Sex, Species } from "@/types/notice";
-import { FullUser, User } from "@/types/user";
+import { FullUser, User, UserEdit } from "@/types/user";
 import axios from "axios";
 
 axios.defaults.baseURL = "https://petlove.b.goit.study/api";
@@ -206,4 +206,9 @@ export const fetchUserFullInfo = async (): Promise<FullUser> => {
     createdAt: "2024-02-20T10:20:30.887Z",
     updatedAt: "2024-02-20T10:48:07.834Z",
   };
+};
+
+export const editUserInfo = async (data: UserEdit): Promise<FullUser> => {
+  const response = await axios.patch<FullUser>("/users/current/edit", data);
+  return response.data;
 };

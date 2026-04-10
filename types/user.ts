@@ -28,3 +28,10 @@ export type Pet = {
   createdAt: string;
   updatedAt?: string;
 };
+
+export type UserEdit = {
+  name?: string;
+  email?: string;
+  phone?: string;
+  avatar?: string;
+};
