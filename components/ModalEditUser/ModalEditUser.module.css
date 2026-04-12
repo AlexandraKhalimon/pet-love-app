@@ -67,6 +67,15 @@
   border: 1px solid rgba(38, 38, 38, 0.15);
 }
 
+.error {
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 120%;
+  letter-spacing: -0.03em;
+  color: #ef2447;
+  margin-top: 2px;
+}
+
 .submit {
   width: 295px;
   height: 42px;
