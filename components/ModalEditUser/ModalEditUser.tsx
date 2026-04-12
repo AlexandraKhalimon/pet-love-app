@@ -39,7 +39,7 @@ export default function ModalEditUser({ user }: Props) {
         />
       ) : (
         <div className={css.image}>
-          <svg className={css.icon} width={36} height={36}>
+          <svg className={css.icon} width={40} height={40}>
             <use href="/icons.svg#icon-user"></use>
           </svg>
         </div>
