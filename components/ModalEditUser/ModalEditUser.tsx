@@ -24,6 +24,11 @@ export default function ModalEditUser({ user }: Props) {
     },
   });
 
+  const photoBorder = user.avatar ? css.active : css.none;
+  const nameBorder = user.name ? css.active : css.none;
+  const emailBorder = user.email ? css.active : css.none;
+  const phoneBorder = user.phone ? css.active : css.none;
+
   const onSubmit = (data: EditUserValues) => console.log(data);
 
   return (
@@ -50,7 +55,7 @@ export default function ModalEditUser({ user }: Props) {
             <input
               {...register("avatar")}
               type="text"
-              className={css.input}
+              className={`${css.input} ${photoBorder}`}
               placeholder="Photo"
             />
           </label>
@@ -58,7 +63,7 @@ export default function ModalEditUser({ user }: Props) {
             <input
               {...register("name")}
               type="text"
-              className={css.input}
+              className={`${css.input} ${nameBorder}`}
               placeholder="Name"
             />
           </label>
@@ -66,7 +71,7 @@ export default function ModalEditUser({ user }: Props) {
             <input
               {...register("email")}
               type="email"
-              className={css.input}
+              className={`${css.input} ${emailBorder}`}
               placeholder="Email"
             />
           </label>
@@ -74,7 +79,7 @@ export default function ModalEditUser({ user }: Props) {
             <input
               {...register("phone")}
               type="tel"
-              className={css.input}
+              className={`${css.input} ${phoneBorder}`}
               placeholder="Phone number"
             />
           </label>

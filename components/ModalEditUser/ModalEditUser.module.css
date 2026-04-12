@@ -41,7 +41,6 @@
 .input {
   width: 295px;
   height: 42px;
-  border: 1px solid #f6b83d;
   border-radius: 30px;
   padding: 12px;
   font-weight: 500;
@@ -58,6 +57,14 @@
   line-height: 129%;
   letter-spacing: -0.03em;
   color: rgba(38, 38, 38, 0.5);
+}
+
+.active {
+  border: 1px solid #f6b83d;
+}
+
+.none {
+  border: 1px solid rgba(38, 38, 38, 0.15);
 }
 
 .submit {
