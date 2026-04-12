@@ -42,7 +42,11 @@ interface EditUserValues {
 }
 
 export default function ModalEditUser({ user }: Props) {
-  const { register, handleSubmit } = useForm<EditUserValues>({
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<EditUserValues>({
     resolver: yupResolver(editSchema) as Resolver<EditUserValues>,
     defaultValues: {
       avatar: user.avatar || "",
@@ -86,6 +90,7 @@ export default function ModalEditUser({ user }: Props) {
               className={`${css.input} ${photoBorder}`}
               placeholder="Photo"
             />
+            <p className={css.error}>{errors.avatar?.message}</p>
           </label>
           <label className={css.label}>
             <input
@@ -94,6 +99,7 @@ export default function ModalEditUser({ user }: Props) {
               className={`${css.input} ${nameBorder}`}
               placeholder="Name"
             />
+            <p className={css.error}>{errors.name?.message}</p>
           </label>
           <label className={css.label}>
             <input
@@ -102,6 +108,7 @@ export default function ModalEditUser({ user }: Props) {
               className={`${css.input} ${emailBorder}`}
               placeholder="Email"
             />
+            <p className={css.error}>{errors.email?.message}</p>
           </label>
           <label className={css.label}>
             <input
@@ -110,6 +117,7 @@ export default function ModalEditUser({ user }: Props) {
               className={`${css.input} ${phoneBorder}`}
               placeholder="Phone number"
             />
+            <p className={css.error}>{errors.phone?.message}</p>
           </label>
         </div>
         <button type="submit" className={css.submit}>
