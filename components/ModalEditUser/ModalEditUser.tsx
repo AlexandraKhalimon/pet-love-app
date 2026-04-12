@@ -1,21 +1,49 @@
 import css from "./ModalEditUser.module.css";
 import { FullUser } from "@/types/user";
 import Image from "next/image";
-import { useForm } from "react-hook-form";
+import { Resolver, useForm } from "react-hook-form";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+
+const editSchema = yup.object({
+  avatar: yup
+    .string()
+    .notRequired()
+    .matches(/^https?:\/\/.*\.(?:png|jpg|jpeg|gif|bmp|webp)$/, {
+      message: "Enter a valid avatar",
+      excludeEmptyString: true,
+    }),
+  name: yup.string().notRequired(),
+  email: yup
+    .string()
+    .notRequired()
+    .matches(/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/, {
+      message: "Enter a valid email",
+      excludeEmptyString: true,
+    }),
+  phone: yup
+    .string()
+    .notRequired()
+    .matches(/^\+38\d{10}$/, {
+      message: "Enter a valid phone number",
+      excludeEmptyString: true,
+    }),
+});
 
 interface Props {
   user: FullUser;
 }
 
 interface EditUserValues {
-  avatar: string;
-  name: string;
-  email: string;
-  phone: string;
+  avatar?: string;
+  name?: string;
+  email?: string;
+  phone?: string;
 }
 
 export default function ModalEditUser({ user }: Props) {
   const { register, handleSubmit } = useForm<EditUserValues>({
+    resolver: yupResolver(editSchema) as Resolver<EditUserValues>,
     defaultValues: {
       avatar: user.avatar || "",
       name: user.name || "",
