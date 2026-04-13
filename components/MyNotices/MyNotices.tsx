@@ -2,8 +2,15 @@
 
 import { useState } from "react";
 import css from "./MyNotices.module.css";
+import { Notice } from "@/types/notice";
+import NoticesList from "../NoticesList/NoticesList";
 
-export default function MyNotices() {
+interface Props {
+  favoriteNotices: Notice[];
+  viewedNotices: Notice[];
+}
+
+export default function MyNotices({ favoriteNotices, viewedNotices }: Props) {
   const [activeTab, setActiveTab] = useState("favorites");
 
   return (
@@ -22,6 +29,8 @@ export default function MyNotices() {
           Viewed
         </button>
       </div>
+      {activeTab === "favorites" && <NoticesList notices={favoriteNotices} />}
+      {activeTab === "viewed" && <NoticesList notices={viewedNotices} />}
     </>
   );
 }
