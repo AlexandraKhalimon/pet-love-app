@@ -1,12 +1,17 @@
 import css from "./UserBlock.module.css";
 import Image from "next/image";
 import { FullUser } from "@/types/user";
+import { useState } from "react";
+import Modal from "../Modal/Modal";
+import ModalEditUser from "../ModalEditUser/ModalEditUser";
 
 interface Props {
   user: FullUser;
 }
 
 export default function UserBlock({ user }: Props) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const name = user.name ?? "Name";
   const email = user.email ?? "name@gmail.com";
   const phone = user.phone ?? "+380";
@@ -33,10 +38,19 @@ export default function UserBlock({ user }: Props) {
               <use href="/icons.svg#icon-user"></use>
             </svg>
           </div>
-          <button type="button" className={css.upload}>
+          <button
+            type="button"
+            className={css.upload}
+            onClick={() => setIsModalOpen(true)}
+          >
             Upload photo
           </button>
         </div>
+      )}
+      {isModalOpen && (
+        <Modal onClose={() => setIsModalOpen(false)}>
+          <ModalEditUser user={user} />
+        </Modal>
       )}
       <h2 className={css.heading}>My information</h2>
       <ul className={css.infoList}>
