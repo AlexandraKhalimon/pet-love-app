@@ -45,3 +45,10 @@
     line-height: 125%;
   }
 }
+
+@media (min-width: 1280px) {
+  .tabsPanel {
+    gap: 8px;
+    margin: 40px 0 32px;
+  }
+}
