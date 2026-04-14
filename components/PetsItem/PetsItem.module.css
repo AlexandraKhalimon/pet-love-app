@@ -73,6 +73,32 @@
   fill: transparent;
 }
 
+@media (min-width: 320px) and (max-width: 374px) {
+  .card {
+    width: 100%;
+    height: auto;
+    gap: 11px;
+    padding: 14px;
+  }
+
+  .title {
+    font-size: 11px;
+  }
+
+  .label {
+    font-size: 9px;
+  }
+
+  .value {
+    font-size: 11px;
+  }
+
+  .trash {
+    top: 11px;
+    right: 11px;
+  }
+}
+
 @media (min-width: 768px) {
   .card {
     width: 305px;
