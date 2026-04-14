@@ -1,0 +1,27 @@
+.tabsPanel {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tabsPanel > button {
+  width: 123px;
+  height: 42px;
+  padding: 12px;
+  border-radius: 30px;
+  background-color: #fff;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.03em;
+  color: var(--foreground);
+}
+
+.tabsPanel > .activeTab {
+  background-color: #f6b83d;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.03em;
+  color: #fff;
+}
