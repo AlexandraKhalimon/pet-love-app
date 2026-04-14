@@ -25,3 +25,23 @@
   letter-spacing: -0.03em;
   color: #fff;
 }
+
+@media (min-width: 768px) {
+  .tabsPanel {
+    gap: 8px;
+    margin: 32px 0 38px;
+  }
+
+  .tabsPanel > button {
+    width: 142px;
+    height: 48px;
+    padding: 14px;
+    font-size: 16px;
+    line-height: 125%;
+  }
+
+  .tabsPanel > .activeTab {
+    font-size: 16px;
+    line-height: 125%;
+  }
+}

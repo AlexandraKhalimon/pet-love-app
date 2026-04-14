@@ -11,3 +11,10 @@
   line-height: 125%;
   color: #2b2b2a;
 }
+
+@media (min-width: 768px) {
+  .heading {
+    font-size: 18px;
+    line-height: 133%;
+  }
+}

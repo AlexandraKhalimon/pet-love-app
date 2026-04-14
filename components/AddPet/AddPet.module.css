@@ -22,3 +22,12 @@
 .link:hover {
   background-color: #f9b020;
 }
+
+@media (min-width: 768px) {
+  .link {
+    width: 118px;
+    height: 40px;
+    font-size: 16px;
+    line-height: 125%;
+  }
+}
