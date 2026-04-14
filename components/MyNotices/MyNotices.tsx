@@ -14,7 +14,7 @@ export default function MyNotices({ favoriteNotices, viewedNotices }: Props) {
   const [activeTab, setActiveTab] = useState("favorites");
 
   return (
-    <>
+    <section>
       <div className={css.tabsPanel}>
         <button
           onClick={() => setActiveTab("favorites")}
@@ -31,6 +31,6 @@ export default function MyNotices({ favoriteNotices, viewedNotices }: Props) {
       </div>
       {activeTab === "favorites" && <NoticesList notices={favoriteNotices} />}
       {activeTab === "viewed" && <NoticesList notices={viewedNotices} />}
-    </>
+    </section>
   );
 }

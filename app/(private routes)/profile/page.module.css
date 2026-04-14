@@ -1,3 +1,6 @@
 .section {
   padding: 18px 20px 56px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
