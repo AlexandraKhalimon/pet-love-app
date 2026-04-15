@@ -83,7 +83,7 @@ export default function NoticesClient() {
         locations={cityOptions}
       />
       {data && data.results.length > 0 && (
-        <NoticesList notices={data.results} />
+        <NoticesList notices={data.results} variant="notices" />
       )}
       {totalPages > 1 && (
         <Pagination

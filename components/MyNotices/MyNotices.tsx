@@ -29,8 +29,12 @@ export default function MyNotices({ favoriteNotices, viewedNotices }: Props) {
           Viewed
         </button>
       </div>
-      {activeTab === "favorites" && <NoticesList notices={favoriteNotices} />}
-      {activeTab === "viewed" && <NoticesList notices={viewedNotices} />}
+      {activeTab === "favorites" && (
+        <NoticesList notices={favoriteNotices} variant="favorites" />
+      )}
+      {activeTab === "viewed" && (
+        <NoticesList notices={viewedNotices} variant="viewed" />
+      )}
     </section>
   );
 }
