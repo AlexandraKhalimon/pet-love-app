@@ -122,11 +122,25 @@
   color: #fff;
 }
 
+.viewedBtn {
+  width: 287px;
+  height: 46px;
+  padding: 14px;
+  border-radius: 30px;
+  background-color: #f6b83d;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.03em;
+  color: #fff;
+}
+
+.viewedBtn:hover,
 .moreBtn:hover {
   background-color: #f9b020;
 }
 
-.heartBtn {
+.iconBtn {
   border-radius: 30px;
   padding: 14px;
   width: 46px;
@@ -136,7 +150,7 @@
   stroke: #f6b83d;
 }
 
-.heartBtn:hover {
+.iconBtn:hover {
   background-color: #fbe7c1;
 }
 
@@ -194,7 +208,14 @@
     line-height: 125%;
   }
 
-  .heartBtn {
+  .viewedBtn {
+    width: 314px;
+    height: 44px;
+    font-size: 16px;
+    line-height: 125%;
+  }
+
+  .iconBtn {
     padding: 15px;
     width: 48px;
     height: 48px;
@@ -218,7 +239,11 @@
     width: 257px;
   }
 
-  .heartBtn {
+  .viewedBtn {
+    width: 292px;
+  }
+
+  .iconBtn {
     padding: 15px;
     width: 48px;
     height: 48px;

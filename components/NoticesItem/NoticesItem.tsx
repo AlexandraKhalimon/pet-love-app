@@ -10,9 +10,10 @@ import ModalNotice from "../ModalNotice/ModalNotice";
 
 interface Props {
   notice: Notice;
+  variant: "notices" | "favorites" | "viewed";
 }
 
-export default function NoticesItem({ notice }: Props) {
+export default function NoticesItem({ notice, variant }: Props) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const modalOpen = () => setIsModalOpen(true);
@@ -22,6 +23,10 @@ export default function NoticesItem({ notice }: Props) {
   const birthday = notice.birthday
     ? notice.birthday.split("-").reverse().join(".")
     : "Unknown";
+
+  const isNotices = variant === "notices";
+  const isFavorites = variant === "favorites";
+  const isViewed = variant === "viewed";
 
   return (
     <li className={css.card}>
@@ -69,23 +74,46 @@ export default function NoticesItem({ notice }: Props) {
         <div className={css.footer}>
           <p className={css.price}>{price}</p>
           <div className={css.actions}>
-            <button type="button" className={css.moreBtn} onClick={modalOpen}>
-              Learn more
-            </button>
             <button
-              className={css.heartBtn}
-              aria-label="Add to favorites"
+              type="button"
+              className={isViewed ? `${css.viewedBtn}` : `${css.moreBtn}`}
               onClick={modalOpen}
             >
-              <svg
-                width={18}
-                height={18}
-                className={css.icon}
-                aria-hidden="true"
-              >
-                <use href="/icons.svg#icon-heart"></use>
-              </svg>
+              Learn more
             </button>
+            {isNotices && (
+              <button
+                className={css.iconBtn}
+                aria-label="Add to favorites"
+                onClick={modalOpen}
+              >
+                <svg
+                  width={18}
+                  height={18}
+                  className={css.icon}
+                  aria-hidden="true"
+                >
+                  <use href="/icons.svg#icon-heart"></use>
+                </svg>
+              </button>
+            )}
+            {isFavorites && (
+              <button
+                className={css.iconBtn}
+                aria-label="Remove from favorites"
+                onClick={modalOpen}
+              >
+                <svg
+                  width={18}
+                  height={18}
+                  className={css.icon}
+                  aria-hidden="true"
+                >
+                  <use href="/icons.svg#icon-trash"></use>
+                </svg>
+              </button>
+            )}
+
             {/* TODO: show different modal based on user authorization status */}
             {/* {isModalOpen && (
               <Modal onClose={modalClose}>
