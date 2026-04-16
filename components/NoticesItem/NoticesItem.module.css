@@ -175,8 +175,20 @@
     height: 472px;
   }
 
+  .profileCard {
+    width: 342px;
+    height: 422px;
+    padding: 14px 14px 24px;
+  }
+
   .image {
     width: 100%;
+  }
+
+  .profileImage {
+    width: 100%;
+    height: 162px;
+    margin-bottom: 14px;
   }
 
   .title {
@@ -225,6 +237,10 @@
 @media (min-width: 1280px) {
   .card {
     width: 363px;
+  }
+
+  .profileCard {
+    width: 320px;
   }
 
   .popularity {
