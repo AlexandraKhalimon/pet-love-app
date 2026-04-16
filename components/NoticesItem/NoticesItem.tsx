@@ -28,15 +28,21 @@ export default function NoticesItem({ notice, variant }: Props) {
   const isFavorites = variant === "favorites";
   const isViewed = variant === "viewed";
 
+  const cardClass = isNotices ? css.card : `${css.card} ${css.profileCard}`;
+  const imageSizes = isNotices
+    ? "(max-width: 767px) 287px, (min-width: 768px) 294px, (min-width: 1280px) 315px"
+    : "(max-width: 767px) 287px, (min-width: 768px) 314px, (min-width: 1280px) 292px";
+  const imageClass = isNotices ? css.image : `${css.image} ${css.profileImage}`;
+
   return (
-    <li className={css.card}>
+    <li className={cardClass}>
       <Image
         src={notice.imgURL}
         alt={notice.species}
-        sizes="(max-width: 767px) 287px, (min-width: 768px) 294px, (min-width: 1280px) 315px"
+        sizes={imageSizes}
         width={287}
         height={178}
-        className={css.image}
+        className={imageClass}
       />
       <div className={css.details}>
         <div className={css.header}>
