@@ -8,8 +8,11 @@ interface Props {
 }
 
 export default function NoticesList({ notices, variant }: Props) {
+  const listClass =
+    variant === "notices" ? css.list : `${css.list} ${css.profileList}`;
+
   return (
-    <ul className={css.list}>
+    <ul className={listClass}>
       {notices.map((notice) => (
         <NoticesItem notice={notice} key={notice._id} variant={variant} />
       ))}

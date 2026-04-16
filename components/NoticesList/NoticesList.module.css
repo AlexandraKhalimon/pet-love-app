@@ -25,4 +25,8 @@
   .list {
     gap: 40px 32px;
   }
+
+  .profileList {
+    gap: 24px;
+  }
 }
