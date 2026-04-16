@@ -15,5 +15,6 @@
   .section {
     flex-direction: row;
     gap: 32px;
+    justify-content: flex-start;
   }
 }
