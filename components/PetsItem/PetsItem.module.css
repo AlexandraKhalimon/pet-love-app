@@ -85,6 +85,11 @@
     font-size: 11px;
   }
 
+  .list {
+    gap: 9px;
+    width: 130px;
+  }
+
   .label {
     font-size: 9px;
   }
@@ -135,7 +140,7 @@
 
   .list {
     flex-wrap: nowrap;
-    gap: 24px;
+    gap: 18px;
     width: 243px;
   }
 
