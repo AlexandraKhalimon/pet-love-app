@@ -33,6 +33,7 @@ export default function NoticesItem({ notice, variant }: Props) {
     ? "(max-width: 767px) 287px, (min-width: 768px) 294px, (min-width: 1280px) 315px"
     : "(max-width: 767px) 287px, (min-width: 768px) 314px, (min-width: 1280px) 292px";
   const imageClass = isNotices ? css.image : `${css.image} ${css.profileImage}`;
+  const listClass = isNotices ? css.list : `${css.list} ${css.profileList}`;
 
   return (
     <li className={cardClass}>
@@ -54,7 +55,7 @@ export default function NoticesItem({ notice, variant }: Props) {
             {notice.popularity}
           </p>
         </div>
-        <ul className={css.list}>
+        <ul className={listClass}>
           <li className={css.item}>
             <p className={css.label}>Name</p>
             <p className={css.value}>{notice.name}</p>

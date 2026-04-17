@@ -251,6 +251,10 @@
     gap: 19px;
   }
 
+  .profileList {
+    gap: 16px;
+  }
+
   .moreBtn {
     width: 257px;
   }
