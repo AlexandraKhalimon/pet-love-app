@@ -26,6 +26,21 @@
   color: #fff;
 }
 
+.message {
+  margin: 80px auto 0;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: var(--foreground);
+}
+
+.message > span {
+  font-weight: 700;
+  color: #f6b83d;
+}
+
 @media (min-width: 768px) {
   .tabsPanel {
     gap: 8px;
@@ -44,11 +59,22 @@
     font-size: 16px;
     line-height: 125%;
   }
+
+  .message {
+    margin: 180px auto 0;
+    font-size: 16px;
+    line-height: 125%;
+    width: 458px;
+  }
 }
 
 @media (min-width: 1280px) {
   .tabsPanel {
     gap: 8px;
     margin: 40px 0 32px;
+  }
+
+  .message {
+    margin-left: 103px;
   }
 }
