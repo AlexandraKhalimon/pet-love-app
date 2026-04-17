@@ -29,12 +29,27 @@ export default function MyNotices({ favoriteNotices, viewedNotices }: Props) {
           Viewed
         </button>
       </div>
-      {activeTab === "favorites" && (
-        <NoticesList notices={favoriteNotices} variant="favorites" />
-      )}
-      {activeTab === "viewed" && (
-        <NoticesList notices={viewedNotices} variant="viewed" />
-      )}
+
+      {activeTab === "favorites" &&
+        (favoriteNotices.length < 1 ? (
+          <p className={css.message}>
+            Oops, <span>looks like there aren&apos;t any furries</span> on our
+            adorable page yet. Do not worry! View your pets on the &quot;find
+            your favorite pet&quot; page and add them to your favorites.
+          </p>
+        ) : (
+          <NoticesList notices={favoriteNotices} variant="favorites" />
+        ))}
+      {activeTab === "viewed" &&
+        (viewedNotices.length < 1 ? (
+          <p className={css.message}>
+            Oops, <span>looks like there aren&apos;t any furries</span> on our
+            adorable page yet. Do not worry! View your pets on the &quot;find
+            your favorite pet&quot; page.
+          </p>
+        ) : (
+          <NoticesList notices={viewedNotices} variant="viewed" />
+        ))}
     </section>
   );
 }
