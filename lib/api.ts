@@ -7,6 +7,9 @@ import axios from "axios";
 
 axios.defaults.baseURL = "https://petlove.b.goit.study/api";
 
+// NEWS API
+// ===============================
+
 interface FetchNewsResponse {
   page: number;
   perPage: number;
@@ -35,10 +38,16 @@ export const fetchNews = async ({
   return response.data;
 };
 
+// FRIENDS API
+// ===============================
+
 export const fetchFriends = async (): Promise<Friend[]> => {
   const response = await axios.get<Friend[]>("/friends/");
   return response.data;
 };
+
+// NOTICES API
+// ===============================
 
 interface FetchNoticesResponse {
   page: number;
@@ -104,6 +113,9 @@ export const fetchNoticeSpecies = async (): Promise<Species[]> => {
   return response.data;
 };
 
+// CITIES AND LOCATIONS API
+// ===============================
+
 interface FetchCitiesParams {
   keyword: string;
 }
@@ -123,6 +135,9 @@ export const fetchLocations = async (): Promise<City[]> => {
   const response = await axios.get<City[]>("/cities/locations");
   return response.data;
 };
+
+// USER AND PET API
+// ===============================
 
 export const fetchUserInfo = async (): Promise<User> => {
   const response = await axios.get<User>("/users/current");
