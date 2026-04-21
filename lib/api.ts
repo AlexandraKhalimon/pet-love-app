@@ -2,7 +2,13 @@ import { City } from "@/types/city";
 import { Friend } from "@/types/friend";
 import type { News } from "@/types/news";
 import { Category, Notice, Sex, Species } from "@/types/notice";
-import { FullUser, User, UserEdit } from "@/types/user";
+import {
+  FullUser,
+  LoginUser,
+  RegisterUser,
+  User,
+  UserEdit,
+} from "@/types/user";
 import axios from "axios";
 
 axios.defaults.baseURL = "https://petlove.b.goit.study/api";
@@ -134,6 +140,19 @@ export const fetchCities = async ({
 export const fetchLocations = async (): Promise<City[]> => {
   const response = await axios.get<City[]>("/cities/locations");
   return response.data;
+};
+
+// AUTH API
+// ===============================
+
+export const registerUser = async (user: RegisterUser): Promise<User> => {
+  const { data } = await axios.post<User>("/users/signup", user);
+  return data;
+};
+
+export const loginUser = async (user: LoginUser): Promise<FullUser> => {
+  const { data } = await axios.post<FullUser>("/users/signin", user);
+  return data;
 };
 
 // USER AND PET API
