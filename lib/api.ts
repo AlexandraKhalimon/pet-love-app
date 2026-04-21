@@ -3,6 +3,7 @@ import { Friend } from "@/types/friend";
 import type { News } from "@/types/news";
 import { Category, Notice, Sex, Species } from "@/types/notice";
 import {
+  AddPet,
   FullUser,
   LoginUser,
   RegisterUser,
@@ -245,4 +246,16 @@ export const fetchUserFullInfo = async (): Promise<FullUser> => {
 export const editUserInfo = async (data: UserEdit): Promise<FullUser> => {
   const response = await axios.patch<FullUser>("/users/current/edit", data);
   return response.data;
+};
+
+export const addPet = async (pet: AddPet): Promise<FullUser> => {
+  const { data } = await axios.post<FullUser>("/users/current/pets/add", pet);
+  return data;
+};
+
+export const removePet = async (petId: string): Promise<FullUser> => {
+  const { data } = await axios.delete<FullUser>(
+    `/users/current/pets/remove/${petId}`,
+  );
+  return data;
 };

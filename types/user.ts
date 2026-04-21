@@ -46,3 +46,12 @@ export type UserEdit = {
   phone?: string;
   avatar?: string;
 };
+
+export type AddPet = {
+  name: string;
+  title: string;
+  imgURL: string;
+  species: Species;
+  birthday: string;
+  sex: Sex;
+};
