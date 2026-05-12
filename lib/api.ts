@@ -156,6 +156,11 @@ export const loginUser = async (user: LoginUser): Promise<FullUser> => {
   return data;
 };
 
+export const logoutUser = async (): Promise<{ message: string }> => {
+  const { data } = await axios.post("/users/signout");
+  return data;
+};
+
 // USER AND PET API
 // ===============================
 
