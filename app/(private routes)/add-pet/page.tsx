@@ -1,5 +1,6 @@
 import css from "./page.module.css";
 import PetBlock from "@/components/PetBlock/PetBlock";
+import AddPetForm from "@/components/AddPetForm/AddPetForm";
 
 export default function AddPetPage() {
   return (
@@ -11,6 +12,7 @@ export default function AddPetPage() {
         alt="Dog with glasses"
         className={css.image}
       />
+      <AddPetForm />
     </section>
   );
 }
