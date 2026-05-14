@@ -26,3 +26,94 @@
   line-height: 129%;
   color: rgba(43, 43, 42, 0.4);
 }
+
+.genderBar {
+  border: none;
+  padding: 0;
+  margin-bottom: 8px;
+  display: flex;
+  gap: 8px;
+}
+
+.genderBar > legend {
+  display: none;
+}
+
+.radio {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 30px;
+  padding: 6px;
+  width: 32px;
+  height: 32px;
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.radio svg {
+  transition:
+    stroke 0.3s ease,
+    fill 0.3s ease;
+}
+
+.radio > input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.radio:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.femaleRadio {
+  background-color: rgba(244, 63, 94, 0.1);
+}
+
+.femaleIcon {
+  fill: none;
+  stroke: #f43f5e;
+}
+
+.femaleRadio:has(input:checked) {
+  background-color: #f43f5e;
+}
+
+.femaleRadio:has(input:checked) .femaleIcon {
+  stroke: #fff;
+}
+
+.maleRadio {
+  background-color: rgba(84, 173, 255, 0.1);
+}
+
+.maleIcon {
+  fill: none;
+  stroke: #54adff;
+}
+
+.maleRadio:has(input:checked) {
+  background-color: #54adff;
+}
+
+.maleRadio:has(input:checked) .maleIcon {
+  stroke: #fff;
+}
+
+.multipleRadio {
+  background-color: #fff4df;
+}
+
+.multipleIcon {
+  fill: #f6b83d;
+}
+
+.multipleRadio:has(input:checked) {
+  background-color: #f6b83d;
+}
+
+.multipleRadio:has(input:checked) .multipleIcon {
+  fill: #fff;
+}

@@ -27,19 +27,19 @@ export default function AddPetForm() {
       <form onSubmit={handleSubmit(onSubmit)}>
         <fieldset className={css.genderBar}>
           <legend>Pet sex</legend>
-          <label className={css.radio}>
+          <label className={`${css.radio} ${css.femaleRadio}`}>
             <input {...register("sex")} type="radio" value="female" />
             <svg className={css.femaleIcon} width={20} height={20}>
               <use href="/icons.svg#icon-female"></use>
             </svg>
           </label>
-          <label className={css.radio}>
+          <label className={`${css.radio} ${css.maleRadio}`}>
             <input {...register("sex")} type="radio" value="male" />
             <svg className={css.maleIcon} width={20} height={20}>
               <use href="/icons.svg#icon-male"></use>
             </svg>
           </label>
-          <label className={css.radio}>
+          <label className={`${css.radio} ${css.multipleRadio}`}>
             <input {...register("sex")} type="radio" value="multiple" />
             <svg className={css.multipleIcon} width={20} height={20}>
               <use href="/icons.svg#icon-multiple"></use>
