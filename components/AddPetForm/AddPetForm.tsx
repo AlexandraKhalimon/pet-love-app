@@ -29,20 +29,20 @@ export default function AddPetForm() {
           <legend>Pet sex</legend>
           <label className={css.radio}>
             <input {...register("sex")} type="radio" value="female" />
-            <svg className={css.genderIcon} width={32} height={32}>
+            <svg className={css.femaleIcon} width={20} height={20}>
               <use href="/icons.svg#icon-female"></use>
             </svg>
           </label>
           <label className={css.radio}>
             <input {...register("sex")} type="radio" value="male" />
-            <svg className={css.genderIcon} width={32} height={32}>
+            <svg className={css.maleIcon} width={20} height={20}>
               <use href="/icons.svg#icon-male"></use>
             </svg>
           </label>
           <label className={css.radio}>
             <input {...register("sex")} type="radio" value="multiple" />
-            <svg className={css.genderIcon} width={32} height={32}>
-              <use href="/icons.svg#icon-both-sexes"></use>
+            <svg className={css.multipleIcon} width={20} height={20}>
+              <use href="/icons.svg#icon-multiple"></use>
             </svg>
           </label>
         </fieldset>
