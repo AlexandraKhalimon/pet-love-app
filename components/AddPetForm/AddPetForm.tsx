@@ -46,6 +46,11 @@ export default function AddPetForm() {
             </svg>
           </label>
         </fieldset>
+        <div className={css.defaultImage}>
+          <svg className={css.icon} width={34} height={34}>
+            <use href="/icons.svg#icon-cat-footprint"></use>
+          </svg>
+        </div>
         <div className={css.formInputs}>
           <label className={css.label}>
             <input

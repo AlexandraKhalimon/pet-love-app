@@ -117,3 +117,17 @@
 .multipleRadio:has(input:checked) .multipleIcon {
   fill: #fff;
 }
+
+.defaultImage {
+  width: 68px;
+  height: 68px;
+  padding: 17px;
+  border-radius: 100px;
+  background-color: #fff4df;
+  margin: 0 auto;
+  margin-bottom: 16px;
+}
+
+.defaultImage > .icon {
+  fill: #f6b83d;
+}
