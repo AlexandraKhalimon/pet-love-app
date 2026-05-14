@@ -1,0 +1,28 @@
+.section {
+  padding: 28px 20px 20px;
+  width: 335px;
+  border-radius: 30px;
+  background-color: #fff;
+}
+
+.titleContainer {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+
+.header {
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 100%;
+  letter-spacing: -0.03em;
+  color: var(--foreground);
+}
+
+.subtitle {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 129%;
+  color: rgba(43, 43, 42, 0.4);
+}
