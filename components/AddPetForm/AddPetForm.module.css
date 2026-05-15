@@ -131,3 +131,34 @@
 .defaultImage > .icon {
   fill: #f6b83d;
 }
+
+.formInputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 31px;
+}
+
+.formInputs .input {
+  width: 295px;
+  height: 42px;
+  padding: 12px;
+  border: 1px solid rgba(38, 38, 38, 0.15);
+  border-radius: 30px;
+  outline: transparent;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.03em;
+  color: var(--foreground);
+}
+
+.formInputs .input::placeholder {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.03em;
+  color: rgba(38, 38, 38, 0.5);
+}
