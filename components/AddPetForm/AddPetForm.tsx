@@ -77,7 +77,9 @@ export default function AddPetForm() {
             />
           </label>
         </div>
-        <button type="button">Back</button>
+        <button type="button" className={css.backBtn}>
+          Back
+        </button>
       </form>
     </section>
   );

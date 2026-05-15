@@ -162,3 +162,22 @@
   letter-spacing: -0.03em;
   color: rgba(38, 38, 38, 0.5);
 }
+
+.backBtn {
+  width: 100px;
+  height: 42px;
+  padding: 12px;
+  border-radius: 30px;
+  background-color: rgba(38, 38, 38, 0.05);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.03em;
+  color: var(--foreground);
+  display: block;
+  margin: 0 auto;
+}
+
+.backBtn:hover {
+  background-color: rgba(38, 38, 38, 0.15);
+}
