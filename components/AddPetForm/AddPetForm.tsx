@@ -1,8 +1,9 @@
 "use client";
 
 import css from "./AddPetForm.module.css";
-import { useForm } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
 import { Sex, Species } from "@/types/notice";
+import Select from "react-select";
 
 interface AddPetFormValues {
   sex: Sex;
@@ -10,11 +11,35 @@ interface AddPetFormValues {
   title: string;
   name: string;
   birthday: string;
-  species: Species;
+  species: { value: Species; label: string };
 }
 
+const species: Species[] = [
+  "dog",
+  "cat",
+  "monkey",
+  "bird",
+  "snake",
+  "turtle",
+  "lizard",
+  "frog",
+  "fish",
+  "ants",
+  "bees",
+  "butterfly",
+  "spider",
+  "scorpion",
+];
+
+const speciesOptions = species.map((option) => {
+  return {
+    value: option,
+    label: option.charAt(0).toUpperCase() + option.slice(1),
+  };
+});
+
 export default function AddPetForm() {
-  const { register, handleSubmit } = useForm<AddPetFormValues>();
+  const { register, handleSubmit, control } = useForm<AddPetFormValues>();
 
   const onSubmit = (data: AddPetFormValues) => console.log(data);
 
@@ -76,6 +101,32 @@ export default function AddPetForm() {
               placeholder="Pet’s Name"
             />
           </label>
+          <div>
+            <label className={css.label}>
+              <Controller
+                name="species"
+                control={control}
+                render={({ field }) => {
+                  return (
+                    <Select
+                      {...field}
+                      options={speciesOptions}
+                      placeholder="Type of pet"
+                      unstyled
+                      isSearchable={false}
+                      classNames={{
+                        control: ({ menuIsOpen }) =>
+                          `${css.selectControl} ${menuIsOpen ? css.dropDownArrow : ""}`,
+                        menu: () => css.selectMenu,
+                        menuList: () => css.selectMenuList,
+                        option: () => css.selectOption,
+                      }}
+                    />
+                  );
+                }}
+              />{" "}
+            </label>
+          </div>
         </div>
         <button type="button" className={css.backBtn}>
           Back
