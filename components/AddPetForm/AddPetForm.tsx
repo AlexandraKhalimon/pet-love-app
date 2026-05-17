@@ -4,6 +4,9 @@ import css from "./AddPetForm.module.css";
 import { useForm, Controller } from "react-hook-form";
 import { Sex, Species } from "@/types/notice";
 import Select from "react-select";
+import DatePicker from "react-datepicker";
+// @ts-expect-error side-effect CSS import from node_modules is not recognized by TS
+import "react-datepicker/dist/react-datepicker.css";
 
 interface AddPetFormValues {
   sex: Sex;
@@ -102,6 +105,23 @@ export default function AddPetForm() {
             />
           </label>
           <div>
+            <label className={css.label}>
+              <Controller
+                name="birthday"
+                control={control}
+                render={({ field: { onChange, value } }) => {
+                  return (
+                    <DatePicker
+                      selected={value ? new Date(value) : null}
+                      onChange={(date: Date | null) => onChange(date)}
+                      placeholderText="00.00.0000"
+                      dateFormat="dd.MM.yyyy"
+                      className={css.selectControl}
+                    />
+                  );
+                }}
+              />
+            </label>
             <label className={css.label}>
               <Controller
                 name="species"
