@@ -104,7 +104,7 @@ export default function AddPetForm() {
               placeholder="Pet’s Name"
             />
           </label>
-          <div>
+          <div className={css.selectWrapper}>
             <label className={css.label}>
               <Controller
                 name="birthday"
@@ -137,6 +137,7 @@ export default function AddPetForm() {
                       classNames={{
                         control: ({ menuIsOpen }) =>
                           `${css.selectControl} ${menuIsOpen ? css.dropDownArrow : ""}`,
+                        placeholder: () => css.selectPlaceholder,
                         menu: () => css.selectMenu,
                         menuList: () => css.selectMenuList,
                         option: () => css.selectOption,

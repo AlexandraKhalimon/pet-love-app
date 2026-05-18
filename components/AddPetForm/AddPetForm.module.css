@@ -163,6 +163,67 @@
   color: rgba(38, 38, 38, 0.5);
 }
 
+.selectWrapper {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+.selectControl {
+  width: 143px;
+  padding: 12px;
+  border: 1px solid rgba(38, 38, 38, 0.15);
+  border-radius: 30px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.03em;
+  color: var(--foreground);
+  outline: transparent;
+}
+
+.selectControl svg {
+  transition: transform 0.3s ease;
+}
+
+.dropDownArrow svg {
+  transform: rotate(180deg);
+}
+
+.selectPlaceholder {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.03em;
+  color: rgba(38, 38, 38, 0.5);
+}
+
+.selectMenu {
+  margin-top: 4px;
+  width: 143px;
+  height: 78px;
+  border: 1px solid rgba(38, 38, 38, 0.15);
+  border-radius: 15px;
+  background-color: #fff;
+  overflow: auto;
+}
+
+.selectMenuList {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.selectOption {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.03em;
+  color: rgba(38, 38, 38, 0.6);
+}
+
 .backBtn {
   width: 100px;
   height: 42px;
