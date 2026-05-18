@@ -117,6 +117,7 @@ export default function AddPetForm() {
                       placeholderText="00.00.0000"
                       dateFormat="dd.MM.yyyy"
                       className={css.selectControl}
+                      popperClassName={css.customPopper}
                     />
                   );
                 }}

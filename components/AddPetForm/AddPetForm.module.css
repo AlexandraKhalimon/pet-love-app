@@ -170,6 +170,89 @@
   justify-content: center;
 }
 
+/*  */
+/* DatePicker Calendar styles and notes*/
+
+/*Calendar window*/
+.customPopper :global(.react-datepicker) {
+  font-family: inherit;
+  font-size: 10px;
+  border: 1px solid rgba(38, 38, 38, 0.15);
+  border-radius: 20px;
+  background-color: #fff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+/* Calendar header*/
+.customPopper :global(.react-datepicker__header) {
+  background-color: #fbe7c1;
+  border-bottom: 1px solid rgba(109, 108, 108, 0.15);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+/* Calendar header arrows navigation*/
+.customPopper :global(.react-datepicker__navigation) {
+  align-items: center;
+  justify-content: center;
+  top: 8px;
+}
+
+/* Calendar header arrows style*/
+.customPopper :global(.react-datepicker__navigation-icon::before) {
+  border-color: rgba(38, 38, 38, 0.6);
+}
+
+/* Calendar header arrows hover style*/
+.customPopper
+  :global(
+    .react-datepicker__navigation:hover
+      .react-datepicker__navigation-icon::before
+  ) {
+  border-color: #262626;
+}
+
+/* Calendar days panel*/
+.customPopper :global(.react-datepicker__day-names) {
+  background-color: #fff4df;
+  border-bottom: 1px solid rgba(38, 38, 38, 0.1);
+  margin-bottom: 0;
+}
+
+/* Calendar days font*/
+.customPopper :global(.react-datepicker__day-name) {
+  color: rgba(38, 38, 38, 0.6);
+}
+
+/* Calendar outside-month days*/
+.customPopper :global(.react-datepicker__day--outside-month) {
+  color: rgba(38, 38, 38, 0.3);
+}
+
+/* Calendar selected day*/
+.customPopper :global(.react-datepicker__day--selected) {
+  background-color: #f6b83d !important;
+  color: #000;
+  border-radius: 50% !important;
+}
+
+/* Calendar hover day*/
+.customPopper :global(.react-datepicker__day:hover) {
+  border-radius: 50% !important;
+  background-color: #fbe7c1 !important;
+}
+
+/* Calendar keyboard-selected day*/
+.customPopper :global(.react-datepicker__day--keyboard-selected) {
+  background-color: #f6b83d;
+  border-radius: 50%;
+  color: #000;
+}
+
+/*  */
+/* Pet types select list styles */
+
 .selectControl {
   width: 143px;
   padding: 12px;
