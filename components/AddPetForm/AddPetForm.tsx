@@ -1,12 +1,13 @@
 "use client";
 
 import css from "./AddPetForm.module.css";
-import { useForm, Controller } from "react-hook-form";
+import { useForm, Controller, useWatch } from "react-hook-form";
 import { Sex, Species } from "@/types/notice";
 import Select from "react-select";
 import DatePicker from "react-datepicker";
 // @ts-expect-error side-effect CSS import from node_modules is not recognized by TS
 import "react-datepicker/dist/react-datepicker.css";
+import Image from "next/image";
 
 interface AddPetFormValues {
   sex: Sex;
@@ -44,6 +45,11 @@ const speciesOptions = species.map((option) => {
 export default function AddPetForm() {
   const { register, handleSubmit, control } = useForm<AddPetFormValues>();
 
+  const petImage = useWatch({
+    control,
+    name: "imgURL",
+  });
+
   const onSubmit = (data: AddPetFormValues) => console.log(data);
 
   return (
@@ -74,11 +80,21 @@ export default function AddPetForm() {
             </svg>
           </label>
         </fieldset>
-        <div className={css.defaultImage}>
-          <svg className={css.icon} width={34} height={34}>
-            <use href="/icons.svg#icon-cat-footprint"></use>
-          </svg>
-        </div>
+        {petImage ? (
+          <Image
+            src={petImage}
+            alt="Pet image"
+            width={68}
+            height={68}
+            className={css.petImage}
+          />
+        ) : (
+          <div className={css.defaultImage}>
+            <svg className={css.icon} width={34} height={34}>
+              <use href="/icons.svg#icon-cat-footprint"></use>
+            </svg>
+          </div>
+        )}
         <div className={css.formInputs}>
           <label className={css.label}>
             <input
