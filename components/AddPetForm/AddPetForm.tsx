@@ -8,13 +8,15 @@ import DatePicker from "react-datepicker";
 // @ts-expect-error side-effect CSS import from node_modules is not recognized by TS
 import "react-datepicker/dist/react-datepicker.css";
 import Image from "next/image";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
 
 interface AddPetFormValues {
   sex: Sex;
   imgURL: string;
   title: string;
   name: string;
-  birthday: string;
+  birthday: Date;
   species: { value: Species; label: string };
 }
 
@@ -42,13 +44,44 @@ const speciesOptions = species.map((option) => {
   };
 });
 
+const addPetSchema = yup.object({
+  sex: yup
+    .mixed<Sex>()
+    .oneOf(["female", "male", "multiple"])
+    .required("Choose pet gender"),
+  imgURL: yup
+    .string()
+    .matches(/^https?:\/\/.*\.(?:png|jpg|jpeg|gif|bmp|webp)$/)
+    .required("Enter a valid image"),
+  title: yup.string().required("Enter a valid title"),
+  name: yup.string().required("Enter the pet name"),
+  birthday: yup.date().required("Choose pet birthdate"),
+  species: yup
+    .object({
+      value: yup.mixed<Species>().oneOf(species).required(),
+      label: yup.string().required(),
+    })
+    .required("Choose pet type"),
+});
+
 export default function AddPetForm() {
   const {
     register,
     handleSubmit,
     control,
     formState: { isValid },
-  } = useForm<AddPetFormValues>();
+  } = useForm<AddPetFormValues>({
+    resolver: yupResolver(addPetSchema),
+    mode: "onChange",
+    defaultValues: {
+      sex: undefined,
+      imgURL: "",
+      title: "",
+      name: "",
+      birthday: undefined,
+      species: undefined,
+    },
+  });
 
   const petImage = useWatch({
     control,
@@ -175,12 +208,10 @@ export default function AddPetForm() {
           <button type="button" className={css.backBtn}>
             Back
           </button>
-          {isValid ? (
+          {isValid && (
             <button type="submit" className={css.submitBtn}>
               Submit
             </button>
-          ) : (
-            ""
           )}
         </div>
       </form>
