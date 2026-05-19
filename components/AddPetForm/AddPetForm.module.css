@@ -118,6 +118,12 @@
   fill: #fff;
 }
 
+.petImage {
+  border-radius: 100px;
+  margin: 0 auto;
+  margin-bottom: 16px;
+}
+
 .defaultImage {
   width: 68px;
   height: 68px;
