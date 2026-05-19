@@ -43,7 +43,12 @@ const speciesOptions = species.map((option) => {
 });
 
 export default function AddPetForm() {
-  const { register, handleSubmit, control } = useForm<AddPetFormValues>();
+  const {
+    register,
+    handleSubmit,
+    control,
+    formState: { isValid },
+  } = useForm<AddPetFormValues>();
 
   const petImage = useWatch({
     control,
@@ -166,9 +171,18 @@ export default function AddPetForm() {
             </label>
           </div>
         </div>
-        <button type="button" className={css.backBtn}>
-          Back
-        </button>
+        <div className={css.btnWrapper}>
+          <button type="button" className={css.backBtn}>
+            Back
+          </button>
+          {isValid ? (
+            <button type="submit" className={css.submitBtn}>
+              Submit
+            </button>
+          ) : (
+            ""
+          )}
+        </div>
       </form>
     </section>
   );
