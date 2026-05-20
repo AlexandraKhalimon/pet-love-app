@@ -313,6 +313,17 @@
   color: rgba(38, 38, 38, 0.6);
 }
 
+.btnWrapper {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.oneBtnWrapper {
+  justify-content: center;
+}
+
 .backBtn {
   width: 100px;
   height: 42px;
@@ -324,10 +335,25 @@
   line-height: 129%;
   letter-spacing: -0.03em;
   color: var(--foreground);
-  display: block;
-  margin: 0 auto;
 }
 
 .backBtn:hover {
   background-color: rgba(38, 38, 38, 0.15);
+}
+
+.submitBtn {
+  width: 100px;
+  height: 42px;
+  padding: 12px;
+  border-radius: 30px;
+  background-color: #f6b83d;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.03em;
+  color: #fff;
+}
+
+.submitBtn:hover {
+  background-color: #f9b020;
 }

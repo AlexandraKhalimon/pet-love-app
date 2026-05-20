@@ -88,6 +88,8 @@ export default function AddPetForm() {
     name: "imgURL",
   });
 
+  const btnWrapper = `${css.btnWrapper} ${!isValid ? css.oneBtnWrapper : ""}`;
+
   const onSubmit = (data: AddPetFormValues) => console.log(data);
 
   return (
@@ -204,7 +206,7 @@ export default function AddPetForm() {
             </label>
           </div>
         </div>
-        <div className={css.btnWrapper}>
+        <div className={btnWrapper}>
           <button type="button" className={css.backBtn}>
             Back
           </button>
