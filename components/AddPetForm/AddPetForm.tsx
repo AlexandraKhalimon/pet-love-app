@@ -51,10 +51,14 @@ const addPetSchema = yup.object({
     .required("Choose pet gender"),
   imgURL: yup
     .string()
-    .matches(/^https?:\/\/.*\.(?:png|jpg|jpeg|gif|bmp|webp)$/)
+    .trim()
+    .matches(
+      /^https?:\/\/.*\.(?:png|jpg|jpeg|gif|bmp|webp)$/,
+      "Enter a valid image URL(png,jpg,jpeg,gif,bmp,webp)",
+    )
     .required("Enter a valid image"),
-  title: yup.string().required("Enter a valid title"),
-  name: yup.string().required("Enter the pet name"),
+  title: yup.string().trim().required("Enter a valid title"),
+  name: yup.string().trim().required("Enter the pet name"),
   birthday: yup.date().required("Choose pet birthdate"),
   species: yup
     .object({
@@ -69,7 +73,7 @@ export default function AddPetForm() {
     register,
     handleSubmit,
     control,
-    formState: { isValid },
+    formState: { isValid, errors },
   } = useForm<AddPetFormValues>({
     resolver: yupResolver(addPetSchema),
     mode: "onChange",
@@ -126,6 +130,7 @@ export default function AddPetForm() {
               <use href="/icons.svg#icon-multiple"></use>
             </svg>
           </label>
+          <p className={css.error}>{errors.sex?.message}</p>
         </fieldset>
         {petImage ? (
           <Image
@@ -147,25 +152,28 @@ export default function AddPetForm() {
             <input
               {...register("imgURL")}
               type="text"
-              className={inputClassController(values.imgURL, css.input)}
+              className={inputClassController(values.imgURL?.trim(), css.input)}
               placeholder="Enter URL"
             />
+            <p className={css.error}>{errors.imgURL?.message}</p>
           </label>
           <label className={css.label}>
             <input
               {...register("title")}
               type="text"
-              className={inputClassController(values.title, css.input)}
+              className={inputClassController(values.title?.trim(), css.input)}
               placeholder="Title"
             />
+            <p className={css.error}>{errors.title?.message}</p>
           </label>
           <label className={css.label}>
             <input
               {...register("name")}
               type="text"
-              className={inputClassController(values.name, css.input)}
+              className={inputClassController(values.name?.trim(), css.input)}
               placeholder="Pet’s Name"
             />
+            <p className={css.error}>{errors.name?.message}</p>
           </label>
           <div className={css.selectWrapper}>
             <label className={css.label}>
@@ -188,6 +196,7 @@ export default function AddPetForm() {
                   );
                 }}
               />
+              <p className={css.error}>{errors.birthday?.message}</p>
             </label>
             <label className={css.label}>
               <Controller
@@ -216,6 +225,7 @@ export default function AddPetForm() {
                   );
                 }}
               />{" "}
+              <p className={css.error}>{errors.species?.message}</p>
             </label>
           </div>
         </div>
