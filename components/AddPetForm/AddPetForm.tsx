@@ -88,6 +88,13 @@ export default function AddPetForm() {
     name: "imgURL",
   });
 
+  const values = useWatch({
+    control,
+  });
+
+  const inputClassController = (value: unknown, baseClass: string) =>
+    `${baseClass} ${value ? css.active : css.none}`;
+
   const btnWrapper = `${css.btnWrapper} ${!isValid ? css.oneBtnWrapper : ""}`;
 
   const onSubmit = (data: AddPetFormValues) => console.log(data);
@@ -140,7 +147,7 @@ export default function AddPetForm() {
             <input
               {...register("imgURL")}
               type="text"
-              className={css.input}
+              className={inputClassController(values.imgURL, css.input)}
               placeholder="Enter URL"
             />
           </label>
@@ -148,7 +155,7 @@ export default function AddPetForm() {
             <input
               {...register("title")}
               type="text"
-              className={css.input}
+              className={inputClassController(values.title, css.input)}
               placeholder="Title"
             />
           </label>
@@ -156,7 +163,7 @@ export default function AddPetForm() {
             <input
               {...register("name")}
               type="text"
-              className={css.input}
+              className={inputClassController(values.name, css.input)}
               placeholder="Pet’s Name"
             />
           </label>
@@ -172,7 +179,10 @@ export default function AddPetForm() {
                       onChange={(date: Date | null) => onChange(date)}
                       placeholderText="00.00.0000"
                       dateFormat="dd.MM.yyyy"
-                      className={css.selectControl}
+                      className={inputClassController(
+                        values.birthday,
+                        css.selectControl,
+                      )}
                       popperClassName={css.customPopper}
                     />
                   );
@@ -193,7 +203,10 @@ export default function AddPetForm() {
                       isSearchable={false}
                       classNames={{
                         control: ({ menuIsOpen }) =>
-                          `${css.selectControl} ${menuIsOpen ? css.dropDownArrow : ""}`,
+                          `${inputClassController(
+                            values.species,
+                            css.selectControl,
+                          )} ${menuIsOpen ? css.dropDownArrow : ""}`,
                         placeholder: () => css.selectPlaceholder,
                         menu: () => css.selectMenu,
                         menuList: () => css.selectMenuList,

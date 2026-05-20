@@ -151,7 +151,6 @@
   width: 295px;
   height: 42px;
   padding: 12px;
-  border: 1px solid rgba(38, 38, 38, 0.15);
   border-radius: 30px;
   outline: transparent;
   font-weight: 500;
@@ -262,7 +261,6 @@
 .selectControl {
   width: 143px;
   padding: 12px;
-  border: 1px solid rgba(38, 38, 38, 0.15);
   border-radius: 30px;
   font-weight: 500;
   font-size: 14px;
@@ -311,6 +309,14 @@
   line-height: 129%;
   letter-spacing: -0.03em;
   color: rgba(38, 38, 38, 0.6);
+}
+
+.active {
+  border: 1px solid #f6b83d;
+}
+
+.none {
+  border: 1px solid rgba(38, 38, 38, 0.15);
 }
 
 .btnWrapper {
