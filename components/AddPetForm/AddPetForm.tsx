@@ -10,6 +10,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import Image from "next/image";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { useRouter } from "next/navigation";
 
 interface AddPetFormValues {
   sex: Sex;
@@ -101,7 +102,14 @@ export default function AddPetForm() {
 
   const btnWrapper = `${css.btnWrapper} ${!isValid ? css.oneBtnWrapper : ""}`;
 
-  const onSubmit = (data: AddPetFormValues) => console.log(data);
+  const router = useRouter();
+
+  const backRouter = () => router.push("/profile");
+
+  const onSubmit = (data: AddPetFormValues) => {
+    console.log(data);
+    router.push("/profile");
+  };
 
   return (
     <section className={css.section}>
@@ -230,7 +238,7 @@ export default function AddPetForm() {
           </div>
         </div>
         <div className={btnWrapper}>
-          <button type="button" className={css.backBtn}>
+          <button type="button" className={css.backBtn} onClick={backRouter}>
             Back
           </button>
           {isValid && (
