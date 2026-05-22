@@ -107,7 +107,15 @@ export default function AddPetForm() {
   const backRouter = () => router.push("/profile");
 
   const onSubmit = (data: AddPetFormValues) => {
-    console.log(data);
+    const formatedData = {
+      sex: data.sex,
+      imgURL: data.imgURL.trim(),
+      title: data.title.trim(),
+      name: data.name.trim(),
+      birthday: data.birthday.toISOString().split("T")[0],
+      species: data.species.value,
+    };
+    console.log(formatedData);
     router.push("/profile");
   };
 
