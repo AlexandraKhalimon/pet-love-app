@@ -152,6 +152,7 @@ export default function AddPetForm() {
           <Image
             src={petImage}
             alt="Pet image"
+            sizes="(max-width: 767px) 68px, (min-width: 768px) 86px"
             width={68}
             height={68}
             className={css.petImage}
