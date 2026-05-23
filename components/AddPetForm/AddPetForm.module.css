@@ -372,3 +372,46 @@
 .submitBtn:hover {
   background-color: #f9b020;
 }
+
+@media (min-width: 320px) and (max-width: 374px) {
+  .section {
+    width: 100%;
+  }
+
+  .titleContainer {
+    gap: 6px;
+  }
+
+  .header {
+    font-size: 24px;
+  }
+
+  .subtitle {
+    font-size: 12px;
+  }
+
+  .label {
+    width: 100%;
+  }
+
+  .formInputs .input {
+    width: 100%;
+  }
+
+  .selectWrapper {
+    gap: 4px;
+  }
+
+  .customPopper :global(.react-datepicker) {
+    font-size: 9px;
+  }
+
+  .selectControl,
+  .selectMenu {
+    width: 100%;
+  }
+
+  .selectPlaceholder {
+    font-size: 12px;
+  }
+}
