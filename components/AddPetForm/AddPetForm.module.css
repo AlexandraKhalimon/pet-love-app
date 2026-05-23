@@ -550,3 +550,28 @@
     line-height: 125%;
   }
 }
+
+@media (min-width: 1280px) {
+  .section {
+    padding: 60px 80px;
+    width: 592px;
+    max-height: 654px;
+  }
+
+  .genderBar {
+    margin-bottom: 82px;
+  }
+
+  .petImage,
+  .defaultImage {
+    top: 156px;
+  }
+
+  .formInputs {
+    margin-bottom: 40px;
+  }
+
+  .selectMenu {
+    height: 126px;
+  }
+}

@@ -13,3 +13,10 @@
     gap: 16px;
   }
 }
+
+@media (min-width: 1280px) {
+  .section {
+    flex-direction: row;
+    gap: 32px;
+  }
+}
