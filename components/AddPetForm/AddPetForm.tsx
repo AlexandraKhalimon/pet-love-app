@@ -112,7 +112,7 @@ export default function AddPetForm() {
       imgURL: data.imgURL.trim(),
       title: data.title.trim(),
       name: data.name.trim(),
-      birthday: data.birthday.toISOString().split("T")[0],
+      birthday: data.birthday.toLocaleDateString("en-CA"),
       species: data.species.value,
     };
     console.log(formatedData);
