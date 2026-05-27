@@ -11,6 +11,7 @@ export default function NotFound() {
           <Image
             src="/images/error-cat.png"
             alt="Cat image"
+            sizes="(max-width: 767px) 109px, (min-width: 768px) 280px"
             width={109}
             height={109}
             priority
