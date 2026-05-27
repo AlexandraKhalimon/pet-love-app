@@ -1,3 +1,5 @@
+/* page.tsx */
+
 .main {
   position: relative;
   max-width: 100%;
@@ -13,6 +15,68 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+/* not-found.tsx */
+
+.errorPage {
+  padding: 0 20px 20px;
+}
+
+.notFound {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 335px;
+  height: 712px;
+  border-radius: 30px;
+  background-color: #f6b83d;
+}
+
+.errorContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.errorNumber {
+  font-weight: 800;
+  font-size: 120px;
+  line-height: 100%;
+  color: #fff;
+}
+
+.errorMessage {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 125%;
+  letter-spacing: -0.03em;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.errorLink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 42px;
+  border-radius: 30px;
+  background-color: #fff4df;
+  text-align: center;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.03em;
+  color: #f6b83d;
+  transition: background-color 0.3s ease;
+}
+
+.errorLink:hover {
+  background-color: #fbe7c1;
 }
 
 @media (min-width: 320px) and (max-width: 374px) {
