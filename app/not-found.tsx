@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function NotFound() {
   return (
     <div className={css.errorPage}>
-      <div className={css.notFound}>
+      <div className={css.error}>
         <div className={css.errorContainer}>
           <p className={css.errorNumber}>4</p>
           <Image

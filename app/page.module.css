@@ -26,23 +26,11 @@
   align-items: center;
 }
 
-.notFound {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 335px;
-  height: 712px;
-  border-radius: 30px;
-  background-color: #f6b83d;
-}
-
 .errorContainer {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 8px;
-  margin-bottom: 20px;
 }
 
 .errorNumber {
@@ -53,12 +41,13 @@
 }
 
 .errorMessage {
+  margin: 20px 0;
+  text-align: center;
   font-weight: 700;
   font-size: 16px;
   line-height: 125%;
   letter-spacing: -0.03em;
   color: #fff;
-  margin-bottom: 20px;
 }
 
 .errorLink {
@@ -124,8 +113,18 @@
 
 @media (min-width: 320px) and (max-width: 374px) {
   .image,
-  .notFound {
+  .error,
+  .btnContainer {
     width: 100%;
+  }
+
+  .btnContainer {
+    gap: 2px;
+  }
+
+  .errorLink,
+  .resetBtn {
+    width: 136px;
   }
 }
 
@@ -148,7 +147,7 @@
     padding: 0 32px 32px;
   }
 
-  .notFound {
+  .error {
     width: 704px;
     height: 878px;
     border-radius: 60px;
@@ -156,7 +155,6 @@
 
   .errorContainer {
     gap: 0px;
-    margin-bottom: 40px;
   }
 
   .errorNumber {
@@ -169,11 +167,19 @@
   }
 
   .errorMessage {
+    margin: 40px 0 20px;
     font-size: 24px;
     line-height: 117%;
   }
 
   .errorLink {
+    width: 162px;
+    height: 48px;
+    font-size: 16px;
+    line-height: 125%;
+  }
+
+  .resetBtn {
     width: 162px;
     height: 48px;
     font-size: 16px;
@@ -191,7 +197,7 @@
     height: 800px;
   }
 
-  .notFound {
+  .error {
     width: 1216px;
     height: 654px;
   }
