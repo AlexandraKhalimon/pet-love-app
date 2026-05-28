@@ -2,12 +2,14 @@
 
 import css from "./page.module.css";
 import Image from "next/image";
+import Link from "next/link";
 
 type Props = {
   error: Error;
+  reset: () => void;
 };
 
-export default function Error({ error }: Props) {
+export default function Error({ error, reset }: Props) {
   return (
     <div className={css.errorPage}>
       <div className={css.error}>
@@ -20,7 +22,15 @@ export default function Error({ error }: Props) {
           priority
           className={css.errorCat}
         />
-        <p className={css.errorMessage}>Sorry!{error.message}</p>
+        <p className={css.errorMessage}>Sorry, {error.message}</p>
+        <div className={css.btnContainer}>
+          <button type="button" onClick={reset} className={css.resetBtn}>
+            Try again
+          </button>
+          <Link href="/home" className={css.errorLink}>
+            To home page
+          </Link>
+        </div>
       </div>
     </div>
   );

@@ -94,6 +94,34 @@
   background-color: #f6b83d;
 }
 
+.btnContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.resetBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 42px;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background-color: transparent;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.03em;
+  color: #fff;
+}
+
+.resetBtn:hover {
+  background-color: #fff4df;
+  color: #f6b83d;
+}
+
 @media (min-width: 320px) and (max-width: 374px) {
   .image,
   .notFound {
