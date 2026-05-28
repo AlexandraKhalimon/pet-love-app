@@ -81,6 +81,19 @@
   background-color: #fbe7c1;
 }
 
+/* error.tsx */
+
+.error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 335px;
+  height: 712px;
+  border-radius: 30px;
+  background-color: #f6b83d;
+}
+
 @media (min-width: 320px) and (max-width: 374px) {
   .image,
   .notFound {
