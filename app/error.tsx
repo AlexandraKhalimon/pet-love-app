@@ -10,6 +10,15 @@ type Props = {
 };
 
 export default function Error({ error, reset }: Props) {
+  const errorMessage = error?.message?.toLowerCase() || "";
+
+  const serverProblem =
+    errorMessage.includes("server components") || !errorMessage;
+
+  const finalMessage = serverProblem
+    ? "an unknown error occured on our side!"
+    : errorMessage;
+
   return (
     <div className={css.errorPage}>
       <div className={css.error}>
@@ -22,7 +31,7 @@ export default function Error({ error, reset }: Props) {
           priority
           className={css.errorCat}
         />
-        <p className={css.errorMessage}>Sorry, {error.message}</p>
+        <p className={css.errorMessage}>Sorry, {finalMessage}</p>
         <div className={css.btnContainer}>
           <button type="button" onClick={reset} className={css.resetBtn}>
             Try again
