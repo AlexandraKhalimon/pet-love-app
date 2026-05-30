@@ -9,7 +9,7 @@ export default function NotFound() {
         <div className={css.errorContainer}>
           <p className={css.errorNumber}>4</p>
           <Image
-            src="/images/error-cat.png"
+            src="/images/errors-cat.png"
             alt="Cat image"
             sizes="(max-width: 767px) 109px, (min-width: 768px) 280px"
             width={109}
