@@ -7,8 +7,6 @@ import {
 import NewsClient from "./News.client";
 
 export default async function NewsPage() {
-  throw new Error();
-
   const queryClient = new QueryClient();
 
   await queryClient.prefetchQuery({
