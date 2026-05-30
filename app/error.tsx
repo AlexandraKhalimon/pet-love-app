@@ -23,7 +23,7 @@ export default function Error({ error, reset }: Props) {
     <div className={css.errorPage}>
       <div className={css.error}>
         <Image
-          src="/images/error-cat.png"
+          src="/images/errors-cat.png"
           alt="Cat image"
           sizes="(max-width: 767px) 109px, (min-width: 768px) 280px"
           width={109}
