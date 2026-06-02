@@ -2,8 +2,12 @@ import Image from "next/image";
 import css from "./page.module.css";
 
 export default function Loader() {
+  const radius = 136;
+  const progress = 70;
+  const circumference = 2 * Math.PI * radius;
+  const offset = circumference - (progress / 100) * circumference;
   return (
-    <div>
+    <div className={css.loaderContainer}>
       <picture>
         <source media="(min-width: 1280px)" srcSet="/images/main-desktop.jpg" />
         <source media="(min-width: 768px)" srcSet="/images/main-tablet.jpg" />
@@ -14,9 +18,33 @@ export default function Loader() {
           height={812}
           sizes="(min-width: 1280px) 1280px, (min-width: 768px) 768px, 100vw"
           priority
-          className={css.image}
+          className={css.loadingImage}
         />
       </picture>
+      <div className={css.loadingOverlay}>
+        <svg
+          width={292}
+          height={292}
+          viewBox="0 0 292 292"
+          className={css.loadingCircle}
+        >
+          <circle
+            cx={146}
+            cy={146}
+            r={radius}
+            className={css.circleBackground}
+          />
+          <circle
+            cx={146}
+            cy={146}
+            r={radius}
+            strokeDasharray={circumference}
+            strokeDashoffset={offset}
+            className={css.circleProgress}
+          />
+        </svg>
+        <p className={css.percent}>{progress}%</p>
+      </div>
     </div>
   );
 }
