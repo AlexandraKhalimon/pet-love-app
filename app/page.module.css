@@ -117,10 +117,13 @@
   position: relative;
 }
 
+.loadingImage {
+  margin: 0 auto;
+}
+
 .loadingOverlay {
   position: absolute;
-  top: 260px;
-  right: 40px;
+  inset: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -158,7 +161,8 @@
 @media (min-width: 320px) and (max-width: 374px) {
   .image,
   .error,
-  .btnContainer {
+  .btnContainer,
+  .loadingImage {
     width: 100%;
   }
 
@@ -229,6 +233,15 @@
     font-size: 16px;
     line-height: 125%;
   }
+
+  .loadingImage {
+    width: 768px;
+    height: 1024px;
+  }
+
+  .percent {
+    font-size: 80px;
+  }
 }
 
 @media (min-width: 1280px) {
@@ -236,7 +249,8 @@
     height: 800px;
   }
 
-  .image {
+  .image,
+  .loadingImage {
     min-width: 1280px;
     height: 800px;
   }
