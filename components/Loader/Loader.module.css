@@ -1,0 +1,73 @@
+.loaderContainer {
+  position: relative;
+}
+
+.loadingImage {
+  margin: 0 auto;
+}
+
+.loadingOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circleBackground {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.1);
+  stroke-width: 2px;
+}
+
+.circleProgress {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 2px;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.1s linear;
+  transform: rotate(-90deg);
+  transform-origin: center;
+}
+
+.percent {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 100%;
+  letter-spacing: -0.04em;
+  color: #fff;
+}
+
+@media (min-width: 320px) and (max-width: 374px) {
+  .loadingImage {
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .loadingImage {
+    width: 768px;
+    height: 1024px;
+  }
+
+  .loadingCircle {
+    width: 427px;
+    height: 427px;
+  }
+
+  .percent {
+    font-size: 80px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .loadingImage {
+    min-width: 1280px;
+    height: 800px;
+  }
+}
