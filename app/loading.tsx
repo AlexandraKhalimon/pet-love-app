@@ -1,11 +1,33 @@
+"use client";
+
 import Image from "next/image";
 import css from "./page.module.css";
+import { useEffect, useState } from "react";
 
 export default function Loader() {
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    let value = 0;
+
+    const percent = setInterval(() => {
+      value += Math.random() * 8;
+
+      if (value >= 90) {
+        value = 90;
+        clearInterval(percent);
+      }
+
+      setProgress(Math.floor(value));
+    }, 120);
+
+    return () => clearInterval(percent);
+  }, []);
+
   const radius = 136;
-  const progress = 70;
   const circumference = 2 * Math.PI * radius;
   const offset = circumference - (progress / 100) * circumference;
+
   return (
     <div className={css.loaderContainer}>
       <picture>
