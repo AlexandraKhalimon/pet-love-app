@@ -15,20 +15,12 @@ export default function NewsClient() {
   const [currentPage, setCurrentPage] = useState(1);
   const [debouncedSearchQuery] = useDebounce(searchQuery, 300);
 
-  const { data, isLoading, error } = useQuery({
+  const { data } = useQuery({
     queryKey: ["news", debouncedSearchQuery, currentPage],
     queryFn: () =>
       fetchNews({ keyword: debouncedSearchQuery, page: currentPage, limit: 6 }),
     placeholderData: keepPreviousData,
   });
-
-  if (isLoading) {
-    return <p>Loading...</p>;
-  }
-
-  if (error) {
-    return <p>Sorry, there is an error</p>;
-  }
 
   if (data) {
     console.log(data);

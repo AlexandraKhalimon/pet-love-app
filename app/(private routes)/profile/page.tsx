@@ -7,18 +7,10 @@ import { useQuery } from "@tanstack/react-query";
 import MyNotices from "@/components/MyNotices/MyNotices";
 
 export default function ProfilePage() {
-  const { data, isLoading, error } = useQuery({
+  const { data } = useQuery({
     queryKey: ["user"],
     queryFn: fetchUserFullInfo,
   });
-
-  if (isLoading) {
-    return <p>Loading...</p>;
-  }
-
-  if (error) {
-    return <p>Sorry, there is an error</p>;
-  }
 
   console.log(data);
 

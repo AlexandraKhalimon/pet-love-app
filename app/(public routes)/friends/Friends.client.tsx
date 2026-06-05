@@ -7,18 +7,10 @@ import { fetchFriends } from "@/lib/api";
 import { useQuery } from "@tanstack/react-query";
 
 export default function FriendsClient() {
-  const { data, isLoading, error } = useQuery({
+  const { data } = useQuery({
     queryKey: ["friends"],
     queryFn: fetchFriends,
   });
-
-  if (isLoading) {
-    return <p>Loading...</p>;
-  }
-
-  if (error) {
-    return <p>Sorry, there is an error</p>;
-  }
 
   return (
     <section className={css.section}>
