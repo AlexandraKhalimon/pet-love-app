@@ -6,10 +6,7 @@ import {
 } from "@tanstack/react-query";
 import NewsClient from "./News.client";
 
-const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
-
 export default async function NewsPage() {
-  await delay(10000);
   const queryClient = new QueryClient();
 
   await queryClient.prefetchQuery({
