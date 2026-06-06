@@ -2,7 +2,7 @@
   border-radius: 15px;
   width: 335px;
   height: 184px;
-  background-color: #fff;
+  background-color: var(--color-white);
   position: relative;
   padding: 40px 25px 40px 20px;
 }
@@ -15,12 +15,12 @@
   padding: 8px;
   width: auto;
   height: 32px;
-  background-color: #fff4df;
+  background-color: var(--color-secondary);
   font-weight: 500;
   font-size: 12px;
   line-height: 133%;
   letter-spacing: -0.02em;
-  color: #f6b83d;
+  color: var(--color-primary);
 }
 
 .information {
@@ -72,7 +72,7 @@
 
 .link:hover,
 .link:active {
-  color: #f6b83d;
+  color: var(--color-primary);
   text-decoration-line: underline;
 }
 
