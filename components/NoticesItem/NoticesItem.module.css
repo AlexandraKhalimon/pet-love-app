@@ -3,7 +3,7 @@
   height: 454px;
   padding: 24px;
   border-radius: 16px;
-  background-color: #fff;
+  background-color: var(--color-white);
   display: flex;
   flex-direction: column;
 }
@@ -114,12 +114,12 @@
   padding: 14px;
   width: 231px;
   height: 46px;
-  background-color: #f6b83d;
+  background-color: var(--color-primary);
   font-weight: 500;
   font-size: 14px;
   line-height: 129%;
   letter-spacing: -0.03em;
-  color: #fff;
+  color: var(--color-white);
 }
 
 .viewedBtn {
@@ -127,17 +127,17 @@
   height: 46px;
   padding: 14px;
   border-radius: 30px;
-  background-color: #f6b83d;
+  background-color: var(--color-primary);
   font-weight: 500;
   font-size: 14px;
   line-height: 129%;
   letter-spacing: -0.03em;
-  color: #fff;
+  color: var(--color-white);
 }
 
 .viewedBtn:hover,
 .moreBtn:hover {
-  background-color: #f9b020;
+  background-color: var(--color-primary-hover);
 }
 
 .iconBtn {
@@ -145,13 +145,13 @@
   padding: 14px;
   width: 46px;
   height: 46px;
-  background-color: #fff4df;
+  background-color: var(--color-secondary);
   fill: transparent;
-  stroke: #f6b83d;
+  stroke: var(--color-primary);
 }
 
 .iconBtn:hover {
-  background-color: #fbe7c1;
+  background-color: var(--color-secondary-hover);
 }
 
 @media (min-width: 320px) and (max-width: 374px) {

@@ -18,12 +18,12 @@
   padding: 8px;
   width: 48px;
   height: 32px;
-  background-color: #fff4df;
+  background-color: var(--color-secondary);
   font-weight: 500;
   font-size: 12px;
   line-height: 133%;
   letter-spacing: -0.02em;
-  color: #f6b83d;
+  color: var(--color-primary);
   text-align: center;
 }
 
@@ -120,13 +120,12 @@
   padding: 12px 31px;
   width: 135px;
   height: 44px;
-  background-color: #f6b83d;
+  background-color: var(--color-primary);
   font-weight: 500;
   font-size: 16px;
   line-height: 125%;
   letter-spacing: -0.03em;
-  color: #fff;
-  transition: background-color 0.3s ease;
+  color: var(--color-white);
 }
 
 .favorite > .icon {
@@ -135,7 +134,7 @@
 }
 
 .favorite:hover {
-  background-color: #f9b020;
+  background-color: var(--color-primary-hover);
 }
 
 .contact {
@@ -143,17 +142,16 @@
   padding: 12px 37px;
   width: 135px;
   height: 44px;
-  background-color: #fff4df;
+  background-color: var(--color-secondary);
   font-weight: 500;
   font-size: 16px;
   line-height: 125%;
   letter-spacing: -0.03em;
-  color: #f6b83d;
-  transition: background-color 0.3s ease;
+  color: var(--color-primary);
 }
 
 .contact:hover {
-  background-color: #fbe7c1;
+  background-color: var(--color-secondary-hover);
 }
 
 @media (min-width: 768px) {

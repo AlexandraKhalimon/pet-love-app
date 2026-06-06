@@ -2,7 +2,7 @@
   width: 335px;
   height: 378px;
   border-radius: 30px;
-  background-color: #fff4df;
+  background-color: var(--color-secondary);
   padding: 20px;
   margin: 40px 0;
 }
@@ -35,7 +35,7 @@
   padding: 12px;
   width: 143px;
   height: 42px;
-  background-color: #fff;
+  background-color: var(--color-white);
   font-weight: 500;
   font-size: 14px;
   line-height: 129%;
@@ -57,7 +57,7 @@
   width: 143px;
   height: auto;
   padding: 12px;
-  background-color: #fff;
+  background-color: var(--color-white);
   text-transform: capitalize;
 }
 
@@ -66,7 +66,7 @@
   padding: 12px;
   width: 295px;
   height: 42px;
-  background-color: #fff;
+  background-color: var(--color-white);
   font-weight: 500;
   font-size: 14px;
   line-height: 129%;
@@ -84,7 +84,7 @@
   width: 295px;
   height: auto;
   padding: 12px;
-  background-color: #fff;
+  background-color: var(--color-white);
   text-transform: capitalize;
 }
 
@@ -107,7 +107,7 @@
   font-size: 14px;
   line-height: 129%;
   letter-spacing: -0.03em;
-  color: #f6b83d;
+  color: var(--color-primary);
 }
 
 .searchIcon {
@@ -155,7 +155,7 @@
   padding: 12px;
   width: auto;
   height: 42px;
-  background-color: #fff;
+  background-color: var(--color-white);
   font-weight: 500;
   font-size: 14px;
   line-height: 129%;
@@ -167,12 +167,12 @@
 }
 
 .radioText:hover {
-  background-color: #f6b83d;
-  color: #fff;
+  background-color: var(--color-primary);
+  color: var(--color-white);
 }
 .radio:checked + .radioText {
-  background-color: #f6b83d;
-  color: #fff;
+  background-color: var(--color-primary);
+  color: var(--color-white);
 }
 
 .cross {
