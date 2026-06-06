@@ -37,7 +37,7 @@
   font-weight: 800;
   font-size: 120px;
   line-height: 100%;
-  color: #fff;
+  color: var(--color-white);
 }
 
 .errorMessage {
@@ -47,7 +47,7 @@
   font-size: 16px;
   line-height: 125%;
   letter-spacing: -0.03em;
-  color: #fff;
+  color: var(--color-white);
 }
 
 .errorLink {
@@ -57,17 +57,16 @@
   width: 150px;
   height: 42px;
   border-radius: 30px;
-  background-color: #fff4df;
+  background-color: var(--color-secondary);
   font-weight: 700;
   font-size: 14px;
   line-height: 129%;
   letter-spacing: -0.03em;
-  color: #f6b83d;
-  transition: background-color 0.3s ease;
+  color: var(--color-primary);
 }
 
 .errorLink:hover {
-  background-color: #fbe7c1;
+  background-color: var(--color-secondary-hover);
 }
 
 /* error.tsx */
@@ -80,7 +79,7 @@
   width: 335px;
   height: 712px;
   border-radius: 30px;
-  background-color: #f6b83d;
+  background-color: var(--color-primary);
 }
 
 .btnContainer {
@@ -103,12 +102,12 @@
   font-size: 14px;
   line-height: 129%;
   letter-spacing: -0.03em;
-  color: #fff;
+  color: var(--color-white);
 }
 
 .resetBtn:hover {
-  background-color: #fff4df;
-  color: #f6b83d;
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
 }
 
 /* loading.tsx */
@@ -137,7 +136,7 @@
 
 .circleProgress {
   fill: none;
-  stroke: #fff;
+  stroke: var(--color-white);
   stroke-width: 2px;
   stroke-linecap: round;
   transition: stroke-dashoffset 0.1s linear;
@@ -155,7 +154,7 @@
   font-size: 50px;
   line-height: 100%;
   letter-spacing: -0.04em;
-  color: #fff;
+  color: var(--color-white);
 }
 
 @media (min-width: 320px) and (max-width: 374px) {
