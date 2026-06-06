@@ -113,6 +113,7 @@ export default function RegistrationForm() {
       <p className={css.question}>
         Already have an account?
         <Link href="/login" className={css.link}>
+          {" "}
           Login
         </Link>
       </p>
