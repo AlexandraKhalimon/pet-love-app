@@ -110,53 +110,6 @@
   color: var(--color-primary);
 }
 
-/* loading.tsx */
-
-.loaderContainer {
-  position: relative;
-}
-
-.loadingImage {
-  margin: 0 auto;
-}
-
-.loadingOverlay {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.circleBackground {
-  fill: none;
-  stroke: rgba(255, 255, 255, 0.1);
-  stroke-width: 2px;
-}
-
-.circleProgress {
-  fill: none;
-  stroke: var(--color-white);
-  stroke-width: 2px;
-  stroke-linecap: round;
-  transition: stroke-dashoffset 0.1s linear;
-  transform: rotate(-90deg);
-  transform-origin: center;
-}
-
-.percent {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: 700;
-  font-size: 50px;
-  line-height: 100%;
-  letter-spacing: -0.04em;
-  color: var(--color-white);
-}
-
 @media (min-width: 320px) and (max-width: 374px) {
   .image,
   .error,

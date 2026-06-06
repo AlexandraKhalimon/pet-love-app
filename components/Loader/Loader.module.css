@@ -22,7 +22,7 @@
 
 .circleProgress {
   fill: none;
-  stroke: #fff;
+  stroke: var(--color-white);
   stroke-width: 2px;
   stroke-linecap: round;
   transition: stroke-dashoffset 0.1s linear;
@@ -40,7 +40,7 @@
   font-size: 50px;
   line-height: 100%;
   letter-spacing: -0.04em;
-  color: #fff;
+  color: var(--color-white);
 }
 
 @media (min-width: 320px) and (max-width: 374px) {
