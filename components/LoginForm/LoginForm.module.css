@@ -38,8 +38,6 @@
   line-height: 129%;
   letter-spacing: -0.03em;
   color: rgba(38, 38, 38, 0.8);
-  outline: none;
-  transition: border-color 250ms ease;
 }
 
 .input::placeholder {
@@ -50,9 +48,8 @@
   color: rgba(38, 38, 38, 0.5);
 }
 
-.input:focus,
 .input:hover {
-  border-color: #f6b83d;
+  border-color: var(--color-primary);
 }
 
 .error {
@@ -72,18 +69,18 @@
   height: 42px;
   border-radius: 30px;
   padding: 12px;
-  background-color: #f6b83d;
+  background-color: var(--color-primary);
   font-weight: 700;
   font-size: 14px;
   line-height: 129%;
   letter-spacing: -0.03em;
   text-transform: uppercase;
-  color: #fff;
+  color: var(--color-white);
   margin-bottom: 12px;
 }
 
 .login:hover {
-  background-color: #f9b020;
+  background-color: var(--color-primary-hover);
 }
 
 .question {
@@ -99,7 +96,7 @@
   font-weight: 700;
   text-decoration: underline;
   text-decoration-skip-ink: none;
-  color: #f6b83d;
+  color: var(--color-primary);
   cursor: pointer;
 }
 
