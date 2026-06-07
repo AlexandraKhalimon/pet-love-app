@@ -62,14 +62,14 @@
 .firstPage:hover,
 .lastPage:hover,
 .pagination > li:hover {
-  background-color: #fff4df;
-  border-color: #fff4df;
-  color: #f6b83d;
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+  color: var(--color-primary);
 }
 
 .pagination a:hover {
-  border-color: #fff4df;
-  color: #f6b83d;
+  border-color: var(--color-secondary);
+  color: var(--color-primary);
 }
 
 .previous,
@@ -79,16 +79,16 @@
 
 .previous:hover,
 .next:hover {
-  border-color: #fff4df !important;
+  border-color: var(--color-secondary) !important;
 }
 
 .active {
-  background-color: #f6b83d;
-  border-color: #f6b83d;
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
 }
 
 .active a {
-  color: #fff !important;
+  color: var(--color-white) !important;
 }
 
 .disabled {
