@@ -3,7 +3,7 @@
   height: 100%;
   padding: 18px 20px 40px;
   border-radius: 30px;
-  background-color: #fff;
+  background-color: var(--color-white);
 }
 
 .header {
@@ -21,12 +21,12 @@
   align-items: center;
   justify-content: center;
   border-radius: 30px;
-  background-color: #f6b83d;
+  background-color: var(--color-primary);
   font-weight: 500;
   font-size: 14px;
   line-height: 129%;
   letter-spacing: -0.02em;
-  color: #fff;
+  color: var(--color-white);
 }
 
 .icon {
@@ -34,12 +34,12 @@
 }
 
 .logout {
-  background-color: #fff4df;
-  color: #f6b83d;
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
 }
 
 .logout:hover {
-  background-color: #fbe7c1;
+  background-color: var(--color-secondary-hover);
 }
 
 @media (min-width: 320px) and (max-width: 374px) {

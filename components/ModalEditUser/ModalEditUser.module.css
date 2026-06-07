@@ -21,13 +21,13 @@
   height: 80px;
   padding: 20px;
   border-radius: 100px;
-  background-color: #fff4df;
+  background-color: var(--color-secondary);
   margin: 0 auto;
   margin-bottom: 12px;
 }
 
 .icon {
-  fill: #f6b83d;
+  fill: var(--color-primary);
 }
 
 .formInputs {
@@ -60,7 +60,7 @@
 }
 
 .active {
-  border: 1px solid #f6b83d;
+  border: 1px solid var(--color-primary);
 }
 
 .none {
@@ -81,7 +81,7 @@
   height: 42px;
   padding: 12px;
   border-radius: 30px;
-  background-color: #f6b83d;
+  background-color: var(--color-primary);
   font-weight: 700;
   font-size: 14px;
   line-height: 129%;
@@ -90,5 +90,5 @@
 }
 
 .submit:hover {
-  background-color: #f9b020;
+  background-color: var(--color-primary-hover);
 }

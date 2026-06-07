@@ -61,15 +61,15 @@
   height: 30px;
   border-radius: 30px;
   padding: 7px;
-  background-color: #fff4df;
+  background-color: var(--color-secondary);
 }
 
 .trash:hover {
-  background-color: #fbe7c1;
+  background-color: var(--color-secondary-hover);
 }
 
 .icon {
-  stroke: #f6b83d;
+  stroke: var(--color-primary);
   fill: transparent;
 }
 

@@ -6,7 +6,7 @@
   width: 103px;
   height: 38px;
   border-radius: 30px;
-  background-color: #f6b83d;
+  background-color: var(--color-primary);
   font-weight: 500;
   font-size: 14px;
   line-height: 129%;
@@ -20,7 +20,7 @@
 }
 
 .link:hover {
-  background-color: #f9b020;
+  background-color: var(--color-primary-hover);
 }
 
 @media (min-width: 768px) {
