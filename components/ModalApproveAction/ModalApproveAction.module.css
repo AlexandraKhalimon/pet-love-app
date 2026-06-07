@@ -6,7 +6,7 @@
   width: 80px;
   height: 80px;
   border-radius: 100%;
-  background-color: #fff4df;
+  background-color: var(--color-secondary);
   margin: 0 auto;
   font-weight: 800;
   font-size: 44px;
@@ -40,16 +40,16 @@
   padding: 12px;
   width: 137px;
   height: 42px;
-  background-color: #f6b83d;
+  background-color: var(--color-primary);
   font-weight: 700;
   font-size: 14px;
   line-height: 129%;
   letter-spacing: -0.03em;
-  color: #fff;
+  color: var(--color-white);
 }
 
 .yes:hover {
-  background-color: #f9b020;
+  background-color: var(--color-primary-hover);
 }
 
 .cancel {
@@ -66,7 +66,7 @@
 }
 
 .cancel:hover {
-  background-color: #fff4df;
+  background-color: rgba(38, 38, 38, 0.15);
 }
 
 @media (min-width: 768px) {
