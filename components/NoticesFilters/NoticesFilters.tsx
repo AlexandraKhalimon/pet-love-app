@@ -41,7 +41,7 @@ export default function NoticesFilters({
   types,
   locations,
 }: Props) {
-  const { register, control, setValue } = useForm<FiltersFormValues>({
+  const { register, control, setValue, reset } = useForm<FiltersFormValues>({
     defaultValues: {
       category: null,
       sex: null,
@@ -79,6 +79,15 @@ export default function NoticesFilters({
     control,
     name: "notice",
   });
+
+  const resetFilters = () =>
+    reset({
+      category: null,
+      sex: null,
+      species: null,
+      location: null,
+      notice: "",
+    });
 
   const searchIcon = () => {
     return (
@@ -359,6 +368,9 @@ export default function NoticesFilters({
           </span>
         </label>
       </div>
+      <button type="button" onClick={resetFilters} className={css.resetBtn}>
+        Reset
+      </button>
     </form>
   );
 }
