@@ -58,7 +58,6 @@
   height: auto;
   padding: 12px;
   background-color: var(--color-white);
-  text-transform: capitalize;
 }
 
 .typeControl {
@@ -85,7 +84,6 @@
   height: auto;
   padding: 12px;
   background-color: var(--color-white);
-  text-transform: capitalize;
 }
 
 .menuList {
@@ -104,6 +102,10 @@
   transition: color 0.3s ease;
 }
 
+.locationOption {
+  text-transform: none;
+}
+
 .option:hover {
   color: var(--color-primary);
 }
@@ -114,11 +116,16 @@
   line-height: 129%;
   letter-spacing: -0.03em;
   color: var(--color-primary);
+  text-transform: capitalize;
 }
 
 .searchIcon {
   fill: transparent;
   stroke: #262626;
+}
+
+.isSearching {
+  color: var(--foreground);
 }
 
 .hr {

@@ -216,7 +216,35 @@ export default function NoticesFilters({
                   menu: () => css.typeMenu,
                   menuList: () => css.menuList,
                   option: ({ isSelected }) =>
-                    isSelected ? css.isSelectedOption : css.option,
+                    isSelected
+                      ? css.isSelectedOption
+                      : `${css.option} ${css.locationOption}`,
+                }}
+                formatOptionLabel={(option, { inputValue }) => {
+                  const capitalizedText =
+                    option.label.charAt(0).toUpperCase() +
+                    option.label.slice(1);
+
+                  if (!inputValue) {
+                    return capitalizedText;
+                  }
+
+                  const highlight = new RegExp(`^(${inputValue})`, "i");
+                  const highlightedText = capitalizedText.split(highlight);
+
+                  return (
+                    <>
+                      {highlightedText.map((text, i) =>
+                        text.toLowerCase() === inputValue.toLowerCase() ? (
+                          <span key={i} className={css.isSearching}>
+                            {text}
+                          </span>
+                        ) : (
+                          text
+                        ),
+                      )}
+                    </>
+                  );
                 }}
                 components={{ DropdownIndicator: searchIcon }}
               />
