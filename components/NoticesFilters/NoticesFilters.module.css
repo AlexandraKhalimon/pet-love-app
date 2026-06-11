@@ -1,6 +1,6 @@
 .form {
   width: 335px;
-  height: 378px;
+  height: auto;
   border-radius: 30px;
   background-color: var(--color-secondary);
   padding: 20px;
@@ -138,6 +138,13 @@
   background-color: rgba(38, 38, 38, 0.1);
 }
 
+.radioFilters {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
 .radioButtons {
   display: flex;
   flex-direction: row;
@@ -200,6 +207,23 @@
 .icon {
   fill: transparent;
   stroke: #fff;
+}
+
+.resetBtn {
+  border-radius: 30px;
+  padding: 12px;
+  width: 150px;
+  height: 42px;
+  background-color: var(--color-primary);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.03em;
+  color: var(--color-secondary);
+}
+
+.resetBtn:hover {
+  background-color: var(--color-primary-hover);
 }
 
 @media (min-width: 320px) and (max-width: 374px) {

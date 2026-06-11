@@ -262,115 +262,117 @@ export default function NoticesFilters({
         />
       </div>
       <hr className={css.hr} />
-      <div className={css.radioButtons}>
-        <label className={css.radioLabel}>
-          <input
-            {...register("notice")}
-            type="radio"
-            value="Popular"
-            className={css.radio}
-          />
-          <span className={css.radioText}>
-            Popular
-            {noticeWatched === "Popular" && (
-              <button
-                className={css.cross}
-                type="button"
-                onClick={(event) => {
-                  event.preventDefault();
-                  event.stopPropagation();
-                  setValue("notice", "");
-                }}
-              >
-                <svg width={18} height={18} className={css.icon}>
-                  <use href="/icons.svg#icon-cross-small"></use>
-                </svg>
-              </button>
-            )}
-          </span>
-        </label>
-        <label className={css.radioLabel}>
-          <input
-            {...register("notice")}
-            type="radio"
-            value="Unpopular"
-            className={css.radio}
-          />
-          <span className={css.radioText}>
-            Unpopular
-            {noticeWatched === "Unpopular" && (
-              <button
-                className={css.cross}
-                type="button"
-                onClick={(event) => {
-                  event.preventDefault();
-                  event.stopPropagation();
-                  setValue("notice", "");
-                }}
-              >
-                <svg width={18} height={18} className={css.icon}>
-                  <use href="/icons.svg#icon-cross-small"></use>
-                </svg>
-              </button>
-            )}
-          </span>
-        </label>
-        <label className={css.radioLabel}>
-          <input
-            {...register("notice")}
-            type="radio"
-            value="Cheap"
-            className={css.radio}
-          />
-          <span className={css.radioText}>
-            Cheap
-            {noticeWatched === "Cheap" && (
-              <button
-                className={css.cross}
-                type="button"
-                onClick={(event) => {
-                  event.preventDefault();
-                  event.stopPropagation();
-                  setValue("notice", "");
-                }}
-              >
-                <svg width={18} height={18} className={css.icon}>
-                  <use href="/icons.svg#icon-cross-small"></use>
-                </svg>
-              </button>
-            )}
-          </span>
-        </label>
-        <label className={css.radioLabel}>
-          <input
-            {...register("notice")}
-            type="radio"
-            value="Expensive"
-            className={css.radio}
-          />
-          <span className={css.radioText}>
-            Expensive
-            {noticeWatched === "Expensive" && (
-              <button
-                className={css.cross}
-                type="button"
-                onClick={(event) => {
-                  event.preventDefault();
-                  event.stopPropagation();
-                  setValue("notice", "");
-                }}
-              >
-                <svg width={18} height={18} className={css.icon}>
-                  <use href="/icons.svg#icon-cross-small"></use>
-                </svg>
-              </button>
-            )}
-          </span>
-        </label>
+      <div className={css.radioFilters}>
+        <div className={css.radioButtons}>
+          <label className={css.radioLabel}>
+            <input
+              {...register("notice")}
+              type="radio"
+              value="Popular"
+              className={css.radio}
+            />
+            <span className={css.radioText}>
+              Popular
+              {noticeWatched === "Popular" && (
+                <button
+                  className={css.cross}
+                  type="button"
+                  onClick={(event) => {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    setValue("notice", "");
+                  }}
+                >
+                  <svg width={18} height={18} className={css.icon}>
+                    <use href="/icons.svg#icon-cross-small"></use>
+                  </svg>
+                </button>
+              )}
+            </span>
+          </label>
+          <label className={css.radioLabel}>
+            <input
+              {...register("notice")}
+              type="radio"
+              value="Unpopular"
+              className={css.radio}
+            />
+            <span className={css.radioText}>
+              Unpopular
+              {noticeWatched === "Unpopular" && (
+                <button
+                  className={css.cross}
+                  type="button"
+                  onClick={(event) => {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    setValue("notice", "");
+                  }}
+                >
+                  <svg width={18} height={18} className={css.icon}>
+                    <use href="/icons.svg#icon-cross-small"></use>
+                  </svg>
+                </button>
+              )}
+            </span>
+          </label>
+          <label className={css.radioLabel}>
+            <input
+              {...register("notice")}
+              type="radio"
+              value="Cheap"
+              className={css.radio}
+            />
+            <span className={css.radioText}>
+              Cheap
+              {noticeWatched === "Cheap" && (
+                <button
+                  className={css.cross}
+                  type="button"
+                  onClick={(event) => {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    setValue("notice", "");
+                  }}
+                >
+                  <svg width={18} height={18} className={css.icon}>
+                    <use href="/icons.svg#icon-cross-small"></use>
+                  </svg>
+                </button>
+              )}
+            </span>
+          </label>
+          <label className={css.radioLabel}>
+            <input
+              {...register("notice")}
+              type="radio"
+              value="Expensive"
+              className={css.radio}
+            />
+            <span className={css.radioText}>
+              Expensive
+              {noticeWatched === "Expensive" && (
+                <button
+                  className={css.cross}
+                  type="button"
+                  onClick={(event) => {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    setValue("notice", "");
+                  }}
+                >
+                  <svg width={18} height={18} className={css.icon}>
+                    <use href="/icons.svg#icon-cross-small"></use>
+                  </svg>
+                </button>
+              )}
+            </span>
+          </label>
+        </div>
+        <button type="button" onClick={resetFilters} className={css.resetBtn}>
+          Reset filters
+        </button>
       </div>
-      <button type="button" onClick={resetFilters} className={css.resetBtn}>
-        Reset
-      </button>
     </form>
   );
 }
