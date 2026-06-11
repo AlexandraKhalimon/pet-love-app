@@ -270,6 +270,8 @@ export default function NoticesFilters({
               type="radio"
               value="Popular"
               className={css.radio}
+              checked={noticeWatched === "Popular"}
+              onChange={() => setValue("notice", "Popular")}
             />
             <span className={css.radioText}>
               Popular
@@ -296,6 +298,8 @@ export default function NoticesFilters({
               type="radio"
               value="Unpopular"
               className={css.radio}
+              checked={noticeWatched === "Unpopular"}
+              onChange={() => setValue("notice", "Unpopular")}
             />
             <span className={css.radioText}>
               Unpopular
@@ -322,6 +326,8 @@ export default function NoticesFilters({
               type="radio"
               value="Cheap"
               className={css.radio}
+              checked={noticeWatched === "Cheap"}
+              onChange={() => setValue("notice", "Cheap")}
             />
             <span className={css.radioText}>
               Cheap
@@ -348,6 +354,8 @@ export default function NoticesFilters({
               type="radio"
               value="Expensive"
               className={css.radio}
+              checked={noticeWatched === "Expensive"}
+              onChange={() => setValue("notice", "Expensive")}
             />
             <span className={css.radioText}>
               Expensive
