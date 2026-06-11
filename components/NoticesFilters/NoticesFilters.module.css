@@ -295,6 +295,11 @@
     line-height: 125%;
   }
 
+  .radioFilters {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
   .radioButtons {
     gap: 8px;
   }
@@ -308,6 +313,13 @@
     height: 48px;
     font-size: 16px;
     line-height: 125%;
+  }
+
+  .resetBtn {
+    padding: 12px;
+    width: 160px;
+    height: 48px;
+    font-size: 16px;
   }
 }
 
