@@ -63,7 +63,7 @@ interface FetchNoticesResponse {
   results: Notice[];
 }
 
-interface FetchNoticesParams {
+export interface FetchNoticesParams {
   keyword?: string;
   category?: Category;
   species?: Species;

@@ -7,6 +7,8 @@ import { Category, Sex, Species } from "@/types/notice";
 import SearchField from "../SearchField/SearchField";
 import { Controller, useForm, useWatch } from "react-hook-form";
 import Select from "react-select";
+import { useEffect } from "react";
+import { FetchNoticesParams } from "@/lib/api";
 
 interface FilterSelect {
   value: string;
@@ -32,6 +34,7 @@ interface Props {
   sexes: Sex[];
   types: Species[];
   locations: LocationSelect[];
+  onFiltersChange: (filters: Partial<FetchNoticesParams>) => void;
 }
 
 export default function NoticesFilters({
@@ -40,6 +43,7 @@ export default function NoticesFilters({
   sexes,
   types,
   locations,
+  onFiltersChange,
 }: Props) {
   const { register, control, setValue, reset } = useForm<FiltersFormValues>({
     defaultValues: {
@@ -79,6 +83,45 @@ export default function NoticesFilters({
     control,
     name: "notice",
   });
+
+  const filtersValues = useWatch({ control });
+
+  const mapRadioToFilters = (value: string): Partial<FetchNoticesParams> => {
+    switch (value) {
+      case "Cheap":
+        return { byPrice: true };
+      case "Expensive":
+        return { byPrice: false };
+      case "Unpopular":
+        return { byPopularity: true };
+      case "Popular":
+        return { byPopularity: false };
+      default:
+        return { byPrice: undefined, byPopularity: undefined };
+    }
+  };
+
+  useEffect(() => {
+    const mappedRadioBtn = mapRadioToFilters(filtersValues.notice ?? "");
+
+    const categoryValue = filtersValues.category?.value;
+    const sexValue = filtersValues.sex?.value;
+    const speciesValue = filtersValues.species?.value;
+
+    onFiltersChange({
+      category:
+        categoryValue === "all" || !categoryValue
+          ? undefined
+          : (categoryValue as Category),
+      sex: sexValue === "all" || !sexValue ? undefined : (sexValue as Sex),
+      species:
+        speciesValue === "all" || !speciesValue
+          ? undefined
+          : (speciesValue as Species),
+      locationId: filtersValues.location?.value ?? undefined,
+      ...mappedRadioBtn,
+    });
+  }, [filtersValues, onFiltersChange]);
 
   const resetFilters = () =>
     reset({

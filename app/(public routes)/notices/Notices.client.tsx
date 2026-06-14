@@ -10,6 +10,7 @@ import {
   fetchNoticeCategories,
   fetchNotices,
   fetchNoticeSex,
+  FetchNoticesParams,
   fetchNoticeSpecies,
 } from "@/lib/api";
 import { keepPreviousData, useQuery } from "@tanstack/react-query";
@@ -20,14 +21,16 @@ import Pagination from "@/components/Pagination/Pagination";
 
 export default function NoticesClient() {
   const [searchQuery, setSearchQuery] = useState("");
+  const [filters, setFilters] = useState<Partial<FetchNoticesParams>>({});
   const [debouncedSearchQuery] = useDebounce(searchQuery, 300);
   const [currentPage, setCurrentPage] = useState(1);
 
   const { data } = useQuery({
-    queryKey: ["notices", debouncedSearchQuery, currentPage, 6],
+    queryKey: ["notices", filters, debouncedSearchQuery, currentPage, 6],
     queryFn: () =>
       fetchNotices({
         keyword: debouncedSearchQuery,
+        ...filters,
         page: currentPage,
         limit: 6,
       }),
@@ -65,6 +68,11 @@ export default function NoticesClient() {
     setCurrentPage(1);
   };
 
+  const handleFiltersChange = (newFilters: Partial<FetchNoticesParams>) => {
+    setFilters(newFilters);
+    setCurrentPage(1);
+  };
+
   const cityOptions = cities.map((city) => ({
     value: city._id,
     label: `${city.stateEn}, ${city.cityEn}`,
@@ -81,6 +89,7 @@ export default function NoticesClient() {
         sexes={sexes}
         types={types}
         locations={cityOptions}
+        onFiltersChange={handleFiltersChange}
       />
       {data && data.results.length > 0 && (
         <NoticesList notices={data.results} variant="notices" />
