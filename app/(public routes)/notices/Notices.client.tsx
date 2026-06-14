@@ -1,5 +1,3 @@
-// TODO: connect filters to API
-
 "use client";
 
 import Title from "@/components/Title/Title";
@@ -37,10 +35,6 @@ export default function NoticesClient() {
     placeholderData: keepPreviousData,
   });
 
-  if (data) {
-    console.log(data?.results);
-  }
-
   const { data: categories = [] } = useQuery({
     queryKey: ["categories"],
     queryFn: fetchNoticeCategories,
@@ -60,8 +54,6 @@ export default function NoticesClient() {
     queryKey: ["cities"],
     queryFn: () => fetchLocations(),
   });
-
-  console.log(cities);
 
   const handleSearch = (query: string) => {
     setSearchQuery(query);

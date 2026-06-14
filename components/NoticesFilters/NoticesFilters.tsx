@@ -1,5 +1,3 @@
-// TODO: implement filtering logic
-
 "use client";
 
 import css from "./NoticesFilters.module.css";
@@ -198,17 +196,6 @@ export default function NoticesFilters({
                 );
               }}
             />
-            {/* <select {...register("sex")} className={css.select}>
-              <option value="" hidden disabled>
-                By gender
-              </option>
-              <option value="">Show all</option>
-              {sexes.map((sex) => (
-                <option key={sex} value={sex}>
-                  {sex}
-                </option>
-              ))}
-            </select> */}
           </label>
         </div>
         <label>
@@ -235,17 +222,6 @@ export default function NoticesFilters({
               );
             }}
           />
-          {/* <select {...register("species")} className={css.select}>
-            <option value="" hidden disabled>
-              By type
-            </option>
-            <option value="">Show all</option>
-            {types.map((type) => (
-              <option key={type} value={type}>
-                {type}
-              </option>
-            ))}
-          </select> */}
         </label>
         <Controller
           name="location"
