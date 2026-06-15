@@ -6,6 +6,8 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useRouter } from "next/navigation";
+import { useMutation } from "@tanstack/react-query";
+import { loginUser } from "@/lib/api";
 
 const LoginSchema = yup.object({
   email: yup
@@ -42,10 +44,18 @@ export default function LoginForm() {
 
   const router = useRouter();
 
+  const { mutate } = useMutation({
+    mutationFn: loginUser,
+    onSuccess: () => {
+      console.log("User signed in");
+      router.push("/profile");
+      reset();
+    },
+  });
+
   const onSubmit = (data: LoginFormValues) => {
     console.log(data);
-    router.push("/profile");
-    reset();
+    mutate(data);
   };
 
   return (
