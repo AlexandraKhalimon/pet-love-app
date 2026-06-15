@@ -6,6 +6,8 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useRouter } from "next/navigation";
+import { useMutation } from "@tanstack/react-query";
+import { registerUser } from "@/lib/api";
 
 const registerSchema = yup.object({
   name: yup
@@ -55,10 +57,23 @@ export default function RegistrationForm() {
 
   const router = useRouter();
 
+  const { mutate } = useMutation({
+    mutationFn: registerUser,
+    onSuccess: () => {
+      console.log("User registered");
+      router.push("/profile");
+      reset();
+    },
+  });
+
   const onSubmit = (data: RegisterFormValues) => {
-    console.log(data);
-    router.push("/profile");
-    reset();
+    const userData = {
+      name: data.name,
+      email: data.email,
+      password: data.password,
+    };
+    console.log(userData);
+    mutate(userData);
 
     return;
   };
