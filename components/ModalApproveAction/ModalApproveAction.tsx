@@ -16,7 +16,7 @@ export default function ModalApproveAction({ onClose }: Props) {
 
   const { mutate } = useMutation({
     mutationFn: logoutUser,
-    onSuccess: () => {
+    onSettled: () => {
       console.log("User logged out");
       onClose();
       logout();
