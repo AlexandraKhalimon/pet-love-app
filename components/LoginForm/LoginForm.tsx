@@ -8,6 +8,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useRouter } from "next/navigation";
 import { useMutation } from "@tanstack/react-query";
 import { loginUser } from "@/lib/api";
+import { useAuthStore } from "@/lib/store/authStore";
 
 const LoginSchema = yup.object({
   email: yup
@@ -42,12 +43,15 @@ export default function LoginForm() {
     },
   });
 
+  const setUser = useAuthStore((state) => state.setUser);
+
   const router = useRouter();
 
   const { mutate } = useMutation({
     mutationFn: loginUser,
-    onSuccess: () => {
+    onSuccess: (data) => {
       console.log("User signed in");
+      setUser(data);
       router.push("/profile");
       reset();
     },
