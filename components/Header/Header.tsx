@@ -14,8 +14,23 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
   const isHomepage = pathname === "/home";
-
   const user = useAuthStore((state) => state.user);
+
+  const nav = <Nav className={css.nav} link={isHomepage ? "white" : "grey"} />;
+
+  const authComponent = user ? (
+    <UserNav />
+  ) : (
+    <AuthNav className={css.authNav} border={isHomepage ? "white" : "orange"} />
+  );
+
+  const menuBtn = (
+    <button className={css.button} onClick={() => setIsMenuOpen(true)}>
+      <svg width={32} height={32} className={css.icon}>
+        <use href="/icons.svg#icon-menu"></use>
+      </svg>
+    </button>
+  );
 
   return isHomepage ? (
     <header className={css.homeHeader}>
@@ -25,17 +40,9 @@ export default function Header() {
             <use href="/icons.svg#icon-logo-2"></use>
           </svg>
         </Link>
-        <Nav className={css.nav} link={"white"} />
-        {user ? (
-          <UserNav />
-        ) : (
-          <AuthNav className={css.authNav} border={"white"} />
-        )}
-        <button className={css.homeButton} onClick={() => setIsMenuOpen(true)}>
-          <svg width={32} height={32} className={css.icon}>
-            <use href="/icons.svg#icon-menu"></use>
-          </svg>
-        </button>
+        {nav}
+        {authComponent}
+        {menuBtn}
         {isMenuOpen && <BurgerMenu onClose={() => setIsMenuOpen(false)} />}
       </div>
     </header>
@@ -46,17 +53,9 @@ export default function Header() {
           <use href="/icons.svg#icon-logo-1"></use>
         </svg>
       </Link>
-      <Nav className={css.nav} link={"grey"} />
-      {user ? (
-        <UserNav />
-      ) : (
-        <AuthNav className={css.authNav} border={"orange"} />
-      )}
-      <button className={css.button} onClick={() => setIsMenuOpen(true)}>
-        <svg width={32} height={32} className={css.icon}>
-          <use href="/icons.svg#icon-menu"></use>
-        </svg>
-      </button>
+      {nav}
+      {authComponent}
+      {menuBtn}
       {isMenuOpen && <BurgerMenu onClose={() => setIsMenuOpen(false)} />}
     </header>
   );
