@@ -7,12 +7,15 @@ import BurgerMenu from "../BurgerMenu/BurgerMenu";
 import AuthNav from "../AuthNav/AuthNav";
 import Nav from "../Nav/Nav";
 import { usePathname } from "next/navigation";
-// import UserNav from "../UserNav/UserNav";
+import { useAuthStore } from "@/lib/store/authStore";
+import UserNav from "../UserNav/UserNav";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
   const isHomepage = pathname === "/home";
+
+  const user = useAuthStore((state) => state.user);
 
   return isHomepage ? (
     <header className={css.homeHeader}>
@@ -23,9 +26,11 @@ export default function Header() {
           </svg>
         </Link>
         <Nav className={css.nav} link={"white"} />
-        {/* TODO: render UserNav when user is authenticated and AuthNav for visitors */}
-        <AuthNav className={css.authNav} border={"white"} />
-        {/* <UserNav /> */}
+        {user ? (
+          <UserNav />
+        ) : (
+          <AuthNav className={css.authNav} border={"white"} />
+        )}
         <button className={css.homeButton} onClick={() => setIsMenuOpen(true)}>
           <svg width={32} height={32} className={css.icon}>
             <use href="/icons.svg#icon-menu"></use>
@@ -42,9 +47,11 @@ export default function Header() {
         </svg>
       </Link>
       <Nav className={css.nav} link={"grey"} />
-      {/* TODO: render UserNav when user is authenticated and AuthNav for visitors */}
-      <AuthNav className={css.authNav} border={"orange"} />
-      {/* <UserNav /> */}
+      {user ? (
+        <UserNav />
+      ) : (
+        <AuthNav className={css.authNav} border={"orange"} />
+      )}
       <button className={css.button} onClick={() => setIsMenuOpen(true)}>
         <svg width={32} height={32} className={css.icon}>
           <use href="/icons.svg#icon-menu"></use>
