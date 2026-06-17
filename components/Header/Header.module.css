@@ -79,6 +79,8 @@
 
   .button {
     margin-left: 16px;
+    width: 36px;
+    height: 36px;
   }
 
   .button > .icon {
@@ -88,6 +90,8 @@
 
   .homeButton {
     margin-left: 18px;
+    width: 36px;
+    height: 36px;
   }
 
   .homeButton > .icon {

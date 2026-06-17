@@ -25,7 +25,10 @@ export default function Header() {
   );
 
   const menuBtn = (
-    <button className={css.button} onClick={() => setIsMenuOpen(true)}>
+    <button
+      className={isHomepage ? css.homeButton : css.button}
+      onClick={() => setIsMenuOpen(true)}
+    >
       <svg width={32} height={32} className={css.icon}>
         <use href="/icons.svg#icon-menu"></use>
       </svg>
