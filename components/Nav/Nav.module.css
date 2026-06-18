@@ -21,14 +21,17 @@
 }
 
 .white {
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.4);
   color: var(--color-white);
-  transition: border-color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.1s ease;
 }
 
 .white:hover,
 .white:focus {
-  border-color: rgba(255, 255, 255, 0.5);
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
 }
 
 .grey {
@@ -39,6 +42,10 @@
 
 .grey:hover,
 .grey:focus {
+  border: 1px solid var(--color-primary);
+}
+
+.active {
   border: 1px solid var(--color-primary);
 }
 
