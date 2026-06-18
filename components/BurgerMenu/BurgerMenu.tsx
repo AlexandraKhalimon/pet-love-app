@@ -3,9 +3,10 @@
 import { createPortal } from "react-dom";
 import css from "./BurgerMenu.module.css";
 import Nav from "../Nav/Nav";
-// import AuthNav from "../AuthNav/AuthNav";
+import AuthNav from "../AuthNav/AuthNav";
 import { usePathname } from "next/navigation";
 import LogOutBtn from "../LogOutBtn/LogOutBtn";
+import { useAuthStore } from "@/lib/store/authStore";
 
 interface Props {
   onClose: () => void;
@@ -14,11 +15,12 @@ interface Props {
 export default function BurgerMenu({ onClose }: Props) {
   const pathname = usePathname();
   const isHomePage = pathname === "/home";
+  const user = useAuthStore((state) => state.user);
 
   const menuBackground = isHomePage ? css.white : css.orange;
   const icon = isHomePage ? css.blackIcon : css.whiteIcon;
   const nav = isHomePage ? "grey" : "white";
-  // const auth = isHomePage ? "orange" : "white";
+  const auth = isHomePage ? "orange" : "white";
   const logout = isHomePage ? css.homeLogout : css.logout;
 
   return createPortal(
@@ -30,9 +32,7 @@ export default function BurgerMenu({ onClose }: Props) {
           </svg>
         </button>
         <Nav link={nav} />
-        {/* // TODO: render LogOutBtn when user is authenticated and AuthNav for visitors */}
-        {/* <AuthNav border={auth} /> */}
-        <LogOutBtn className={logout} />
+        {user ? <LogOutBtn className={logout} /> : <AuthNav border={auth} />}
       </div>
     </div>,
     document.body,
