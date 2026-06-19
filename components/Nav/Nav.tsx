@@ -7,9 +7,10 @@ import { usePathname } from "next/navigation";
 interface Props {
   className?: string;
   link: "white" | "grey";
+  onClose?: () => void;
 }
 
-export default function Nav({ className, link }: Props) {
+export default function Nav({ className, link, onClose }: Props) {
   const pathname = usePathname();
   const news = pathname === "/news" && link === "grey" ? css.active : "";
   const notices = pathname === "/notices" && link === "grey" ? css.active : "";
@@ -18,13 +19,19 @@ export default function Nav({ className, link }: Props) {
   return (
     <ul className={`${css.navigation} ${className}`}>
       <li className={`${css.link} ${css[link]} ${news}`}>
-        <Link href="/news">News</Link>
+        <Link href="/news" onClick={onClose}>
+          News
+        </Link>
       </li>
       <li className={`${css.link} ${css[link]} ${notices}`}>
-        <Link href="/notices">Find pet</Link>
+        <Link href="/notices" onClick={onClose}>
+          Find pet
+        </Link>
       </li>
       <li className={`${css.link} ${css[link]} ${friends}`}>
-        <Link href="/friends">Our friends</Link>
+        <Link href="/friends" onClick={onClose}>
+          Our friends
+        </Link>
       </li>
     </ul>
   );

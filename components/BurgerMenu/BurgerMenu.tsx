@@ -13,6 +13,12 @@ interface Props {
 }
 
 export default function BurgerMenu({ onClose }: Props) {
+  const handleBackdropClick = (event: React.MouseEvent<HTMLDivElement>) => {
+    if (event.target === event.currentTarget) {
+      onClose();
+    }
+  };
+
   const pathname = usePathname();
   const isHomePage = pathname === "/home";
   const user = useAuthStore((state) => state.user);
@@ -24,15 +30,19 @@ export default function BurgerMenu({ onClose }: Props) {
   const logout = isHomePage ? css.homeLogout : css.logout;
 
   return createPortal(
-    <div className={css.backdrop}>
+    <div className={css.backdrop} onClick={handleBackdropClick}>
       <div className={`${css.menu} ${menuBackground}`}>
         <button className={css.button} onClick={onClose}>
           <svg width={32} height={32} className={icon}>
             <use href="/icons.svg#icon-cross-small"></use>
           </svg>
         </button>
-        <Nav link={nav} />
-        {user ? <LogOutBtn className={logout} /> : <AuthNav border={auth} />}
+        <Nav link={nav} onClose={onClose} />
+        {user ? (
+          <LogOutBtn className={logout} />
+        ) : (
+          <AuthNav border={auth} onClose={onClose} />
+        )}
       </div>
     </div>,
     document.body,
