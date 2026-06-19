@@ -1,5 +1,32 @@
 @media (min-width: 320px) and (max-width: 767px) {
+  .logout,
+  .homeLogout {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
   .logout {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+  }
+
+  .logout:hover {
+    background-color: var(--color-primary-hover);
+  }
+
+  .homeLogout {
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+  }
+
+  .homeLogout:hover {
+    background-color: var(--color-secondary-hover);
+  }
+}
+
+@media (min-width: 1280px) {
+  .homeLogout {
     display: none;
   }
 }
