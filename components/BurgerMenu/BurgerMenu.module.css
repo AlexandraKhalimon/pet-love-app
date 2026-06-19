@@ -22,11 +22,11 @@
 }
 
 .orange {
-  background-color: #f6b83d;
+  background-color: var(--color-primary);
 }
 
 .white {
-  background-color: #fff;
+  background-color: var(--color-white);
 }
 
 .button {
@@ -45,21 +45,21 @@
 }
 
 .logout {
-  background-color: #fff4df;
-  color: #f6b83d;
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
 }
 
 .logout:hover {
-  background-color: #fbe7c1;
+  background-color: var(--color-secondary-hover);
 }
 
 .homeLogout {
-  background-color: #f6b83d;
-  color: #fff;
+  background-color: var(--color-primary);
+  color: var(--color-white);
 }
 
 .homeLogout:hover {
-  background-color: #f9b020;
+  background-color: var(--color-primary-hover);
 }
 
 @media (min-width: 768px) {
