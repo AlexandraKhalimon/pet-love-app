@@ -17,9 +17,9 @@ export default function UserNav({ user }: Props) {
   const logout = isHomePage ? css.homeLogout : css.logout;
 
   return (
-    <>
+    <div className={css.wrapper}>
       <LogOutBtn className={logout} />
       <UserBar user={user} />
-    </>
+    </div>
   );
 }
