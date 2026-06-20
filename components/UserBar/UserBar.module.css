@@ -28,6 +28,14 @@
   color: var(--foreground);
 }
 
+.white {
+  color: var(--color-white);
+}
+
+.black {
+  color: var(--foreground);
+}
+
 @media (min-width: 320px) and (max-width: 767px) {
   .name {
     display: none;
