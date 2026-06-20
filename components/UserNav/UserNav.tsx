@@ -3,8 +3,14 @@
 import css from "./UserNav.module.css";
 import LogOutBtn from "../LogOutBtn/LogOutBtn";
 import { usePathname } from "next/navigation";
+import UserBar from "../UserBar/UserBar";
+import { FullUser } from "@/types/user";
 
-export default function UserNav() {
+interface Props {
+  user: FullUser;
+}
+
+export default function UserNav({ user }: Props) {
   const pathname = usePathname();
   const isHomePage = pathname === "/home";
 
@@ -13,6 +19,7 @@ export default function UserNav() {
   return (
     <>
       <LogOutBtn className={logout} />
+      <UserBar user={user} />
     </>
   );
 }

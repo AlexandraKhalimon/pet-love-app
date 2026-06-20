@@ -19,7 +19,7 @@ export default function Header() {
   const nav = <Nav className={css.nav} link={isHomepage ? "white" : "grey"} />;
 
   const authComponent = user ? (
-    <UserNav />
+    <UserNav user={user} />
   ) : (
     <AuthNav className={css.authNav} border={isHomepage ? "white" : "orange"} />
   );
