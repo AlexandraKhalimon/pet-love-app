@@ -29,6 +29,12 @@
   display: none !important;
 }
 
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 .authNav {
   display: none !important;
 }
@@ -73,12 +79,15 @@
     height: 28px;
   }
 
+  .headerActions {
+    gap: 16px;
+  }
+
   .authNav {
     display: flex !important;
   }
 
   .button {
-    margin-left: 16px;
     width: 36px;
     height: 36px;
   }
