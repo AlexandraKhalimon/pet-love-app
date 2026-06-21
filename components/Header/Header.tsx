@@ -35,6 +35,13 @@ export default function Header() {
     </button>
   );
 
+  const headerActions = (
+    <div className={css.headerActions}>
+      {authComponent}
+      {menuBtn}
+    </div>
+  );
+
   return isHomepage ? (
     <header className={css.homeHeader}>
       <div className={css.headerWrapper}>
@@ -44,10 +51,7 @@ export default function Header() {
           </svg>
         </Link>
         {nav}
-        <div className={css.headerActions}>
-          {authComponent}
-          {menuBtn}
-        </div>
+        {headerActions}
         {isMenuOpen && <BurgerMenu onClose={() => setIsMenuOpen(false)} />}
       </div>
     </header>
@@ -59,11 +63,7 @@ export default function Header() {
         </svg>
       </Link>
       {nav}
-      <div className={css.headerActions}>
-        {authComponent}
-        {menuBtn}
-      </div>
-
+      {headerActions}
       {isMenuOpen && <BurgerMenu onClose={() => setIsMenuOpen(false)} />}
     </header>
   );
