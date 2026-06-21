@@ -17,7 +17,7 @@
 
 .headerWrapper {
   padding: 18px 20px 0 20px;
-  background-color: #f6b83d;
+  background-color: var(--color-primary);
   border-radius: 30px 30px 0 0;
   display: flex;
   flex-direction: row;
@@ -58,7 +58,6 @@
 @media (min-width: 768px) {
   .header {
     padding: 32px 32px;
-    justify-content: flex-end;
   }
 
   .homeHeader {
@@ -98,7 +97,6 @@
   }
 
   .homeButton {
-    margin-left: 18px;
     width: 36px;
     height: 36px;
   }
@@ -112,11 +110,14 @@
 @media (min-width: 1280px) {
   .header {
     padding: 32px 64px;
-    justify-content: flex-end;
   }
 
   .headerWrapper {
     padding: 16px 64px 0 64px;
+  }
+
+  .logo {
+    margin-right: 0;
   }
 
   .nav {

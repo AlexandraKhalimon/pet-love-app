@@ -44,8 +44,10 @@ export default function Header() {
           </svg>
         </Link>
         {nav}
-        {authComponent}
-        {menuBtn}
+        <div className={css.headerActions}>
+          {authComponent}
+          {menuBtn}
+        </div>
         {isMenuOpen && <BurgerMenu onClose={() => setIsMenuOpen(false)} />}
       </div>
     </header>
