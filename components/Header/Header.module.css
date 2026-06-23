@@ -117,11 +117,19 @@
   }
 
   .logo {
-    margin-right: 0;
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
   }
 
   .nav {
     display: flex !important;
+  }
+
+  .headerActions {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
   }
 
   .button {
