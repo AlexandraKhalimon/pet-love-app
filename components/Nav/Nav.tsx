@@ -18,18 +18,30 @@ export default function Nav({ className, link, onClose }: Props) {
 
   return (
     <ul className={`${css.navigation} ${className}`}>
-      <li className={`${css.link} ${css[link]} ${news}`}>
-        <Link href="/news" onClick={onClose}>
+      <li>
+        <Link
+          href="/news"
+          onClick={onClose}
+          className={`${css.link} ${css[link]} ${news}`}
+        >
           News
         </Link>
       </li>
-      <li className={`${css.link} ${css[link]} ${notices}`}>
-        <Link href="/notices" onClick={onClose}>
+      <li>
+        <Link
+          href="/notices"
+          onClick={onClose}
+          className={`${css.link} ${css[link]} ${notices}`}
+        >
           Find pet
         </Link>
       </li>
-      <li className={`${css.link} ${css[link]} ${friends}`}>
-        <Link href="/friends" onClick={onClose}>
+      <li>
+        <Link
+          href="/friends"
+          onClick={onClose}
+          className={`${css.link} ${css[link]} ${friends}`}
+        >
           Our friends
         </Link>
       </li>
