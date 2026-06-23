@@ -7,6 +7,9 @@
 }
 
 .login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 30px;
   padding: 12px 67px;
   width: 178px;
@@ -38,6 +41,9 @@
 }
 
 .register {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 30px;
   padding: 12px 41px;
   width: 178px;

@@ -10,13 +10,17 @@ interface Props {
 export default function AuthNav({ className, border, onClose }: Props) {
   return (
     <ul className={`${css.navigation} ${className}`}>
-      <li className={`${css.login} ${css[border]}`}>
-        <Link href="/login" onClick={onClose}>
+      <li>
+        <Link
+          href="/login"
+          onClick={onClose}
+          className={`${css.login} ${css[border]}`}
+        >
           Log In
         </Link>
       </li>
-      <li className={css.register}>
-        <Link href="/register" onClick={onClose}>
+      <li>
+        <Link href="/register" onClick={onClose} className={css.register}>
           Registration
         </Link>
       </li>
