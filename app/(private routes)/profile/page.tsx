@@ -14,15 +14,14 @@ export default function ProfilePage() {
 
   console.log(data);
 
+  const pets = data?.pets || [];
+  const favorite = data?.noticesFavorites || [];
+  const viewed = data?.noticesViewed || [];
+
   return (
     <section className={css.section}>
-      {data && <UserCard user={data} pets={data.pets} />}
-      {data && (
-        <MyNotices
-          favoriteNotices={data.noticesFavorites}
-          viewedNotices={data.noticesViewed}
-        />
-      )}
+      {data && <UserCard user={data} pets={pets} />}
+      {data && <MyNotices favoriteNotices={favorite} viewedNotices={viewed} />}
     </section>
   );
 }
