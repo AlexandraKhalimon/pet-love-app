@@ -37,7 +37,7 @@ export default function BurgerMenu({ onClose }: Props) {
             <use href="/icons.svg#icon-cross-small"></use>
           </svg>
         </button>
-        <Nav link={nav} onClose={onClose} />
+        <Nav link={nav} onClose={onClose} className={css.nav} />
         {user ? (
           <LogOutBtn className={logout} />
         ) : (
