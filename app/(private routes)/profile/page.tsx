@@ -5,6 +5,7 @@ import UserCard from "@/components/UserCard/UserCard";
 import { fetchUserFullInfo } from "@/lib/api";
 import { useQuery } from "@tanstack/react-query";
 import MyNotices from "@/components/MyNotices/MyNotices";
+import { useAuthStore } from "@/lib/store/authStore";
 
 export default function ProfilePage() {
   const { data } = useQuery({
@@ -13,6 +14,7 @@ export default function ProfilePage() {
   });
 
   console.log(data);
+  console.log(useAuthStore.getState().user);
 
   const pets = data?.pets || [];
   const favorite = data?.noticesFavorites || [];

@@ -7,7 +7,7 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useRouter } from "next/navigation";
 import { useMutation } from "@tanstack/react-query";
-import { loginUser } from "@/lib/api";
+import { loginUser, setAuthHeader } from "@/lib/api";
 import { useAuthStore } from "@/lib/store/authStore";
 
 const LoginSchema = yup.object({
@@ -52,6 +52,7 @@ export default function LoginForm() {
     onSuccess: (data) => {
       console.log("User signed in");
       setUser(data);
+      setAuthHeader(data.token);
       router.push("/profile");
       reset();
     },

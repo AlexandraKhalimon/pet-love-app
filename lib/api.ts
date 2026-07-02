@@ -161,6 +161,10 @@ export const logoutUser = async (): Promise<{ message: string }> => {
   return data;
 };
 
+export const setAuthHeader = (token: string) => {
+  axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+};
+
 // USER AND PET API
 // ===============================
 
