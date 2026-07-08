@@ -2,15 +2,25 @@
 
 import css from "./page.module.css";
 import UserCard from "@/components/UserCard/UserCard";
-import { fetchUserFullInfo } from "@/lib/api";
+import { fetchUserFullInfo, setAuthHeader } from "@/lib/api";
 import { useQuery } from "@tanstack/react-query";
 import MyNotices from "@/components/MyNotices/MyNotices";
 import { useAuthStore } from "@/lib/store/authStore";
+import { useEffect } from "react";
 
 export default function ProfilePage() {
+  const user = useAuthStore((state) => state.user);
+
+  useEffect(() => {
+    if (user?.token) {
+      setAuthHeader(user.token);
+    }
+  }, [user]);
+
   const { data } = useQuery({
-    queryKey: ["user"],
+    queryKey: ["user", user?.token],
     queryFn: fetchUserFullInfo,
+    enabled: !!user?.token,
   });
 
   console.log(data);
