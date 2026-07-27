@@ -26,7 +26,7 @@ export default function EditUserBtn({ user }: Props) {
       </button>
       {isModalOpen && (
         <Modal onClose={() => setIsModalOpen(false)}>
-          <ModalEditUser user={user} />
+          <ModalEditUser user={user} onClose={() => setIsModalOpen(false)} />
         </Modal>
       )}
     </>

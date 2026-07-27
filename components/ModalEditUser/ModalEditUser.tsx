@@ -4,6 +4,9 @@ import Image from "next/image";
 import { Resolver, useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { useAuthStore } from "@/lib/store/authStore";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { editUserInfo } from "@/lib/api";
 
 const editSchema = yup.object({
   avatar: yup
@@ -32,6 +35,7 @@ const editSchema = yup.object({
 
 interface Props {
   user: FullUser;
+  onClose: () => void;
 }
 
 interface EditUserValues {
@@ -41,7 +45,7 @@ interface EditUserValues {
   phone?: string;
 }
 
-export default function ModalEditUser({ user }: Props) {
+export default function ModalEditUser({ user, onClose }: Props) {
   const {
     register,
     handleSubmit,
@@ -61,7 +65,28 @@ export default function ModalEditUser({ user }: Props) {
   const emailBorder = user.email ? css.active : css.none;
   const phoneBorder = user.phone ? css.active : css.none;
 
-  const onSubmit = (data: EditUserValues) => console.log(data);
+  const setUser = useAuthStore((state) => state.setUser);
+  const queryClient = useQueryClient();
+
+  const { mutate } = useMutation({
+    mutationFn: editUserInfo,
+    onSuccess: (data: FullUser) => {
+      console.log("User info was edited");
+      setUser(data);
+      queryClient.invalidateQueries({ queryKey: ["user"] });
+      onClose();
+    },
+  });
+
+  const onSubmit = (data: EditUserValues) => {
+    const filteredData = Object.entries(data).filter(
+      ([key, value]) => value !== "",
+    );
+    const editedData = Object.fromEntries(filteredData);
+
+    console.log(editedData);
+    mutate(editedData);
+  };
 
   return (
     <div className={css.modal}>
