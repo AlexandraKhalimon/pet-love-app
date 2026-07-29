@@ -5,8 +5,9 @@ import { Notice } from "@/types/notice";
 import Image from "next/image";
 import { useState } from "react";
 import Modal from "../Modal/Modal";
-// import ModalAttention from "../ModalAttention/ModalAttention";
+import ModalAttention from "../ModalAttention/ModalAttention";
 import ModalNotice from "../ModalNotice/ModalNotice";
+import { useAuthStore } from "@/lib/store/authStore";
 
 interface Props {
   notice: Notice;
@@ -34,6 +35,13 @@ export default function NoticesItem({ notice, variant }: Props) {
     : "(max-width: 767px) 287px, (min-width: 768px) 314px, (min-width: 1280px) 292px";
   const imageClass = isNotices ? css.image : `${css.image} ${css.profileImage}`;
   const listClass = isNotices ? css.list : `${css.list} ${css.profileList}`;
+
+  const user = useAuthStore((state) => state.user);
+  const modalContent = user ? (
+    <ModalNotice notice={notice} />
+  ) : (
+    <ModalAttention />
+  );
 
   return (
     <li className={cardClass}>
@@ -120,18 +128,7 @@ export default function NoticesItem({ notice, variant }: Props) {
                 </svg>
               </button>
             )}
-
-            {/* TODO: show different modal based on user authorization status */}
-            {/* {isModalOpen && (
-              <Modal onClose={modalClose}>
-                <ModalAttention />
-              </Modal>
-            )} */}
-            {isModalOpen && (
-              <Modal onClose={modalClose}>
-                <ModalNotice notice={notice} />
-              </Modal>
-            )}
+            {isModalOpen && <Modal onClose={modalClose}>{modalContent}</Modal>}
           </div>
         </div>
       </div>
