@@ -80,7 +80,7 @@ export default function ModalEditUser({ user, onClose }: Props) {
 
   const onSubmit = (data: EditUserValues) => {
     const filteredData = Object.entries(data).filter(
-      ([key, value]) => value !== "",
+      ([, value]) => value !== "",
     );
     const editedData = Object.fromEntries(filteredData);
 
