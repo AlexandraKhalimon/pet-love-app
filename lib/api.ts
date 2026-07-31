@@ -120,6 +120,25 @@ export const fetchNoticeSpecies = async (): Promise<Species[]> => {
   return response.data;
 };
 
+export const addNoticeToFavorites = async (id: string): Promise<string[]> => {
+  const response = await axios.post<string[]>(`/notices/favorites/add/${id}`);
+  return response.data;
+};
+
+export const removeNoticeFromFavorites = async (
+  id: string,
+): Promise<string[]> => {
+  const response = await axios.delete<string[]>(
+    `/notices/favorites/remove/${id}`,
+  );
+  return response.data;
+};
+
+export const getNoticeById = async (id: string): Promise<Notice> => {
+  const response = await axios.get<Notice>(`/notices/${id}`);
+  return response.data;
+};
+
 // CITIES AND LOCATIONS API
 // ===============================
 
